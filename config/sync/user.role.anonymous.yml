@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access druxt resources'
+  - 'never autoplay videos'
+  - 'use exclude node title'
+  - 'view linky entities'
+  - 'view media'
+  - 'view paragraph content card'
+  - 'view paragraph content card_group'
+  - 'view paragraph content entity_reference'
+  - 'view paragraph content jumbotron'
+  - 'view paragraph content link'
+  - 'view paragraph content link_external'
+  - 'view paragraph content link_internal'
+  - 'view paragraph content listing'
+  - 'view paragraph content media'
+  - 'view paragraph content section'
+  - 'view paragraph content text_formatted'
+  - 'view paragraph content text_markdown'
+  - 'view paragraph content text_plain'

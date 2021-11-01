@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_listing
+    - paragraphs.paragraphs_type.listing
+  module:
+    - viewfield
+id: paragraph.listing.field_listing
+field_name: field_listing
+entity_type: paragraph
+bundle: listing
+label: 'Listing type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: false
+  allowed_views:
+    blog: blog
+    events: events
+    content: '0'
+    block_content: '0'
+    files: '0'
+    frontpage: '0'
+    google_analytics_reports_page: '0'
+    google_analytics_summary: '0'
+    locked_content: '0'
+    managed_links: '0'
+    media: '0'
+    media_library: '0'
+    moderated_content: '0'
+    user_admin_people: '0'
+    content_recent: '0'
+    redirect: '0'
+    scheduled_transitions: '0'
+    taxonomy_term: '0'
+    watchdog: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    embed: embed
+    attachment: '0'
+    block: '0'
+    default: '0'
+    feed: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

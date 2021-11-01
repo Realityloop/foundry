@@ -1,0 +1,30 @@
+nid_list: {  }
+translation_sync: true
+search: false
+type: remove
+content_types:
+  blog: all
+  event: all
+  news: all
+  page: all
+content_type_modes:
+  blog:
+    - card
+    - full
+    - landing
+    - teaser
+  event:
+    - card
+    - full
+    - landing
+    - teaser
+  news:
+    - card
+    - full
+    - landing
+    - teaser
+  page:
+    - card
+    - full
+    - landing
+    - teaser

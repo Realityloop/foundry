@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_display_mode
+    - paragraphs_ee
+third_party_settings:
+  entity_display_mode:
+    display_configuration:
+      field_name: ''
+  paragraphs_ee:
+    paragraphs_categories: {  }
+id: card
+label: Card
+icon_uuid: null
+icon_default: null
+description: 'Create a static card that can link to internal or external content.'
+behavior_plugins: {  }

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_display_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories: {  }
+  entity_display_mode:
+    display_configuration:
+      field_name: ''
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: 'A titled wrapper that allows for in page contents to be created.'
+behavior_plugins: {  }

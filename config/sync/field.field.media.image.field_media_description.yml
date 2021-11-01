@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_description
+    - media.type.image
+id: media.image.field_media_description
+field_name: field_media_description
+entity_type: media
+bundle: image
+label: Description
+description: 'Enter a very short description to help editors find relevant media.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

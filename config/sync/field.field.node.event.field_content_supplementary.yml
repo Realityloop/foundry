@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_supplementary
+    - node.type.event
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.text_formatted
+    - paragraphs.paragraphs_type.text_markdown
+  module:
+    - entity_reference_revisions
+id: node.event.field_content_supplementary
+field_name: field_content_supplementary
+entity_type: node
+bundle: event
+label: 'Supplementary content'
+description: 'Items added typically display visually separated from the primary content of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      text_formatted: text_formatted
+      text_markdown: text_markdown
+      card: card
+      link: link
+      media: media
+      section: section
+    target_bundles_drag_drop:
+      card:
+        enabled: true
+        weight: -20
+      card_group:
+        weight: -19
+        enabled: false
+      entity_reference:
+        weight: -14
+        enabled: false
+      jumbotron:
+        weight: -18
+        enabled: false
+      link:
+        enabled: true
+        weight: -17
+      media:
+        enabled: true
+        weight: -16
+      section:
+        enabled: true
+        weight: -15
+      text_formatted:
+        enabled: true
+        weight: -23
+      text_markdown:
+        enabled: true
+        weight: -22
+      text_plain:
+        enabled: true
+        weight: -21
+field_type: entity_reference_revisions

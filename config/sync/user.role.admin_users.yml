@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies: {  }
+id: admin_users
+label: 'Admin: Users'
+weight: -4
+is_admin: null
+permissions:
+  - 'access admin audit trail'
+  - 'access coffee'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'assign admin_content role'
+  - 'assign admin_users role'
+  - 'assign approver role'
+  - 'assign author role'
+  - 'masquerade as approver'
+  - 'masquerade as approver_blog'
+  - 'masquerade as approver_event'
+  - 'masquerade as approver_news'
+  - 'masquerade as approver_page'
+  - 'masquerade as authenticated'
+  - 'masquerade as author'
+  - 'masquerade as author_blog'
+  - 'masquerade as author_event'
+  - 'masquerade as author_news'
+  - 'masquerade as author_page'
+  - 'use exclude node title'
+  - 'view the administration theme'
+  - 'view user email addresses'

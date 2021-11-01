@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: admin_developer
+label: 'Admin: Developer'
+weight: -3
+is_admin: true
+permissions:
+  - 'access administration pages'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer shortcuts'
+  - 'administer site configuration'
+  - 'assign all roles'
+  - 'customize shortcut links'
+  - 'switch shortcut sets'
+  - 'view all media revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view the administration theme'

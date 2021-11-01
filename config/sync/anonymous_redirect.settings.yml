@@ -1,0 +1,3 @@
+enable_redirect: false
+redirect_url: /user/login
+redirect_url_overrides: "/user/*\r\n/jsonapi\r\n/jsonapi/*\r\n/oauth/*\r\n/router/*"

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.admin_developer
+  module:
+    - user
+id: user_remove_role_action.admin_developer
+label: 'Remove the Admin: Developer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: admin_developer

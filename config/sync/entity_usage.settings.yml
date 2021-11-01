@@ -1,0 +1,57 @@
+track_enabled_base_fields: false
+local_task_enabled_entity_types:
+  - linky
+  - media
+  - node
+usage_controller_items_per_page: 25
+track_enabled_source_entity_types:
+  - block_content
+  - consumer
+  - content_moderation_state
+  - crop
+  - linky
+  - media
+  - menu_link_content
+  - node
+  - path_alias
+  - redirect
+  - scheduled_transition
+  - shortcut
+  - oauth2_token
+  - taxonomy_term
+  - paragraph
+track_enabled_target_entity_types:
+  - block_content
+  - consumer
+  - content_moderation_state
+  - crop
+  - linky
+  - media
+  - menu_link_content
+  - node
+  - path_alias
+  - redirect
+  - scheduled_transition
+  - shortcut
+  - oauth2_token
+  - taxonomy_term
+  - paragraph
+edit_warning_message_entity_types:
+  - linky
+  - media
+  - node
+delete_warning_message_entity_types:
+  - linky
+  - media
+  - node
+track_enabled_plugins:
+  - block_field
+  - dynamic_entity_reference
+  - entity_embed
+  - entity_reference
+  - html_link
+  - layout_builder
+  - link
+  - linkit
+  - media_embed
+site_domains: {  }

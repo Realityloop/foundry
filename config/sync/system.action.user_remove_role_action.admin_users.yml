@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.admin_users
+  module:
+    - user
+id: user_remove_role_action.admin_users
+label: 'Remove the Admin: Users role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: admin_users

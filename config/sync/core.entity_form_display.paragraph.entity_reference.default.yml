@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.entity_reference.field_entity_reference
+    - field.field.paragraph.entity_reference.field_title
+    - paragraphs.paragraphs_type.entity_reference
+id: paragraph.entity_reference.default
+targetEntityType: paragraph
+bundle: entity_reference
+mode: default
+content:
+  field_entity_reference:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

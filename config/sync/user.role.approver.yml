@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies: {  }
+id: approver
+label: Approver
+weight: -6
+is_admin: null
+permissions:
+  - 'access coffee'
+  - 'access contextual links'
+  - 'access entity usage statistics'
+  - 'access toolbar'
+  - 'notify of path changes'
+  - 'view all media revisions'
+  - 'view all scheduled transitions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view the administration theme'

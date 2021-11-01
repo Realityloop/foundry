@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: medium
+label: 'Medium (220×220)'
+effects:
+  7325678a-cf45-45af-abd3-6478720fcdef:
+    uuid: 7325678a-cf45-45af-abd3-6478720fcdef
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 200
+      height: 200
+      crop_type: focal_point

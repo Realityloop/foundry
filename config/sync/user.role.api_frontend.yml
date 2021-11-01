@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: api_frontend
+label: 'API Frontend'
+weight: -9
+is_admin: null
+permissions:
+  - 'access druxt resources'
+  - 'use exclude node title'

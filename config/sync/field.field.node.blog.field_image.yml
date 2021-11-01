@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.blog
+id: node.blog.field_image
+field_name: field_image
+entity_type: node
+bundle: blog
+label: Image
+description: "This image will be used for social meta tags and certain feature display for this item throughout the site, it will be cropped and resized appropriately for display.<br />\r\nThe best size to make your image is 1200 x 1200 or larger with a square aspect ratio. This is due to the different aspect ratios Facebook, Reddit, Twitter and other sharing sites use.<br />\r\nIf no image is provided a site default one will be used for the meta."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

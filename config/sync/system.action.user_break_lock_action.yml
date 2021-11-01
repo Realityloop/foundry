@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_lock
+id: user_break_lock_action
+label: 'Break lock user'
+type: user
+plugin: 'entity:break_lock:user'
+configuration: {  }

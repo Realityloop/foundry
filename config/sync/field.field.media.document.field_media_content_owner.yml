@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_content_owner
+    - media.type.document
+id: media.document.field_media_content_owner
+field_name: field_media_content_owner
+entity_type: media
+bundle: document
+label: 'Content owner'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

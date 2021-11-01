@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.listing.field_listing
+    - paragraphs.paragraphs_type.listing
+  module:
+    - viewfield
+id: paragraph.listing.default
+targetEntityType: paragraph
+bundle: listing
+mode: default
+content:
+  field_listing:
+    weight: 0
+    label: hidden
+    settings:
+      view_title: hidden
+      empty_view_title: hidden
+      always_build_output: false
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden: {  }

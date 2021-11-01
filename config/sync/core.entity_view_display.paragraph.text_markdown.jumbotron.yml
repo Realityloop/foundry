@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.jumbotron
+    - field.field.paragraph.text_markdown.field_text_markdown
+    - paragraphs.paragraphs_type.text_markdown
+id: paragraph.text_markdown.jumbotron
+targetEntityType: paragraph
+bundle: text_markdown
+mode: jumbotron
+content: {  }
+hidden:
+  field_text_markdown: true

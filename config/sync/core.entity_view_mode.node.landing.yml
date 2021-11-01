@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.landing
+label: 'Landing page'
+targetEntityType: node
+cache: true

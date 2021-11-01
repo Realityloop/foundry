@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: meta_instagram_pinterest
+label: 'Social Meta: Instagram Pinterest (1080x1920)'
+effects:
+  b81f2d62-14ec-43cc-8018-80c1f79157e2:
+    uuid: b81f2d62-14ec-43cc-8018-80c1f79157e2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1080
+      height: 1920
+      crop_type: focal_point

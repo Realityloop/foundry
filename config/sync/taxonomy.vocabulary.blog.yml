@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Blog
+vid: blog
+description: 'This is for categorisation of blog entries.'
+weight: 0

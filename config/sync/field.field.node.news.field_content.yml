@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.news
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.jumbotron
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.text_formatted
+    - paragraphs.paragraphs_type.text_markdown
+  module:
+    - entity_reference_revisions
+id: node.news.field_content
+field_name: field_content
+entity_type: node
+bundle: news
+label: Content
+description: 'Items added will display in the primary content region of the page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      text_formatted: text_formatted
+      text_markdown: text_markdown
+      card: card
+      card_group: card_group
+      jumbotron: jumbotron
+      link: link
+      media: media
+      section: section
+    target_bundles_drag_drop:
+      card:
+        enabled: true
+        weight: -20
+      card_group:
+        enabled: true
+        weight: -19
+      entity_reference:
+        weight: -14
+        enabled: false
+      jumbotron:
+        enabled: true
+        weight: -18
+      link:
+        enabled: true
+        weight: -17
+      media:
+        enabled: true
+        weight: -16
+      section:
+        enabled: true
+        weight: -15
+      text_formatted:
+        enabled: true
+        weight: -23
+      text_markdown:
+        enabled: true
+        weight: -22
+      text_plain:
+        enabled: true
+        weight: -21
+field_type: entity_reference_revisions

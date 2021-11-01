@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.text_formatted
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: section
+label: 'Section content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      text_formatted: text_formatted
+      card_group: card_group
+      link: link
+      media: media
+      section: section
+    target_bundles_drag_drop:
+      card:
+        weight: -14
+        enabled: false
+      card_group:
+        enabled: true
+        weight: -13
+      jumbotron:
+        weight: -12
+        enabled: false
+      link:
+        enabled: true
+        weight: -11
+      media:
+        enabled: true
+        weight: -10
+      section:
+        enabled: true
+        weight: -9
+      text_formatted:
+        enabled: true
+        weight: -15
+field_type: entity_reference_revisions

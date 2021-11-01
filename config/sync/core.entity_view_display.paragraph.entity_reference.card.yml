@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.card
+    - field.field.paragraph.entity_reference.field_entity_reference
+    - field.field.paragraph.entity_reference.field_title
+    - paragraphs.paragraphs_type.entity_reference
+id: paragraph.entity_reference.card
+targetEntityType: paragraph
+bundle: entity_reference
+mode: card
+content:
+  field_entity_reference:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

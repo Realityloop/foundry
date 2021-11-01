@@ -15,7 +15,6 @@
         }
     ],
     "require": {
-        "briangilbert/foundry": "dev-main",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.0",
         "drupal-tome/tome_drush": "dev-master",
@@ -77,7 +76,8 @@
         "drupal/viewfield": "^3.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.2",        "drush/drush": "^10.5"
+        "drupal/core-dev": "^9.2",
+        "drush/drush": "^10.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -88,7 +88,7 @@
         "sort-packages": true
     },
     "scripts": {
-        "post-create-project-cmd": "mkdir config"
+        "post-create-project-cmd": ""
     },
     "extra": {
         "drupal-scaffold": {
@@ -148,6 +148,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3247553#comment-14280389": "https://www.drupal.org/files/issues/2021-11-04/3247553-3.patch"
+            },
             "drupal/entity_clone": {
                 "Batch field creation https://www.drupal.org/project/entity_clone/issues/2845094#comment-14163283": "https://git.drupalcode.org/project/entity_clone/-/merge_requests/8.diff"
             },

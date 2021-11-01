@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.jumbotron
+    - field.field.paragraph.link.field_link
+    - paragraphs.paragraphs_type.link
+  module:
+    - linky
+id: paragraph.link.jumbotron
+targetEntityType: paragraph
+bundle: link
+mode: jumbotron
+content:
+  field_link:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      parent_entity_label_link_text: false
+    third_party_settings: {  }
+    type: linky_label
+    region: content
+hidden: {  }

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_display_mode
+    - node
+id: node.field_display
+field_name: field_display
+entity_type: node
+type: entity_display_mode
+settings: {  }
+module: entity_display_mode
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

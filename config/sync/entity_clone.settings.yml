@@ -1,0 +1,70 @@
+form_settings:
+  block_content:
+    default_value: false
+    disable: false
+    hidden: false
+  consumer:
+    default_value: false
+    disable: false
+    hidden: false
+  content_moderation_state:
+    default_value: false
+    disable: false
+    hidden: false
+  crop:
+    default_value: false
+    disable: false
+    hidden: false
+  file:
+    default_value: false
+    disable: false
+    hidden: false
+  linky:
+    default_value: false
+    disable: false
+    hidden: false
+  media:
+    default_value: false
+    disable: false
+    hidden: false
+  menu_link_content:
+    default_value: false
+    disable: false
+    hidden: false
+  node:
+    default_value: false
+    disable: false
+    hidden: false
+  path_alias:
+    default_value: false
+    disable: false
+    hidden: false
+  redirect:
+    default_value: false
+    disable: false
+    hidden: false
+  scheduled_transition:
+    default_value: false
+    disable: false
+    hidden: false
+  shortcut:
+    default_value: false
+    disable: false
+    hidden: false
+  oauth2_token:
+    default_value: false
+    disable: false
+    hidden: false
+  taxonomy_term:
+    default_value: false
+    disable: false
+    hidden: false
+  user:
+    default_value: false
+    disable: false
+    hidden: false
+  paragraph:
+    default_value: false
+    disable: false
+    hidden: false
+take_ownership: 1

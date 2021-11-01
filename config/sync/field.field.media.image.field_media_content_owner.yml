@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_content_owner
+    - media.type.image
+id: media.image.field_media_content_owner
+field_name: field_media_content_owner
+entity_type: media
+bundle: image
+label: 'Content owner'
+description: 'Enter the organisational person or role that is primary contact regarding this image.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

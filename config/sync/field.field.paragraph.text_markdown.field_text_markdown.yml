@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_markdown
+    - paragraphs.paragraphs_type.text_markdown
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    markdown: markdown
+    formatted: '0'
+    plain_text: '0'
+id: paragraph.text_markdown.field_text_markdown
+field_name: field_text_markdown
+entity_type: paragraph
+bundle: text_markdown
+label: Markdown
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

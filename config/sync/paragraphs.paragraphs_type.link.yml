@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_display_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      basics: basics
+  entity_display_mode:
+    display_configuration:
+      field_name: ''
+id: link
+label: Link
+icon_uuid: null
+icon_default: null
+description: 'Create a link to internal or external content.'
+behavior_plugins: {  }

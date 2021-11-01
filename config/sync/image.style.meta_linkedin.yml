@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: meta_linkedin
+label: 'Social Meta: LinkedIn (1200x627)'
+effects:
+  7eafc51b-e928-4012-a16f-009aea647e97:
+    uuid: 7eafc51b-e928-4012-a16f-009aea647e97
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 627
+      crop_type: focal_point

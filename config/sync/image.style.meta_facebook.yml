@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: meta_facebook
+label: 'Social Meta: Facebook (1200x630)'
+effects:
+  0e87910e-4131-45e2-91e1-410dcc769dff:
+    uuid: 0e87910e-4131-45e2-91e1-410dcc769dff
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 630
+      crop_type: focal_point

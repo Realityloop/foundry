@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.jumbotron
+    - field.field.paragraph.text_formatted.field_text_formatted
+    - paragraphs.paragraphs_type.text_formatted
+  module:
+    - text
+id: paragraph.text_formatted.jumbotron
+targetEntityType: paragraph
+bundle: text_formatted
+mode: jumbotron
+content:
+  field_text_formatted:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

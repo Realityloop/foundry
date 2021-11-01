@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large
+label: 'Large (480×480)'
+effects:
+  c22befe2-28e9-4c47-b21b-a96f1863d18b:
+    uuid: c22befe2-28e9-4c47-b21b-a96f1863d18b
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 480
+      height: 480
+      crop_type: focal_point

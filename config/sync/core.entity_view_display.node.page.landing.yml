@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.landing
+    - field.field.node.page.field_content
+    - field.field.node.page.field_content_supplementary
+    - field.field.node.page.field_description
+    - field.field.node.page.field_display
+    - field.field.node.page.field_display_title
+    - field.field.node.page.field_image
+    - field.field.node.page.field_meta_tags
+    - node.type.page
+  module:
+    - entity_display_mode
+    - entity_reference_revisions
+    - text
+    - title_field_for_manage_display
+    - user
+id: node.page.landing
+targetEntityType: node
+bundle: page
+mode: landing
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_content_supplementary:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_display:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_display_mode_default
+    region: content
+  field_display_title:
+    type: title_value_field_formatter
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      tag: h1
+      classes: ''
+      linked: 0
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  content_moderation_control: true
+  field_meta_tags: true
+  langcode: true
+  links: true

@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.event.field_content
+    - field.field.node.event.field_content_supplementary
+    - field.field.node.event.field_date
+    - field.field.node.event.field_description
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_image
+    - field.field.node.event.field_meta_tags
+    - node.type.event
+  module:
+    - advanced_text_formatter
+    - datetime
+    - title_field_for_manage_display
+    - user
+id: node.event.card
+targetEntityType: node
+bundle: event
+mode: card
+content:
+  field_date:
+    weight: 2
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: '160'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: input
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    type: advanced_text
+    region: content
+  field_display_title:
+    type: title_value_field_formatter
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      tag: h3
+      linked: '1'
+      classes: ''
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_content: true
+  field_content_supplementary: true
+  field_meta_tags: true
+  langcode: true
+  links: true

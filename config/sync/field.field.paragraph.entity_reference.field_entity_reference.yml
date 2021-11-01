@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entity_reference
+    - node.type.blog
+    - node.type.event
+    - node.type.news
+    - node.type.page
+    - paragraphs.paragraphs_type.entity_reference
+id: paragraph.entity_reference.field_entity_reference
+field_name: field_entity_reference
+entity_type: paragraph
+bundle: entity_reference
+label: Link
+description: 'Start typing to find internal content to link to.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog: blog
+      event: event
+      news: news
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: blog
+field_type: entity_reference

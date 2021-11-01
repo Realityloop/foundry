@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.event
+  module:
+    - text
+id: node.event.field_description
+field_name: field_description
+entity_type: node
+bundle: event
+label: Description
+description: "This field is used as the meta description, and in teasers throughout the website that link to this page:\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>"
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

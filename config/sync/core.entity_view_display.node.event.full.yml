@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.field_content
+    - field.field.node.event.field_content_supplementary
+    - field.field.node.event.field_date
+    - field.field.node.event.field_description
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_image
+    - field.field.node.event.field_meta_tags
+    - node.type.event
+  module:
+    - datetime
+    - entity_reference_revisions
+    - title_field_for_manage_display
+    - user
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  field_content:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_content_supplementary:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_date:
+    weight: 1
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_display_title:
+    type: title_value_field_formatter
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      tag: h1
+      classes: ''
+      linked: 0
+    third_party_settings: {  }
+hidden:
+  field_description: true
+  field_image: true
+  field_meta_tags: true
+  langcode: true
+  links: true

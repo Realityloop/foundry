@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: meta_twitter
+label: 'Social Meta: Twitter (1024x512)'
+effects:
+  257c2a1f-65e2-4975-ad4a-d3e209229e86:
+    uuid: 257c2a1f-65e2-4975-ad4a-d3e209229e86
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 512
+      crop_type: focal_point

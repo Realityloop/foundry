@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: entity_reference
+label: 'Entity reference'
+icon_uuid: null
+icon_default: null
+description: 'A reference to content from within this website.'
+behavior_plugins: {  }

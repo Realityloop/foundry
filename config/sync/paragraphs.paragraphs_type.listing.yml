@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      basics: basics
+id: listing
+label: Listing
+icon_uuid: null
+icon_default: null
+description: 'Add a listing to your content area.'
+behavior_plugins: {  }
