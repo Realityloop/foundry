@@ -86,8 +86,8 @@
     "config": {
         "sort-packages": true
     },
-	"scripts": {
-		"post-install-cmd": "config::createFolder"
+    "scripts": {
+        "post-install-cmd": "config::createFolder"
     },
     "extra": {
         "drupal-scaffold": {
