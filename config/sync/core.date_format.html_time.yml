@@ -1,6 +1,9 @@
+uuid: 2e39c3f0-6e5a-49ac-bbd5-fd51701c3544
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: M7yqicYkU36hRy5p9drAaGBBihhUD1OyujFrAaQ93ZE
 id: html_time
 label: 'HTML Time'
 locked: true

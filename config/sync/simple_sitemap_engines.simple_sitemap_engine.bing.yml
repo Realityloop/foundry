@@ -1,6 +1,9 @@
+uuid: d45203b1-b492-4973-b9b7-e4c402308a98
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pu2tnTIZRlkkRZxbhVQU0L3FYniVvYFXIe6iCH9kXHo
 id: bing
 label: Bing
 url: 'https://www.bing.com/ping?sitemap=[sitemap]'

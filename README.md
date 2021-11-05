@@ -9,10 +9,7 @@ The Foundry install profile is designed to be a good starting point for most web
 Create a directory for your project then use the `composer create-project` command to download the required code as shown here:
 
 ```
-mkdir project-directory
-cd project-directory
-composer create-project -s dev realityloop/foundry .
-composer remove drupal/core-project-message
+composer create-project -s dev realityloop/foundry [destination]
 ```
 
 ## Install Drupal using quickstart

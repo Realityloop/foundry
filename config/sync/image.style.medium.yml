@@ -1,8 +1,11 @@
+uuid: 5d7b504d-2ec0-4747-a42b-8a0b9381f237
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: Y9NmnZHQq20ASSyTNA6JnwtWrJJiSajOehGDtmUFdM0
 name: medium
 label: 'Medium (220×220)'
 effects:

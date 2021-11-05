@@ -1,3 +1,4 @@
+uuid: e2a65fc6-4beb-4e3c-ab1a-37cb876d388b
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - link
     - linky
     - user
+_core:
+  default_config_hash: J0nqM0nfugGQFCKQgtltlZAgyy9tYJ-5W4O0--IJXfs
 id: managed_links
 label: 'Managed links'
 module: views

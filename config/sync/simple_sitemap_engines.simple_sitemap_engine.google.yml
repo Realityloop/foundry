@@ -1,6 +1,9 @@
+uuid: 3fd327fc-2aef-419e-9906-d63abb6da282
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: PS-z03VbhvMPW8pe7N_Pya5JDfVm1mL_F07cJ_srmYE
 id: google
 label: Google
 url: 'https://www.google.com/ping?sitemap=[sitemap]'

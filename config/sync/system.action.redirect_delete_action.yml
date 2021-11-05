@@ -1,3 +1,4 @@
+uuid: 636a5815-4700-468d-ac8f-c741ce864f2a
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
       - redirect
   module:
     - redirect
+_core:
+  default_config_hash: vcnRZRvBqTbK3nZ2M4_lKPlEGc8GjPzgaqapYUfyX8M
 id: redirect_delete_action
 label: 'Delete redirect'
 type: redirect

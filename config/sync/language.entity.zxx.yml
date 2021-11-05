@@ -1,6 +1,9 @@
+uuid: ce973c9d-fd69-46a1-bc58-11c23598dd45
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 35CefWbnzaiytcg3acexxz_GTvuwIjYd_ZTcmmR-tXA
 id: zxx
 label: 'Not applicable'
 direction: ltr

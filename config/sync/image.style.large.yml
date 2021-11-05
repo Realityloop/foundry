@@ -1,8 +1,11 @@
+uuid: 52436e13-90c8-4f31-9fd4-5b75fcdd8541
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
+_core:
+  default_config_hash: J2n0RpFzS0-bgSyxjs6rSdgxB1rb-bTAgqywNx_964M
 name: large
 label: 'Large (480×480)'
 effects:

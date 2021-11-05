@@ -21,7 +21,6 @@ module:
   coffee: 0
   config: 0
   config_filter: 0
-  config_profile: 0
   consumers: 0
   content_lock: 0
   content_lock_timeout: 0
@@ -64,6 +63,7 @@ module:
   linky: 0
   linkychecker: 0
   linkyreplacer: 0
+  m4032404: 0
   masquerade: 0
   maxlength: 0
   media: 0
@@ -115,3 +115,5 @@ theme:
   claro: 0
   gin: 0
 profile: minimal
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
