@@ -184,4 +184,10 @@ settings:
   base_field_override:
     handler: 'default:base_field_override'
     handler_settings: {  }
+  contact_form:
+    handler: 'default:contact_form'
+    handler_settings: {  }
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
 field_type: dynamic_entity_reference

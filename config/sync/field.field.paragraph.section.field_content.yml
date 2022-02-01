@@ -24,33 +24,33 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       text_formatted: text_formatted
       card_group: card_group
       link: link
       media: media
       section: section
+    negate: 0
     target_bundles_drag_drop:
       card:
         weight: -14
         enabled: false
       card_group:
-        enabled: true
         weight: -13
+        enabled: true
       jumbotron:
         weight: -12
         enabled: false
       link:
-        enabled: true
         weight: -11
+        enabled: true
       media:
-        enabled: true
         weight: -10
+        enabled: true
       section:
-        enabled: true
         weight: -9
-      text_formatted:
         enabled: true
+      text_formatted:
         weight: -15
+        enabled: true
 field_type: entity_reference_revisions

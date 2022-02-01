@@ -13,11 +13,11 @@ bundle: listing
 mode: default
 content:
   field_listing:
+    type: viewfield_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: viewfield_select
-    region: content
 hidden:
   created: true
   status: true

@@ -1,7 +1,15 @@
 uuid: 545b8e9c-5942-481f-b5b5-f9ea2b41104d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - coffee
+    - contextual
+    - entity_usage
+    - media
+    - pathauto
+    - system
+    - toolbar
 id: approver
 label: Approver
 weight: -6
@@ -13,7 +21,4 @@ permissions:
   - 'access toolbar'
   - 'notify of path changes'
   - 'view all media revisions'
-  - 'view all scheduled transitions'
-  - 'view any unpublished content'
-  - 'view latest version'
   - 'view the administration theme'

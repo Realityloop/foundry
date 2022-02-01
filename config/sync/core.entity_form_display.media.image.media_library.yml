@@ -53,13 +53,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_media_image:
+    type: image_image
     weight: 0
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_media_usage_terms:
     type: string_textarea
     weight: 6

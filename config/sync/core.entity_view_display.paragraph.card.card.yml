@@ -19,26 +19,24 @@ mode: card
 content:
   field_image:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
   field_link:
-    weight: 3
+    type: linky_label
     label: hidden
     settings:
       link: true
       parent_entity_label_link_text: false
     third_party_settings: {  }
-    type: linky_label
+    weight: 3
     region: content
   field_text_formatted:
     type: advanced_text
-    weight: 2
-    region: content
     label: above
     settings:
       trim_length: '160'
@@ -65,12 +63,14 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
+    weight: 2
+    region: content
   field_title:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden: {  }

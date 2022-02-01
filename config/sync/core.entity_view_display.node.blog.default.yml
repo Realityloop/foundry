@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.blog.field_display_title
     - field.field.node.blog.field_image
     - field.field.node.blog.field_meta_tags
+    - field.field.node.blog.field_published
+    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - entity_reference_revisions
@@ -23,68 +25,78 @@ bundle: blog
 mode: default
 content:
   field_blog_category:
-    weight: 1
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   field_content:
-    weight: 5
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 5
     region: content
   field_content_supplementary:
     type: entity_reference_revisions_entity_view
-    weight: 6
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 6
     region: content
   field_description:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
   field_display_title:
     type: title_value_field_formatter
-    weight: 0
-    region: content
     label: hidden
     settings:
       tag: h1
       classes: ''
       linked: 0
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_image:
-    weight: 2
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 3
     region: content
   field_meta_tags:
-    weight: 9
+    type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
-  links:
     weight: 8
     region: content
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 7
+    region: content
 hidden:
+  field_published: true
   langcode: true

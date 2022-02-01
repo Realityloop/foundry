@@ -22,20 +22,20 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       card: card
       entity_reference: entity_reference
+    negate: 0
     target_bundles_drag_drop:
       card:
-        enabled: true
         weight: 7
+        enabled: true
       card_group:
         weight: 8
         enabled: false
       entity_reference:
-        enabled: true
         weight: 14
+        enabled: true
       jumbotron:
         weight: 15
         enabled: false

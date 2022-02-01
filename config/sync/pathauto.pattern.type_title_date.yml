@@ -11,14 +11,14 @@ pattern: '[node:content-type]/[node:title]-[node:created:custom:Ymd]'
 selection_criteria:
   d5392510-e20d-4089-bc0b-658806e76913:
     id: node_type
+    negate: false
+    uuid: 86a5888d-826f-46d0-948b-a8c94aad8e77
+    context_mapping:
+      node: node
     bundles:
       blog: blog
       event: event
       news: news
-    negate: false
-    context_mapping:
-      node: node
-    uuid: d5392510-e20d-4089-bc0b-658806e76913
 selection_logic: and
 weight: -5
 relationships: {  }

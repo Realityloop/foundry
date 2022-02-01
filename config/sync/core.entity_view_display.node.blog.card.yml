@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.blog.field_display_title
     - field.field.node.blog.field_image
     - field.field.node.blog.field_meta_tags
+    - field.field.node.blog.field_published
+    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - advanced_text_formatter
@@ -22,7 +24,7 @@ bundle: blog
 mode: card
 content:
   field_description:
-    weight: 2
+    type: advanced_text
     label: hidden
     settings:
       trim_length: '160'
@@ -49,31 +51,40 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
-    type: advanced_text
+    weight: 3
     region: content
   field_display_title:
     type: title_value_field_formatter
-    weight: 0
-    region: content
     label: hidden
     settings:
       tag: h3
       linked: '1'
       classes: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_image:
-    weight: 1
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: card
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 2
+    region: content
+  field_video:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_blog_category: true
   field_content: true
   field_content_supplementary: true
   field_meta_tags: true
+  field_published: true
   langcode: true
   links: true

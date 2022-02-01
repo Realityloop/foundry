@@ -23,11 +23,11 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       link: link
       text_formatted: text_formatted
       text_markdown: text_markdown
+    negate: 0
     target_bundles_drag_drop:
       card:
         weight: 11
@@ -42,8 +42,8 @@ settings:
         weight: 14
         enabled: false
       link:
-        enabled: true
         weight: 15
+        enabled: true
       media:
         weight: 16
         enabled: false
@@ -51,12 +51,12 @@ settings:
         weight: 17
         enabled: false
       text_formatted:
-        enabled: true
         weight: 18
+        enabled: true
       text_markdown:
-        enabled: true
         weight: 19
-      text_plain:
         enabled: true
+      text_plain:
         weight: 20
+        enabled: true
 field_type: entity_reference_revisions

@@ -10,8 +10,11 @@ dependencies:
     - field.field.node.blog.field_display_title
     - field.field.node.blog.field_image
     - field.field.node.blog.field_meta_tags
+    - field.field.node.blog.field_published
+    - field.field.node.blog.field_video
     - node.type.blog
   module:
+    - datetime
     - field_group
     - media_library
     - metatag
@@ -26,44 +29,44 @@ third_party_settings:
       children:
         - langcode
         - field_image
+      label: Meta
+      region: content
       parent_name: ''
       weight: 0
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: Meta
     group_content_primary:
       children:
         - field_content
         - field_content_supplementary
-      parent_name: ''
-      weight: 4
-      format_type: fieldset
+      label: Content
       region: content
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
       format_settings:
+        classes: ''
+        id: ''
         description: ''
         required_fields: true
-        id: ''
-        classes: ''
-      label: Content
     group_work:
       children:
         - status
-      parent_name: ''
-      weight: 12
-      format_type: fieldset
+      label: Workflow
       region: content
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: Workflow
 id: node.blog.default
 targetEntityType: node
 bundle: blog
@@ -71,18 +74,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_blog_category:
+    type: options_buttons
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_content:
+    type: paragraphs
     weight: 26
+    region: content
     settings:
       title: Content
       title_plural: Content
@@ -99,20 +104,19 @@ content:
         duplicate: duplicate
     third_party_settings:
       paragraphs_features:
-        delete_confirmation: true
         add_in_between: true
-        show_drag_and_drop: true
+        delete_confirmation: true
         split_text: false
+        show_drag_and_drop: true
       paragraphs_ee:
         paragraphs_ee:
+          dialog_off_canvas: false
           dialog_style: tiles
           easy_access_count: 0
-          dialog_off_canvas: false
-    type: paragraphs
-    region: content
   field_content_supplementary:
     type: paragraphs
     weight: 27
+    region: content
     settings:
       title: Content
       title_plural: Content
@@ -129,38 +133,50 @@ content:
         duplicate: duplicate
     third_party_settings:
       paragraphs_features:
-        delete_confirmation: true
         add_in_between: true
-        show_drag_and_drop: true
+        delete_confirmation: true
         split_text: false
+        show_drag_and_drop: true
       paragraphs_ee:
         paragraphs_ee:
+          dialog_off_canvas: false
           dialog_style: tiles
           easy_access_count: 0
-          dialog_off_canvas: false
-    region: content
   field_description:
-    weight: 3
+    type: text_textarea
+    weight: 5
+    region: content
     settings:
       rows: 2
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_image:
+    type: media_library_widget
     weight: 6
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_meta_tags:
-    weight: 29
+    type: metatag_firehose
+    weight: 15
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
+  field_published:
+    type: datetime_default
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 5
@@ -169,39 +185,39 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
+    type: string_textfield
     weight: 28
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   path:
     type: path
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
+    weight: 10
+    region: content
     settings:
       display_label: true
-    weight: 8
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 15
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
+    weight: 11
+    region: content
     settings:
       display_label: true
-    weight: 9
-    region: content
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -212,22 +228,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

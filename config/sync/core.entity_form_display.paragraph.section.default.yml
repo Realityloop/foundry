@@ -18,6 +18,7 @@ content:
   field_content:
     type: paragraphs
     weight: 1
+    region: content
     settings:
       title: Content
       title_plural: Content
@@ -34,24 +35,23 @@ content:
         duplicate: duplicate
     third_party_settings:
       paragraphs_features:
-        delete_confirmation: true
         add_in_between: true
-        show_drag_and_drop: true
+        delete_confirmation: true
         split_text: false
+        show_drag_and_drop: true
       paragraphs_ee:
         paragraphs_ee:
+          dialog_off_canvas: false
           dialog_style: tiles
           easy_access_count: 0
-          dialog_off_canvas: false
-    region: content
   field_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

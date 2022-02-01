@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: video
 label: Video
+description: ''
 providers:
   - Vimeo
   - YouTube
-description: ''

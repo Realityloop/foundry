@@ -22,8 +22,6 @@ mode: teaser
 content:
   field_description:
     type: advanced_text
-    weight: 1
-    region: content
     label: hidden
     settings:
       trim_length: '160'
@@ -50,16 +48,18 @@ content:
       token_replace: 0
       autop: 0
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_display_title:
     type: title_value_field_formatter
-    weight: 0
-    region: content
     label: hidden
     settings:
       tag: h2
       linked: '1'
       classes: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_content: true
   field_content_supplementary: true

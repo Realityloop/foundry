@@ -1,7 +1,13 @@
 uuid: 4ef0789d-7916-4778-87d3-09c666e44547
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - exclude_node_title
+    - gin_toolbar
+    - media
+    - paragraphs_type_permissions
+    - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
@@ -11,7 +17,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access secondary toolbar'
-  - 'never autoplay videos'
   - 'use exclude node title'
   - 'view media'
   - 'view paragraph content card'
@@ -24,4 +29,3 @@ permissions:
   - 'view paragraph content section'
   - 'view paragraph content text_formatted'
   - 'view paragraph content text_markdown'
-  - 'view paragraph content text_plain'

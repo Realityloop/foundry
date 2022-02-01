@@ -1,7 +1,15 @@
 uuid: 85e24346-5ac3-4523-8ab3-634dadecb6fb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - admin_audit_trail
+    - coffee
+    - exclude_node_title
+    - masquerade
+    - role_delegation
+    - system
+    - toolbar
 id: admin_users
 label: 'Admin: Users'
 weight: -4
@@ -16,16 +24,8 @@ permissions:
   - 'assign approver role'
   - 'assign author role'
   - 'masquerade as approver'
-  - 'masquerade as approver_blog'
-  - 'masquerade as approver_event'
-  - 'masquerade as approver_news'
-  - 'masquerade as approver_page'
   - 'masquerade as authenticated'
   - 'masquerade as author'
-  - 'masquerade as author_blog'
-  - 'masquerade as author_event'
-  - 'masquerade as author_news'
-  - 'masquerade as author_page'
   - 'use exclude node title'
   - 'view the administration theme'
   - 'view user email addresses'

@@ -18,35 +18,35 @@ mode: default
 content:
   field_image:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
   field_link:
-    weight: 3
+    type: linky_label
     label: hidden
     settings:
       link: true
       parent_entity_label_link_text: false
     third_party_settings: {  }
-    type: linky_label
+    weight: 3
     region: content
   field_text_formatted:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden: {  }

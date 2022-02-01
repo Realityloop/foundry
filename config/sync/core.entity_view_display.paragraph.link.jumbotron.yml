@@ -14,12 +14,12 @@ bundle: link
 mode: jumbotron
 content:
   field_link:
-    weight: 0
+    type: linky_label
     label: hidden
     settings:
       link: true
       parent_entity_label_link_text: false
     third_party_settings: {  }
-    type: linky_label
+    weight: 0
     region: content
 hidden: {  }

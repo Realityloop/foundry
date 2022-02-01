@@ -25,54 +25,54 @@ mode: landing
 content:
   field_content:
     type: entity_reference_revisions_entity_view
-    weight: 3
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 3
     region: content
   field_content_supplementary:
-    weight: 4
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 4
     region: content
   field_description:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_display:
-    weight: 5
+    type: entity_display_mode_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: entity_display_mode_default
+    weight: 5
     region: content
   field_display_title:
     type: title_value_field_formatter
-    weight: 0
-    region: content
     label: hidden
     settings:
       tag: h1
       classes: ''
       linked: 0
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_image:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true

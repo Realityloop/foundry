@@ -1,7 +1,14 @@
 uuid: 8e4c562a-a33f-4b01-88ec-5e570c500f53
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - druxt
+    - exclude_node_title
+    - linky
+    - media
+    - paragraphs_type_permissions
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
@@ -11,7 +18,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access druxt resources'
-  - 'never autoplay videos'
   - 'use exclude node title'
   - 'view linky entities'
   - 'view media'
@@ -20,11 +26,8 @@ permissions:
   - 'view paragraph content entity_reference'
   - 'view paragraph content jumbotron'
   - 'view paragraph content link'
-  - 'view paragraph content link_external'
-  - 'view paragraph content link_internal'
   - 'view paragraph content listing'
   - 'view paragraph content media'
   - 'view paragraph content section'
   - 'view paragraph content text_formatted'
   - 'view paragraph content text_markdown'
-  - 'view paragraph content text_plain'

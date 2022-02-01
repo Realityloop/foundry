@@ -13,7 +13,9 @@ bundle: link
 mode: default
 content:
   field_link:
+    type: linky
     weight: 0
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -21,8 +23,6 @@ content:
       placeholder: ''
       allow_duplicate_urls: true
     third_party_settings: {  }
-    type: linky
-    region: content
 hidden:
   created: true
   status: true
