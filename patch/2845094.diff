@@ -1,0 +1,223 @@
+diff --git a/src/EntityClone/Config/ConfigWithFieldEntityClone.php b/src/EntityClone/Config/ConfigWithFieldEntityClone.php
+index 322925a9ac1215cf7f6b35d8528be2e64150395e..519d3f0aa755ab230bea4fcb029a18c1f268d8e7 100644
+--- a/src/EntityClone/Config/ConfigWithFieldEntityClone.php
++++ b/src/EntityClone/Config/ConfigWithFieldEntityClone.php
+@@ -3,7 +3,12 @@
+ namespace Drupal\entity_clone\EntityClone\Config;
+ 
+ use Drupal\Core\Entity\EntityInterface;
++use Drupal\Core\Entity\EntityTypeInterface;
++use Drupal\Core\Entity\EntityTypeManager;
+ use Drupal\Core\Field\FieldConfigInterface;
++use Drupal\Core\Field\FieldDefinitionInterface;
++use Drupal\Core\StringTranslation\TranslatableMarkup;
++use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+  * Class ContentEntityCloneBase.
+@@ -14,23 +19,34 @@ class ConfigWithFieldEntityClone extends ConfigEntityCloneBase {
+    * {@inheritdoc}
+    */
+   public function cloneEntity(EntityInterface $entity, EntityInterface $cloned_entity, array $properties = []) {
++    $batch = [
++      'title' => new TranslatableMarkup('Cloning fields and displays for <em>@entity (@entity_id)</em> of type <em>@type</em> ...', [
++        '@entity' => $entity->label(),
++        '@entity_id' => $entity->id(),
++        '@type' => $entity->getEntityTypeId(),
++      ]),
++      'operations' => [],
++      'finished' => [static::class, 'batchCloneFinished'],
++    ];
++
+     $cloned_entity = parent::cloneEntity($entity, $cloned_entity, $properties);
+     $bundle_of = $cloned_entity->getEntityType()->getBundleOf();
+     if ($bundle_of) {
+-      $this->cloneFields($entity->id(), $cloned_entity->id(), $bundle_of);
++      $batch['operations'] = array_merge($batch['operations'], $this->cloneFields($entity->id(), $cloned_entity->id(), $bundle_of));
+     }
+ 
+     $view_displays = \Drupal::service('entity_display.repository')->getFormModes($bundle_of);
+     $view_displays = array_merge($view_displays, ['default' => 'default']);
+     if (!empty($view_displays)) {
+-      $this->cloneDisplays('form', $entity->id(), $cloned_entity->id(), $view_displays, $bundle_of);
++      $batch['operations'] = array_merge($batch['operations'], $this->cloneDisplays('form', $entity->id(), $cloned_entity->id(), $view_displays, $bundle_of));
+     }
+ 
+     $view_displays = \Drupal::service('entity_display.repository')->getViewModes($bundle_of);
+     $view_displays = array_merge($view_displays, ['default' => 'default']);
+     if (!empty($view_displays)) {
+-      $this->cloneDisplays('view', $entity->id(), $cloned_entity->id(), $view_displays, $bundle_of);
++      $batch['operations'] = array_merge($batch['operations'], $this->cloneDisplays('view', $entity->id(), $cloned_entity->id(), $view_displays, $bundle_of));
+     }
++    batch_set($batch);
+ 
+     return $cloned_entity;
+   }
+@@ -44,30 +60,19 @@ class ConfigWithFieldEntityClone extends ConfigEntityCloneBase {
+    *   The cloned entity ID.
+    * @param string $bundle_of
+    *   The bundle of the cloned entity.
++   *
++   * @return array
++   *   Batch operations.
+    */
+   protected function cloneFields($entity_id, $cloned_entity_id, $bundle_of) {
+     /** @var \Drupal\Core\Entity\EntityFieldManager $field_manager */
+     $field_manager = \Drupal::service('entity_field.manager');
+     $fields = $field_manager->getFieldDefinitions($bundle_of, $entity_id);
+-    foreach ($fields as $field_definition) {
+-      if ($field_definition instanceof FieldConfigInterface) {
+-        if ($this->entityTypeManager->hasHandler($this->entityTypeManager->getDefinition($field_definition->getEntityTypeId())
+-          ->id(), 'entity_clone')
+-        ) {
+-          /** @var \Drupal\entity_clone\EntityClone\EntityCloneInterface $field_config_clone_handler */
+-          $field_config_clone_handler = $this->entityTypeManager->getHandler($this->entityTypeManager->getDefinition($field_definition->getEntityTypeId())
+-            ->id(), 'entity_clone');
+-          $field_config_properties = [
+-            'id' => $field_definition->getName(),
+-            'label' => $field_definition->label(),
+-            'skip_storage' => TRUE,
+-          ];
+-          $cloned_field_definition = $field_definition->createDuplicate();
+-          $cloned_field_definition->set('bundle', $cloned_entity_id);
+-          $field_config_clone_handler->cloneEntity($field_definition, $cloned_field_definition, $field_config_properties);
+-        }
+-      }
++    $operations = [];
++    foreach ($fields as $field_id => $field_definition) {
++      $operations[] = [[static::class, 'batchCloneField'], [$cloned_entity_id, $field_definition, $this->entityTypeId]];
+     }
++    return $operations;
+   }
+ 
+   /**
+@@ -83,21 +88,119 @@ class ConfigWithFieldEntityClone extends ConfigEntityCloneBase {
+    *   All view available display for this type.
+    * @param string $bundle_of
+    *   The bundle of the cloned entity.
++   *
++   * @return array
++   *   Batch operations.
+    */
+   protected function cloneDisplays($type, $entity_id, $cloned_entity_id, array $view_displays, $bundle_of) {
+     foreach ($view_displays as $view_display_id => $view_display) {
+-      /** @var \Drupal\Core\Entity\Display\EntityDisplayInterface $display */
+-      $display = $this->entityTypeManager->getStorage('entity_' . $type . '_display')->load($bundle_of . '.' . $entity_id . '.' . $view_display_id);
+-      if ($display) {
+-        /** @var \Drupal\entity_clone\EntityClone\EntityCloneInterface $view_display_clone_handler */
+-        $view_display_clone_handler = $this->entityTypeManager->getHandler($this->entityTypeManager->getDefinition($display->getEntityTypeId())
++      $operations[] = [[static::class, 'batchCloneDisplay'], [$type, $entity_id, $cloned_entity_id, $bundle_of, $view_display_id, $this->entityTypeId]];
++    }
++    return $operations;
++  }
++
++  /**
++   * Batch callback to clone a field.
++   *
++   * @param string $cloned_entity_id
++   *   Cloned ID.
++   * @param \Drupal\Core\Field\FieldDefinitionInterface $field_definition
++   *   Field to clone.
++   * @param string $entity_type_id
++   *   Entity type ID.
++   * @param array $context
++   *   Batch context.
++   */
++  public static function batchCloneField($cloned_entity_id, FieldDefinitionInterface $field_definition, $entity_type_id, array &$context) {
++    $instance = new static(\Drupal::entityTypeManager(), $entity_type_id);
++    $instance->cloneField($cloned_entity_id, $field_definition);
++  }
++
++  /**
++   * Batch callback to clone a display.
++   *
++   * @param string $type
++   *   The type of display (view or form).
++   * @param string $entity_id
++   *   The base entity ID.
++   * @param $cloned_entity_id
++   *   The cloned entity ID.
++   * @param $bundle_of
++   *   The bundle of the cloned entity.
++   * @param array $view_display_id
++   *   View display ID.
++   * @param string $entity_type_id
++   *   Entity Type Id.
++   * @param array $context
++   *   Batch context.
++   */
++  public static function batchCloneDisplay($type, $entity_id, $cloned_entity_id, $bundle_of, $view_display_id, $entity_type_id, array &$context) {
++    $instance = new static(\Drupal::entityTypeManager(), $entity_type_id);
++    $instance->cloneDisplay($type, $entity_id, $cloned_entity_id, $bundle_of, $view_display_id);
++  }
++
++  /**
++   * Batch callback finished.
++   */
++  public static function batchCloneFinished() {
++    drupal_set_message(new TranslatableMarkup('Finished cloning fields and displays'));
++  }
++
++  /**
++   * Clones a display.
++   *
++   * @param string $type
++   *   The type of display (view or form).
++   * @param string $entity_id
++   *   The base entity ID.
++   * @param $cloned_entity_id
++   *   The cloned entity ID.
++   * @param $bundle_of
++   *   The bundle of the cloned entity.
++   * @param array $view_display_id
++   *   View display ID.
++   */
++  protected function cloneDisplay($type, $entity_id, $cloned_entity_id, $bundle_of, $view_display_id) {
++    /** @var \Drupal\Core\Entity\Display\EntityDisplayInterface $display */
++    $display = $this->entityTypeManager->getStorage('entity_' . $type . '_display')
++      ->load($bundle_of . '.' . $entity_id . '.' . $view_display_id);
++    if ($display) {
++      /** @var \Drupal\entity_clone\EntityClone\EntityCloneInterface $view_display_clone_handler */
++      $view_display_clone_handler = $this->entityTypeManager->getHandler($this->entityTypeManager->getDefinition($display->getEntityTypeId())
++        ->id(), 'entity_clone');
++      $view_display_properties = [
++        'id' => $bundle_of . '.' . $cloned_entity_id . '.' . $view_display_id,
++      ];
++      $cloned_view_display = $display->createDuplicate();
++      $cloned_view_display->set('bundle', $cloned_entity_id);
++      $view_display_clone_handler->cloneEntity($display, $cloned_view_display, $view_display_properties);
++    }
++  }
++
++  /**
++   * Clones a field.
++   *
++   * @param string $cloned_entity_id
++   *   Cloned ID.
++   * @param \Drupal\Core\Field\FieldDefinitionInterface $field_definition
++   *   Field to clone.
++   */
++  protected function cloneField($cloned_entity_id, FieldDefinitionInterface $field_definition) {
++    if ($field_definition instanceof FieldConfigInterface) {
++      if ($this->entityTypeManager->hasHandler($this->entityTypeManager->getDefinition($field_definition->getEntityTypeId())
++        ->id(), 'entity_clone')
++      ) {
++        /** @var \Drupal\entity_clone\EntityClone\EntityCloneInterface $field_config_clone_handler */
++        $field_config_clone_handler = $this->entityTypeManager->getHandler($this->entityTypeManager->getDefinition($field_definition->getEntityTypeId())
+           ->id(), 'entity_clone');
+-        $view_display_properties = [
+-          'id' => $bundle_of . '.' . $cloned_entity_id . '.' . $view_display_id,
++        $field_config_properties = [
++          'id' => $field_definition->getName(),
++          'label' => $field_definition->label(),
++          'skip_storage' => TRUE,
+         ];
+-        $cloned_view_display = $display->createDuplicate();
+-        $cloned_view_display->set('bundle', $cloned_entity_id);
+-        $view_display_clone_handler->cloneEntity($display, $cloned_view_display, $view_display_properties);
++        $cloned_field_definition = $field_definition->createDuplicate();
++        $cloned_field_definition->set('bundle', $cloned_entity_id);
++        $field_config_clone_handler->cloneEntity($field_definition, $cloned_field_definition, $field_config_properties);
+       }
+     }
+   }

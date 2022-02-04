@@ -1,0 +1,14 @@
+diff --git a/node-edit-protection.js b/node-edit-protection.js
+index 9ce7398c030d11236730930c14493e9e24aa8688..672bb502b1ff9b36f988d3a105c2fb2879b63218 100755
+--- a/node-edit-protection.js
++++ b/node-edit-protection.js
+@@ -27,7 +27,8 @@
+       });
+ 
+       // Catch all links and buttons EXCEPT for "#" links.
+-      $("a, button, input[type='submit']:not(.node-edit-protection-processed), button[type='submit']:not(.node-edit-protection-processed)")
++      $("a, button, input[type='submit']")
++          .not('.node-edit-protection-processed')
+           .each(function() {
+             $(this).click(function() {
+               // Return when a "#" link is clicked so as to skip the

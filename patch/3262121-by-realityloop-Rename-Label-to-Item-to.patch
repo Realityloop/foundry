@@ -1,0 +1,26 @@
+From 515bf23a054827c495022f688eb81f5acb4f59cb Mon Sep 17 00:00:00 2001
+From: Brian Gilbert <brian@Brians-MacBook-Pro.local>
+Date: Thu, 3 Feb 2022 11:40:39 +1100
+Subject: [PATCH] Issue #3262121 by realityloop: Rename Label to Item to reduce
+ potential ambiguity.
+
+---
+ src/Plugin/Field/FieldWidget/DynamicEntityReferenceWidget.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Plugin/Field/FieldWidget/DynamicEntityReferenceWidget.php b/src/Plugin/Field/FieldWidget/DynamicEntityReferenceWidget.php
+index 946d37a..41e7f4a 100644
+--- a/src/Plugin/Field/FieldWidget/DynamicEntityReferenceWidget.php
++++ b/src/Plugin/Field/FieldWidget/DynamicEntityReferenceWidget.php
+@@ -157,7 +157,7 @@ class DynamicEntityReferenceWidget extends EntityReferenceAutocompleteWidget {
+       ];
+     }
+ 
+-    $element['#title'] = $this->t('Label');
++    $element['#title'] = $this->t('Item');
+ 
+     if (count($available) > 1) {
+       $target_type_element = [
+-- 
+2.32.0 (Apple Git-132)
+
