@@ -6,13 +6,18 @@ dependencies:
     - field.storage.node.field_description
     - node.type.news
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
 id: node.news.field_description
 field_name: field_description
 entity_type: node
 bundle: news
 label: Description
-description: "This field is used as the meta description, and in teasers throughout the website that link to this page:\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>"
+description: "Description content is used on content teasers and for the meta description.\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>"
 required: true
 translatable: true
 default_value: {  }

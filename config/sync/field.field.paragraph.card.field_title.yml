@@ -9,7 +9,7 @@ id: paragraph.card.field_title
 field_name: field_title
 entity_type: paragraph
 bundle: card
-label: Title
+label: 'Card title'
 description: ''
 required: false
 translatable: true

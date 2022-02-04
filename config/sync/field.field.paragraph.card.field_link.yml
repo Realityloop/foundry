@@ -16,7 +16,7 @@ field_name: field_link
 entity_type: paragraph
 bundle: card
 label: Link
-description: 'Select ''Content'' to link to internal content and start to type the title, or ''Managed Link'' to create an external link.'
+description: "<ul>\r\n<li>Select type <strong>Content</strong> to link to site content, start to type the title to search</li> \r\n<li>Select type <strong>Managed Link</strong> for external links. To find existing external link start typing the title, to create a new one enter the URL.</li>\r\n</ul>"
 required: false
 translatable: false
 default_value: {  }
@@ -43,50 +43,26 @@ settings:
         field: _none
         direction: ASC
       auto_create: true
-  crop:
-    handler: 'default:crop'
+  block:
+    handler: 'default:block'
     handler_settings: {  }
   block_content:
     handler: 'default:block_content'
     handler_settings: {  }
-  menu_link_content:
-    handler: 'default:menu_link_content'
-    handler_settings: {  }
-  file:
-    handler: 'default:file'
-    handler_settings: {  }
-  media:
-    handler: 'default:media'
-    handler_settings: {  }
-  paragraph:
-    handler: 'default:paragraph'
-    handler_settings: {  }
-  redirect:
-    handler: 'default:redirect'
-    handler_settings: {  }
-  shortcut:
-    handler: 'default:shortcut'
-    handler_settings: {  }
-  taxonomy_term:
-    handler: 'default:taxonomy_term'
-    handler_settings: {  }
-  path_alias:
-    handler: 'default:path_alias'
-    handler_settings: {  }
-  user:
-    handler: 'default:user'
+  block_content_type:
+    handler: 'default:block_content_type'
     handler_settings: {  }
   consumer:
     handler: 'default:consumer'
     handler_settings: {  }
-  oauth2_token:
-    handler: 'default:oauth2_token'
+  contact_form:
+    handler: 'default:contact_form'
     handler_settings: {  }
-  block:
-    handler: 'default:block'
+  contact_message:
+    handler: 'default:contact_message'
     handler_settings: {  }
-  block_content_type:
-    handler: 'default:block_content_type'
+  crop:
+    handler: 'default:crop'
     handler_settings: {  }
   crop_type:
     handler: 'default:crop_type'
@@ -94,11 +70,17 @@ settings:
   editor:
     handler: 'default:editor'
     handler_settings: {  }
+  environment_indicator:
+    handler: 'default:environment_indicator'
+    handler_settings: {  }
   field_config:
     handler: 'default:field_config'
     handler_settings: {  }
   field_storage_config:
     handler: 'default:field_storage_config'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
     handler_settings: {  }
   filter_format:
     handler: 'default:filter_format'
@@ -112,8 +94,14 @@ settings:
   language_content_settings:
     handler: 'default:language_content_settings'
     handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
   media_type:
     handler: 'default:media_type'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
     handler_settings: {  }
   metatag_defaults:
     handler: 'default:metatag_defaults'
@@ -127,8 +115,20 @@ settings:
   oembed_provider_bucket:
     handler: 'default:oembed_provider_bucket'
     handler_settings: {  }
+  path_alias:
+    handler: 'default:path_alias'
+    handler_settings: {  }
+  redirect:
+    handler: 'default:redirect'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
   shortcut_set:
     handler: 'default:shortcut_set'
+    handler_settings: {  }
+  oauth2_token:
+    handler: 'default:oauth2_token'
     handler_settings: {  }
   oauth2_token_type:
     handler: 'default:oauth2_token_type'
@@ -148,17 +148,26 @@ settings:
   menu:
     handler: 'default:menu'
     handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
   taxonomy_vocabulary:
     handler: 'default:taxonomy_vocabulary'
     handler_settings: {  }
   user_role:
     handler: 'default:user_role'
     handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
   pathauto_pattern:
     handler: 'default:pathauto_pattern'
     handler_settings: {  }
   view:
     handler: 'default:view'
+    handler_settings: {  }
+  paragraph:
+    handler: 'default:paragraph'
     handler_settings: {  }
   paragraphs_type:
     handler: 'default:paragraphs_type'
@@ -183,11 +192,5 @@ settings:
     handler_settings: {  }
   base_field_override:
     handler: 'default:base_field_override'
-    handler_settings: {  }
-  contact_form:
-    handler: 'default:contact_form'
-    handler_settings: {  }
-  contact_message:
-    handler: 'default:contact_message'
     handler_settings: {  }
 field_type: dynamic_entity_reference

@@ -12,7 +12,7 @@ field_name: field_display
 entity_type: node
 bundle: page
 label: Display
-description: 'Select how you want this page to display. Some selections may result in certain fields no being displayed.'
+description: "Select how you want this page to display. \r\n<ul>\r\n<li><strong>Default:</strong> All content displayed.</li>\r\n<li><strong>Landing page:</strong> Supplementary content hidden.</li>\r\n</ul>"
 required: false
 translatable: false
 default_value:

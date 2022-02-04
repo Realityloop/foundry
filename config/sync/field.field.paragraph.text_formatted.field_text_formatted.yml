@@ -10,9 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    formatted: formatted
-    markdown: '0'
-    plain_text: '0'
+    allowed_formats:
+      - formatted
 id: paragraph.text_formatted.field_text_formatted
 field_name: field_text_formatted
 entity_type: paragraph

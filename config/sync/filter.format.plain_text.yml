@@ -1,9 +1,7 @@
 uuid: 796a4723-3f9e-4a8b-880d-33664bc637d8
 langcode: en
 status: true
-dependencies:
-  module:
-    - linky
+dependencies: {  }
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
 name: 'Plain text'
@@ -22,16 +20,3 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  linky_direct_link_filter:
-    id: linky_direct_link_filter
-    provider: linky
-    status: true
-    weight: 10
-    settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
