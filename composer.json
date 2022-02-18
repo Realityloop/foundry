@@ -60,7 +60,7 @@
         "drupal/memcache": "^2.3",
         "drupal/node_edit_protection": "^1.0",
         "drupal/oembed_providers": "^2.0",
-        "drupal/paragraphs_ee": "^1.8",
+        "drupal/paragraphs_ee": "2.0.1",
         "drupal/pathauto": "^1.8",
         "drupal/prevent_homepage_deletion": "^1.4",
         "drupal/redirect": "^1.7",
