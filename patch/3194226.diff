@@ -1,0 +1,882 @@
+diff --git a/config/install/gin.settings.yml b/config/install/gin.settings.yml
+index e43f31971f48b9d93fbbf43d141ab38ed751cfc3..dfc3537eae3f071f0269ceedb0c323f273e9330f 100644
+--- a/config/install/gin.settings.yml
++++ b/config/install/gin.settings.yml
+@@ -5,6 +5,7 @@ classic_toolbar: 'vertical'
+ icon_default: true
+ icon_path: ''
+ high_contrast_mode: false
++show_description_toggle: true
+ show_user_theme_settings: false
+ third_party_settings:
+   shortcut:
+diff --git a/config/schema/gin.schema.yml b/config/schema/gin.schema.yml
+index 7417430e0964297a418246959a33a36507f0095d..da53a0294b167f90457734eac31f704b22d570db 100644
+--- a/config/schema/gin.schema.yml
++++ b/config/schema/gin.schema.yml
+@@ -33,6 +33,9 @@ gin.settings:
+     icon_upload:
+       type: string
+       label: 'The icon upload'
++    show_description_toggle:
++      type: boolean
++      label: 'Display help icon to toggle form description'
+     show_user_theme_settings:
+       type: boolean
+       label: 'Let user override theme'
+diff --git a/dist/css/base/gin.css b/dist/css/base/gin.css
+index 0d8ce1736f001a66f791df4907e19fec05c38452..57fc39e366cc508272c7e2f7721de5ebaf726830 100644
+--- a/dist/css/base/gin.css
++++ b/dist/css/base/gin.css
+@@ -2280,6 +2280,12 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
+   margin-top: 20px;
+ }
+ 
++/* Align fieldset label positioning to regular form item label, see claro form.css. */
++
++.fieldset__label {
++  margin-top: .25rem;
++}
++
+ .fieldset__label,
+ .fieldset__label--group,
+ .form-item__label {
+diff --git a/dist/css/components/description_toggle.css b/dist/css/components/description_toggle.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..cd3586fb2e16bea60907b41576f00f2c27a3e9e5
+--- /dev/null
++++ b/dist/css/components/description_toggle.css
+@@ -0,0 +1,93 @@
++/* Base wrapper */
++
++.help-icon {
++  display: flex;
++}
++
++/* Size of svg + border added by claro. */
++
++.help-icon__description-toggle {
++  all: unset;
++  flex-shrink: 0;
++  margin: .3rem 1rem 0 .3rem;
++  height: 16px;
++  width: 16px;
++  border-radius: 50%;
++}
++
++.help-icon__description-toggle:before {
++  background-color: var(--colorGinIcons);
++  content: "";
++  display: block;
++  width: 100%;
++  height: 100%;
++  -webkit-mask-image: url("../../media/sprite.svg#help-view");
++          mask-image: url("../../media/sprite.svg#help-view");
++  -webkit-mask-repeat: no-repeat;
++          mask-repeat: no-repeat;
++  -webkit-mask-position: center center;
++          mask-position: center center;
++  -webkit-mask-size: 100% 100%;
++          mask-size: 100% 100%;
++}
++
++.help-icon__description-toggle:hover:before {
++  background-color: var(--colorGinPrimary);
++}
++
++.form-type--checkbox > .help-icon__element-has-description,
++.form-type--radio > .help-icon__element-has-description {
++  display: flex;
++  align-items: normal;
++}
++
++.form-type--checkbox > .help-icon__element-has-description > label,
++.form-type--radio > .help-icon__element-has-description > label {
++  margin-left: 6px;
++}
++
++.form-type--checkbox .checkbox-toggle + .help-icon,
++.form-type--radio .checkbox-toggle + .help-icon {
++  padding-left: 4px;
++}
++
++/*
++ * 1. Subtract description toggle width from input fields.
++ */
++
++.help-icon__element-has-description input:not(.form-checkbox):not(.form-autocomplete):not(.form-file),
++.help-icon__element-has-description select {
++  max-width: calc(100% - 34px);
++  /* 1 */
++}
++
++/* Float toggle in detail summary. */
++
++details.help-icon__description-container .help-icon__description-toggle {
++  float: right;
++}
++
++/* Fieldgroup adjustments */
++
++fieldset:not(.fieldgroup) .help-icon > .fieldset__legend .fieldset__label {
++  padding-right: 0;
++}
++
++fieldset.media-library-widget .help-icon > .help-icon__description-toggle {
++  margin-top: 1.3rem;
++}
++
++/* System Modules Search fields */
++
++.system-modules .table-filter .form-type--search,
++.system-modules-uninstall .table-filter .form-type--search {
++  position: relative;
++}
++
++.system-modules .table-filter .form-type--search .help-icon__description-toggle,
++.system-modules-uninstall .table-filter .form-type--search .help-icon__description-toggle {
++  position: absolute;
++  right: -8px;
++  top: 16px;
++}
++
+diff --git a/dist/css/theme/dialog.css b/dist/css/theme/dialog.css
+index d801e27665ad8397436cd064e677fa1c62f34bf6..cdbe4d63cc426a63bd22eb03b2bface2853650e7 100644
+--- a/dist/css/theme/dialog.css
++++ b/dist/css/theme/dialog.css
+@@ -591,6 +591,10 @@
+   margin-top: 20px;
+ }
+ 
++.ui-dialog .fieldset__label {
++  margin-top: .25rem;
++}
++
+ .ui-dialog .fieldset__label,
+ .ui-dialog .fieldset__label--group,
+ .ui-dialog .form-item__label {
+diff --git a/dist/js/description_toggle.js b/dist/js/description_toggle.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..13fa3cacc6d7a0571494b3e90926c05e659990a9
+--- /dev/null
++++ b/dist/js/description_toggle.js
+@@ -0,0 +1,14 @@
++(Drupal => {
++  Drupal.behaviors.formDescriptionToggle = {
++    attach: function(context) {
++      context.querySelectorAll(".help-icon__description-toggle").forEach((elem => {
++        elem.dataset.formDescriptionToggleAttached || (elem.dataset.formDescriptionToggleAttached = !0, 
++        elem.addEventListener("click", (event => {
++          event.preventDefault(), event.currentTarget.focus(), event.currentTarget.closest(".help-icon__description-container").querySelectorAll(".claro-details__description, .fieldset__description, .form-item__description").forEach((description => {
++            description.classList.toggle("visually-hidden");
++          }));
++        })));
++      }));
++    }
++  };
++})(Drupal);
+\ No newline at end of file
+diff --git a/gin.libraries.yml b/gin.libraries.yml
+index d4f6905e371c5948e688c3a6050bb5e99ab8e31a..d94db328b475493f46911106793a00128161da54 100644
+--- a/gin.libraries.yml
++++ b/gin.libraries.yml
+@@ -89,6 +89,13 @@ gin_dialog:
+     - gin/gin_base
+     - gin/gin_accent
+ 
++gin_description_toggle:
++  css:
++    theme:
++      dist/css/components/description_toggle.css: { minified: false }
++  js:
++    dist/js/description_toggle.js: { minified: false }
++
+ gin_messages:
+   version: VERSION
+   js:
+diff --git a/includes/form.theme b/includes/form.theme
+index 85ae10f8ef8e0a757aa72951faf2ff6e07c837b2..fefcc0bf2c271e9b17d1033b9aef2107b14a3a0c 100644
+--- a/includes/form.theme
++++ b/includes/form.theme
+@@ -6,6 +6,7 @@
+  */
+ 
+ use Drupal\Core\Form\FormStateInterface;
++use Drupal\gin\GinPreRender;
+ use Drupal\gin\GinSettings;
+ 
+ /**
+@@ -191,6 +192,57 @@ function gin_theme_suggestions_input_alter(array &$suggestions, array $variables
+   }
+ }
+ 
++/**
++ * Implements template_preprocess_HOOK() for form_element.
++ */
++function gin_preprocess_form_element(&$variables) {
++  _gin_add_description_toggle($variables);
++}
++
++/**
++ * Implements template_preprocess_HOOK() for datetime_wrapper.
++ */
++function gin_preprocess_datetime_wrapper(&$variables) {
++  _gin_add_description_toggle($variables);}
++
++/**
++ * Implements template_preprocess_HOOK() for details.
++ */
++function gin_preprocess_details(&$variables) {
++  _gin_add_description_toggle($variables);
++}
++
++/**
++ * Implements template_preprocess_HOOK() for fieldset.
++ */
++function gin_preprocess_fieldset(&$variables) {
++  _gin_add_description_toggle($variables);
++}
++
++/**
++ * Implements hook_element_info_alter().
++ */
++function gin_element_info_alter(&$info) {
++  if (array_key_exists('text_format', $info)) {
++    $info['text_format']['#pre_render'][] = [
++      GinPreRender::class,
++      'textFormat',
++    ];
++  }
++}
++
++/**
++ * Implements template_preprocess_HOOK() for text_format_wrapper.
++ */
++function gin_preprocess_text_format_wrapper(&$variables) {
++  /** @var \Drupal\gin\GinSettings $settings */
++  $settings = \Drupal::classResolver(GinSettings::class);
++  if ($settings->get('show_description_toggle') && !empty($variables['description'])) {
++    $variables['description_display'] = 'invisible';
++    $variables['description_toggle'] = TRUE;
++  }
++}
++
+ /**
+  * Implements template_preprocess_inline_entity_form_entity_table() for forms.
+  */
+diff --git a/includes/helper.theme b/includes/helper.theme
+index 7fc893759b9dddf35621ec0eccfedb3a1462ede4..6366fa8fcb323f2a0666306e7bc238f8a62cdb72 100644
+--- a/includes/helper.theme
++++ b/includes/helper.theme
+@@ -57,6 +57,7 @@ function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
+       'preset_focus_color' => $form_state->getValue('preset_focus_color'),
+       'focus_color' => $form_state->getValue('focus_color'),
+       'high_contrast_mode' => (bool) $form_state->getValue('high_contrast_mode'),
++      'show_description_toggle' => $form_state->getValue('show_description_toggle'),
+     ];
+     $settings->setAll($user_settings, $account);
+   }
+@@ -181,3 +182,29 @@ function _gin_is_content_form($form = NULL, $form_state = NULL, $form_id = NULL)
+ 
+   return $is_content_form;
+ }
++
++/**
++ * @param $variables
++ */
++function _gin_add_description_toggle(&$variables) {
++  if (_gin_is_description_toggle_enabled()){
++    if (!empty($variables['description'])) {
++      $variables['description_display'] = 'invisible';
++      $variables['description_toggle'] = TRUE;
++    }
++    // Add toggle for text_format, description is in wrapper.
++    elseif (!empty($variables['element']['#description_toggle'])) {
++      $variables['description_toggle'] = TRUE;
++    }
++  }
++}
++
++/**
++ * @return array|bool|mixed|string|null
++ */
++function _gin_is_description_toggle_enabled() {
++  /** @var \Drupal\gin\GinSettings $settings */
++  $settings = \Drupal::classResolver(GinSettings::class);
++  return $settings->get('show_description_toggle') && _gin_is_content_form();
++}
++
+diff --git a/js/description_toggle.js b/js/description_toggle.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5596ab302
+--- /dev/null
++++ b/js/description_toggle.js
+@@ -0,0 +1,28 @@
++((Drupal) => {
++  Drupal.behaviors.formDescriptionToggle = {
++    attach: function attach(context) {
++      context
++        .querySelectorAll('.help-icon__description-toggle')
++        .forEach((elem) => {
++          if (elem.dataset.formDescriptionToggleAttached) {
++            return;
++          }
++          elem.dataset.formDescriptionToggleAttached = true;
++
++          elem.addEventListener('click', (event) => {
++            const toggleFunction = (description) => {
++              description.classList.toggle('visually-hidden');
++            };
++            event.preventDefault();
++            event.currentTarget.focus(); // firefox button focus issue
++            event.currentTarget
++              .closest('.help-icon__description-container')
++              .querySelectorAll(
++                '.claro-details__description, .fieldset__description, .form-item__description',
++              )
++              .forEach(toggleFunction);
++          });
++        });
++    },
++  };
++})(Drupal);
+diff --git a/src/GinPreRender.php b/src/GinPreRender.php
+new file mode 100644
+index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f163316a9
+--- /dev/null
++++ b/src/GinPreRender.php
+@@ -0,0 +1,41 @@
++<?php
++
++namespace Drupal\gin;
++
++use Drupal\Core\Security\TrustedCallbackInterface;
++
++/**
++ * Implements trusted prerender callbacks for the Gin theme.
++ *
++ * @internal
++ */
++class GinPreRender implements TrustedCallbackInterface {
++
++  /**
++   * Prepare description toggle for output in template.
++   */
++  public static function textFormat($element) {
++
++    if (_gin_is_description_toggle_enabled() && !empty($element['#description'])) {
++      if ($element['#type'] === 'text_format') {
++        $element['value']['#description_toggle'] = TRUE;
++      }
++      else {
++        $element['#description_toggle'] = TRUE;
++        $element['#description_display'] = 'invisible';
++      }
++
++    }
++     return $element;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function trustedCallbacks() {
++    return [
++      'textFormat',
++    ];
++  }
++
++}
+diff --git a/src/GinSettings.php b/src/GinSettings.php
+index 77192e77f4035f0b01b78e9abdb8f287c1ac2595..8569ca8aaf9ab00f09fcf653432f7f63bc55e9cd 100644
+--- a/src/GinSettings.php
++++ b/src/GinSettings.php
+@@ -334,6 +334,14 @@ class GinSettings implements ContainerInjectionInterface {
+       '#after_build' => [],
+     ];
+ 
++    $form['show_description_toggle'] = [
++      '#type' => 'checkbox',
++      '#title' => t('Enable form description toggle.'),
++      '#description' => t('Show a help icon to show/hide form descriptions on content forms.'),
++      '#default_value' => $account ? $this->get('show_description_toggle', $account) : $this->getDefault('show_description_toggle'),
++      '#weight' => 0,
++    ];
++
+     $form['high_contrast_mode'] = [
+       '#type' => 'checkbox',
+       '#title' => $this->t('Increase contrast (EXPERIMENTAL)'),
+diff --git a/styles/base/_form.scss b/styles/base/_form.scss
+index 5fb84318ae3c2f4d1e7510de5d67802c00265e50..cd2e820a24dcce3a3aff75136bc7ca7f89c7cad0 100644
+--- a/styles/base/_form.scss
++++ b/styles/base/_form.scss
+@@ -359,6 +359,11 @@ fieldset:not(.fieldgroup) {
+   }
+ }
+ 
++/* Align fieldset label positioning to regular form item label, see claro form.css. */
++.fieldset__label {
++  margin-top: 0.25rem;
++}
++
+ .fieldset__label,
+ .fieldset__label--group,
+ .form-item__label {
+diff --git a/styles/components/description_toggle.scss b/styles/components/description_toggle.scss
+new file mode 100644
+index 0000000000000000000000000000000000000000..3abb3c624dd0c48351107c9d8bbdfc9ddfa21a7e
+--- /dev/null
++++ b/styles/components/description_toggle.scss
+@@ -0,0 +1,90 @@
++/* Base wrapper */
++.help-icon {
++  display: flex;
++}
++
++/* Size of svg + border added by claro. */
++.help-icon__description-toggle {
++  all: unset;
++  flex-shrink: 0;
++  margin: .3rem 1rem 0 .3rem;
++  height: 16px;
++  width: 16px;
++  border-radius: 50%;
++
++  &:before {
++    background-color: var(--colorGinIcons);
++    content: "";
++    display: block;
++    width: 100%;
++    height: 100%;
++    mask-image: icon('help');
++    mask-repeat: no-repeat;
++    mask-position: center center;
++    mask-size: 100% 100%;
++  }
++
++  &:hover:before {
++    background-color: var(--colorGinPrimary);
++  }
++}
++
++.form-type--checkbox,
++.form-type--radio {
++  > .help-icon__element-has-description {
++    display: flex;
++    align-items: normal;
++
++    > label {
++      margin-left: 6px;
++    }
++  }
++
++  .checkbox-toggle + .help-icon {
++    padding-left: 4px;
++  }
++}
++
++/*
++ * 1. Subtract description toggle width from input fields.
++ */
++.help-icon__element-has-description {
++  input:not(.form-checkbox):not(.form-autocomplete):not(.form-file),
++  select {
++    max-width: calc(100% - 34px); /* 1 */
++  }
++}
++
++/* Float toggle in detail summary. */
++details.help-icon__description-container .help-icon__description-toggle {
++  float: right;
++}
++
++/* Fieldgroup adjustments */
++fieldset:not(.fieldgroup) {
++  .help-icon {
++    > .fieldset__legend .fieldset__label {
++      padding-right: 0;
++    }
++  }
++}
++
++fieldset.media-library-widget {
++  .help-icon {
++    > .help-icon__description-toggle {
++      margin-top: 1.3rem;
++    }
++  }
++}
++
++/* System Modules Search fields */
++.system-modules .table-filter .form-type--search,
++.system-modules-uninstall .table-filter .form-type--search {
++  position: relative;
++
++  .help-icon__description-toggle {
++    position: absolute;
++    right: -8px;
++    top: 16px;
++  }
++}
+diff --git a/templates/form/datetime-wrapper.html.twig b/templates/form/datetime-wrapper.html.twig
+new file mode 100644
+index 0000000000000000000000000000000000000000..f0faa05e1b8c0ff04fd8e339f0033c15ba6661a2
+--- /dev/null
++++ b/templates/form/datetime-wrapper.html.twig
+@@ -0,0 +1,55 @@
++{#
++/**
++ * @file
++ * Theme override of a datetime form wrapper.
++ *
++ * @todo Refactor when https://www.drupal.org/node/3010558 is fixed.
++ *
++ * @see template_preprocess_form_element()
++ */
++#}
++{%
++  set classes = [
++    'form-item',
++    'form-datetime-wrapper',
++    description_toggle ? 'help-icon__description-container',
++  ]
++  %}
++{%
++  set title_classes = [
++    'form-item__label',
++    required ? 'js-form-required',
++    required ? 'form-required',
++    errors ? 'has-error',
++  ]
++%}
++{%
++  set description_classes = [
++    'form-item__description',
++    description_display == 'invisible' ? 'visually-hidden',
++  ]
++%}
++<div {{ attributes.addClass(classes) }}>
++  {% if description and description_toggle %}
++  <div class="help-icon">
++  {% endif %}
++  {% if title %}
++  <h4{{ title_attributes.addClass(title_classes) }}>{{ title }}</h4>
++  {% endif %}
++  {% if description and description_toggle %}
++    {{ attach_library('gin/gin_description_toggle') }}
++    <button class="help-icon__description-toggle"></button>
++  </div>
++  {% endif %}
++  {{ content }}
++{% if errors %}
++  <div class="form-item__error-message">
++    {{ errors }}
++  </div>
++{% endif %}
++{% if description %}
++  <div{{ description_attributes.addClass(description_classes) }}>
++    {{ description }}
++  </div>
++{% endif %}
++</div>
+diff --git a/templates/form/details.html.twig b/templates/form/details.html.twig
+index 78534960770dedb127040d204e611222270995a2..2c501bfb4f2bfe8641d0a08581e6c2cface19762 100644
+--- a/templates/form/details.html.twig
++++ b/templates/form/details.html.twig
+@@ -29,6 +29,7 @@
+     'claro-details',
+     accordion ? 'claro-details--accordion',
+     accordion_item ? 'claro-details--accordion-item',
++    description_toggle ? 'help-icon__description-container',
+   ]
+ %}
+ {%
+@@ -46,6 +47,13 @@
+     accordion_item ? 'claro-details__content--accordion-item',
+   ]
+ %}
++{%
++  set description_classes = [
++  'claro-details__description',
++  disabled ? 'is-disabled',
++  description_display == 'invisible' ? 'visually-hidden',
++]
++%}
+ <details{{ attributes.addClass(classes) }}>
+   {%- if title -%}
+     {%
+@@ -60,6 +68,10 @@
+     <summary{{ summary_attributes.addClass(summary_classes) }}>
+       {{- title -}}
+       <span class="required-mark"></span>
++      {% if description and description_toggle %}
++        {{ attach_library('gin/gin_description_toggle') }}
++        <button class="help-icon__description-toggle"></button>
++      {% endif %}
+     </summary>
+   {%- endif -%}
+   <div{{ content_attributes.addClass(content_wrapper_classes) }}>
+@@ -73,7 +85,7 @@
+         </div>
+       {% endif %}
+       {%- if description -%}
+-        <div class="claro-details__description{{ disabled ? ' is-disabled' }}">{{ description }}</div>
++        <div{{ create_attribute().addClass(description_classes) }}>{{ description }}</div>
+       {%- endif -%}
+       {%- if children -%}
+         {{ children }}
+diff --git a/templates/form/fieldset.html.twig b/templates/form/fieldset.html.twig
+new file mode 100644
+index 0000000000000000000000000000000000000000..8a02c80fd13fb60b04fd88ebb05e135942165325
+--- /dev/null
++++ b/templates/form/fieldset.html.twig
+@@ -0,0 +1,89 @@
++{#
++/**
++ * @file
++ * Theme override for a fieldset element and its children.
++ *
++ * @see template_preprocess_fieldset()
++ * @see claro_preprocess_fieldset()
++ */
++#}
++{%
++  set classes = [
++  'fieldset',
++  attributes.hasClass('fieldgroup') ? 'fieldset--group',
++  'js-form-item',
++  'form-item',
++  'js-form-wrapper',
++  'form-wrapper',
++  description_toggle ? 'help-icon__description-container',
++]
++%}
++{%
++  set wrapper_classes = [
++  'fieldset__wrapper',
++  attributes.hasClass('fieldgroup') ? 'fieldset__wrapper--group',
++]
++%}
++{%
++  set legend_span_classes = [
++  'fieldset__label',
++  attributes.hasClass('fieldgroup') ? 'fieldset__label--group',
++  required ? 'js-form-required',
++  required ? 'form-required',
++]
++%}
++{%
++  set legend_classes = [
++  'fieldset__legend',
++  attributes.hasClass('fieldgroup') and not attributes.hasClass('form-composite') ? 'fieldset__legend--group',
++  attributes.hasClass('form-composite') ? 'fieldset__legend--composite',
++  title_display == 'invisible' ? 'fieldset__legend--invisible' : 'fieldset__legend--visible',
++]
++%}
++{%
++  set description_classes = [
++  'fieldset__description',
++  description_display == 'invisible' ? 'visually-hidden',
++]
++%}
++<fieldset{{ attributes.addClass(classes) }}>
++  {% if description.content and description_toggle %}
++    <div class="help-icon">
++  {% endif %}
++  {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
++  {% if legend.title %}
++    <legend{{ legend.attributes.addClass(legend_classes) }}>
++      <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
++    </legend>
++  {% endif %}
++  {% if description.content and description_toggle %}
++      {{ attach_library('gin/gin_description_toggle') }}
++      <button class="help-icon__description-toggle"></button>
++    </div>
++  {% endif %}
++  <div{{ content_attributes.addClass(wrapper_classes) }}>
++    {% if inline_items %}
++    <div class="container-inline">
++      {% endif %}
++
++      {% if prefix %}
++        <span class="fieldset__prefix">{{ prefix }}</span>
++      {% endif %}
++      {{ children }}
++      {% if suffix %}
++        <span class="fieldset__suffix">{{ suffix }}</span>
++      {% endif %}
++      {% if errors %}
++        <div class="fieldset__error-message">
++          {{ errors }}
++        </div>
++      {% endif %}
++      {% if description.content %}
++        <div{{ description.attributes.addClass(description_classes) }}>{{ description.content }}</div>
++      {% endif %}
++
++      {% if inline_items %}
++    </div>
++    {% endif %}
++  </div>
++</fieldset>
+diff --git a/templates/form/form-element.html.twig b/templates/form/form-element.html.twig
+new file mode 100644
+index 0000000000000000000000000000000000000000..8eae11df5f4d4f936b35ff67121bb5838631e454
+--- /dev/null
++++ b/templates/form/form-element.html.twig
+@@ -0,0 +1,85 @@
++{#
++/**
++ * @file
++ * Theme override for a form element.
++ *
++ * @see template_preprocess_form_element()
++ */
++#}
++{#
++Most of core-provided js assumes that the CSS class pattern js-form-item-[something] or
++js-form-type-[something] exists on form items. We have to keep them.
++#}
++{%
++  set classes = [
++    'js-form-item',
++    'form-item',
++    'js-form-type-' ~ type|clean_class,
++    'form-type--' ~ type|clean_class,
++    type in ['checkbox', 'radio'] ? 'form-type--boolean',
++    'js-form-item-' ~ name|clean_class,
++    'form-item--' ~ name|clean_class,
++    title_display not in ['after', 'before'] ? 'form-item--no-label',
++    disabled == 'disabled' ? 'form-item--disabled',
++    errors ? 'form-item--error',
++    description.content ? 'help-icon__description-container'
++  ]
++%}
++{%
++  set description_classes = [
++    'form-item__description',
++    description_display == 'invisible' ? 'visually-hidden',
++  ]
++%}
++<div{{ attributes.addClass(classes) }}>
++  {% if label_display in ['before', 'invisible'] %}
++    {% if description_toggle %}
++      <div class="help-icon">
++        {{ label }}
++        {{ attach_library('gin/gin_description_toggle') }}
++        <button class="help-icon__description-toggle"></button>
++      </div>
++    {% else %}
++      {{ label }}
++    {% endif %}
++  {% endif %}
++  {% if description.content and description_toggle %}
++  <div class="help-icon__element-has-description">
++  {% endif %}
++  {% if prefix is not empty %}
++    <span class="form-item__prefix{{disabled == 'disabled' ? ' is-disabled'}}">{{ prefix }}</span>
++  {% endif %}
++  {% if description_display == 'before' and description.content %}
++    <div{{ description.attributes.addClass(description_classes) }}>
++      {{ description.content }}
++    </div>
++  {% endif %}
++  {{ children }}
++  {% if suffix is not empty %}
++    <span class="form-item__suffix{{disabled == 'disabled' ? ' is-disabled'}}">{{ suffix }}</span>
++  {% endif %}
++  {% if label_display == 'after' %}
++    {% if description.content and description_toggle %}
++      <div class="help-icon">
++        {{ label }}
++        {{ attach_library('gin/gin_description_toggle') }}
++        <button class="help-icon__description-toggle"></button>
++      </div>
++    {% else %}
++      {{ label }}
++    {% endif %}
++  {% endif %}
++  {% if description.content and description_toggle %}
++  </div>
++  {% endif %}
++  {% if errors %}
++    <div class="form-item__error-message">
++      {{ errors }}
++    </div>
++  {% endif %}
++  {% if description_display in ['after', 'invisible'] and description.content %}
++    <div{{ description.attributes.addClass(description_classes) }}>
++      {{ description.content }}
++    </div>
++  {% endif %}
++</div>
+diff --git a/templates/form/text-format-wrapper.html.twig b/templates/form/text-format-wrapper.html.twig
+new file mode 100644
+index 0000000000000000000000000000000000000000..5c8711e9121a7ec230116a2b3a8307efae6c035b
+--- /dev/null
++++ b/templates/form/text-format-wrapper.html.twig
+@@ -0,0 +1,43 @@
++{#
++/**
++ * @file
++ * Theme override for a text format-enabled form element.
++ *
++ * @todo Remove when https://www.drupal.org/node/3016346 and
++ * https://www.drupal.org/node/3016343 are fixed.
++ *
++ * Available variables:
++ * - children: Text format element children.
++ * - description: Text format element description.
++ * - attributes: HTML attributes for the containing element.
++ * - aria_description: Flag for whether or not an ARIA description has been
++ *   added to the description container.
++ * - description_attributes: attributes for the description.
++ *   @see https://www.drupal.org/node/3016343
++ * - disabled: An indicator for whether the associated form element is disabled,
++ *   added by this theme.
++ *   @see https://www.drupal.org/node/3016346
++ *
++ * @see template_preprocess_text_format_wrapper()
++ */
++#}
++{%
++  set classes = [
++  'js-form-item',
++  'form-item',
++  description_toggle ? 'help-icon__description-container',
++]
++%}
++<div{{ attributes.addClass(classes) }}>
++  {{ children }}
++  {% if description %}
++    {%
++      set description_classes = [
++      aria_description ? 'form-item__description',
++      disabled ? 'is-disabled',
++      description_display == 'invisible' ? 'visually-hidden',
++    ]
++    %}
++    <div{{ description_attributes.addClass(description_classes) }}>{{ description }}</div>
++  {% endif %}
++</div>
+diff --git a/webpack.config.js b/webpack.config.js
+index 754c32110b3112e74a815b62d995b13e954a6f5e..0305fc87106cc127c88acc56bc85255d4f716001 100644
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -17,6 +17,7 @@ module.exports = {
+     'messages': ['./js/messages.js'],
+     'settings': ['./js/settings.js'],
+     'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
++    'description_toggle': ['./js/description_toggle.js'],
+     // Base
+     'base/gin': ['./styles/gin.scss'],
+     // Components
+@@ -45,6 +46,7 @@ module.exports = {
+     'components/media_library': ['./styles/components/media_library.scss'],
+     'components/contextual_links': ['./styles/components/contextual_links.scss'],
+     'components/ajax': ['./styles/components/ajax.scss'],
++    'components/description_toggle': ['./styles/components/description_toggle.scss'],
+     // Layout
+     'layout/toolbar': ['./styles/layout/toolbar.scss'],
+     'layout/horizontal_toolbar': ['./styles/layout/horizontal_toolbar.scss'],
