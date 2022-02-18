@@ -105,6 +105,7 @@ content:
     third_party_settings:
       paragraphs_features:
         add_in_between: true
+        add_in_between_link_count: 0
         delete_confirmation: true
         split_text: false
         show_drag_and_drop: true
@@ -134,6 +135,7 @@ content:
     third_party_settings:
       paragraphs_features:
         add_in_between: true
+        add_in_between_link_count: 0
         delete_confirmation: true
         split_text: false
         show_drag_and_drop: true

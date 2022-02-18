@@ -7,4 +7,5 @@ _core:
 id: bing
 label: Bing
 url: 'https://www.bing.com/ping?sitemap=[sitemap]'
+index_now_url: null
 sitemap_variants: {  }

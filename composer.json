@@ -60,7 +60,7 @@
         "drupal/memcache": "^2.3",
         "drupal/node_edit_protection": "^1.0",
         "drupal/oembed_providers": "^2.0",
-        "drupal/paragraphs_ee": "^1.8",
+        "drupal/paragraphs_ee": "^2.0",
         "drupal/pathauto": "^1.8",
         "drupal/prevent_homepage_deletion": "^1.4",
         "drupal/redirect": "^1.7",
@@ -73,7 +73,7 @@
         "drupal/simple_sitemap": "^4.x-dev",
         "drupal/title_field_for_manage_display": "^2.0",
         "drupal/tome": "^1.4",
-        "drupal/transliterate_filenames": "^1.6",
+        "drupal/transliterate_filenames": "^2.0",
         "drupal/username_enumeration_prevention": "^1.2",
         "drupal/viewfield": "^3.0"
     },
