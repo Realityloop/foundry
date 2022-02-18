@@ -37,21 +37,6 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
-    group_workflow:
-      children:
-        - field_approver
-        - moderation_state
-        - status
-      label: Workflow
-      region: content
-      parent_name: ''
-      weight: 11
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        id: ''
-        description: ''
-        required_fields: true
     group_meta:
       children:
         - langcode

@@ -54,19 +54,6 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
-    group_work:
-      children:
-        - status
-      label: Workflow
-      region: content
-      parent_name: ''
-      weight: 14
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        id: ''
-        description: ''
-        required_fields: true
 id: node.blog.default
 targetEntityType: node
 bundle: blog
