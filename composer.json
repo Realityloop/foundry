@@ -179,7 +179,7 @@
             },
             "drupal/gin": {
                 "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "./patch/3217391.diff",
-                "https://www.drupal.org/project/gin/issues/3194226#comment-14398052": "https://git.drupalcode.org/project/gin/-/merge_requests/12.diff"
+                "https://www.drupal.org/project/gin/issues/3194226#comment-14415576": "./patch/3194226.diff"
             },
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "./patch/3217393.diff"
