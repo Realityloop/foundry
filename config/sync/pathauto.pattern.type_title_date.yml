@@ -5,20 +5,19 @@ dependencies:
   module:
     - node
 id: type_title_date
-label: type/title-date
+label: content-type/title-date
 type: 'canonical_entities:node'
 pattern: '[node:content-type]/[node:title]-[node:created:custom:Ymd]'
 selection_criteria:
-  d5392510-e20d-4089-bc0b-658806e76913:
+  aa57e4fa-b821-4360-a10d-05bdee8316b6:
     id: node_type
     negate: false
-    uuid: 86a5888d-826f-46d0-948b-a8c94aad8e77
+    uuid: aa57e4fa-b821-4360-a10d-05bdee8316b6
     context_mapping:
       node: node
     bundles:
-      blog: blog
+      article: article
       event: event
-      news: news
 selection_logic: and
 weight: -5
 relationships: {  }

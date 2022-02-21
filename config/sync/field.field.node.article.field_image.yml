@@ -1,15 +1,15 @@
-uuid: 120813fd-fcd0-4d66-827b-39e6116d0cfe
+uuid: 41a5c0b3-54ee-450f-9294-04a7e6ba493e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
     - media.type.image
-    - node.type.news
-id: node.news.field_image
+    - node.type.article
+id: node.article.field_image
 field_name: field_image
 entity_type: node
-bundle: news
+bundle: article
 label: Image
 description: "This will be used for social meta tags and certain feature displays for this item throughout the site.\r\n<ul>\r\n<li>It will be cropped and resized appropriately for display.</li>\r\n<li>The ideal size to make your image is 1200 x 1200 or larger with a square aspect ratio due to how different social networks handle images.</li>\r\n<li>If no image is provided a site default one will be used for the social meta image.</li>\r\n</ul>"
 required: false

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_content_supplementary
-    - node.type.blog
+    - node.type.article
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.link
     - paragraphs.paragraphs_type.media
@@ -13,10 +13,10 @@ dependencies:
     - paragraphs.paragraphs_type.text_markdown
   module:
     - entity_reference_revisions
-id: node.blog.field_content_supplementary
+id: node.article.field_content_supplementary
 field_name: field_content_supplementary
 entity_type: node
-bundle: blog
+bundle: article
 label: 'Supplementary content'
 description: 'Items added typically display visually separated from the primary content of the page.'
 required: false

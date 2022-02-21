@@ -1,17 +1,16 @@
-uuid: 6e769c53-af09-40d5-93f7-052d001d9ca2
+uuid: 14bbe63f-7623-4992-9678-56849edcd756
 langcode: en
 status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.teaser
-    - node.type.news
+    - node.type.article
     - system.menu.main
   module:
     - node
     - user
-id: news
-label: News
+id: article
+label: Article
 module: views
 description: ''
 tag: ''
@@ -24,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: News
+      title: Article
       fields:
         title:
           id: title
@@ -77,7 +76,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 6
           total_pages: null
           id: 0
           tags:
@@ -149,7 +148,7 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            news: news
+            article: article
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -158,8 +157,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: card
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -185,7 +183,7 @@ display:
     id: block_1
     display_title: Block
     display_plugin: block
-    position: 2
+    position: 3
     display_options:
       fields:
         title:
@@ -259,16 +257,62 @@ display:
       style:
         type: default
       row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: teaser
+        type: fields
       defaults:
         pager: false
         style: false
         row: false
         fields: false
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  embed_1:
+    id: embed_1
+    display_title: Embed
+    display_plugin: embed
+    position: 4
+    display_options:
+      defaults:
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+      use_more: true
+      use_more_always: false
+      use_more_text: 'Read more'
+      display_extenders:
+        simple_sitemap_display_extender: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  feed_1:
+    id: feed_1
+    display_title: Feed
+    display_plugin: feed
+    position: 2
+    display_options:
+      pager:
+        type: some
+      style:
+        type: rss
+      row:
+        type: node_rss
+      display_extenders: {  }
+      path: article.xml
+      displays:
+        default: default
+        page_1: page_1
     cache_metadata:
       max-age: -1
       contexts:
@@ -284,10 +328,10 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: news
+      path: article
       menu:
         type: normal
-        title: News
+        title: Article
         menu_name: main
     cache_metadata:
       max-age: -1

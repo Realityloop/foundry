@@ -1,25 +1,37 @@
-uuid: 34d51a2d-cd93-4d28-8130-137bf01ee158
+uuid: b6de6891-558f-4a79-a142-d3f2f16d74f9
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.news.field_content
-    - field.field.node.news.field_content_supplementary
-    - field.field.node.news.field_description
-    - field.field.node.news.field_display_title
-    - field.field.node.news.field_image
-    - field.field.node.news.field_meta_tags
-    - node.type.news
+    - field.field.node.article.field_article_category
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_content
+    - field.field.node.article.field_content_supplementary
+    - field.field.node.article.field_description
+    - field.field.node.article.field_display_title
+    - field.field.node.article.field_image
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_published
+    - field.field.node.article.field_video
+    - node.type.article
   module:
     - advanced_text_formatter
     - title_field_for_manage_display
     - user
-id: node.news.teaser
+id: node.article.teaser
 targetEntityType: node
-bundle: news
+bundle: article
 mode: teaser
 content:
+  field_article_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_description:
     type: advanced_text
     label: hidden
@@ -61,9 +73,12 @@ content:
     weight: 0
     region: content
 hidden:
+  field_article_type: true
   field_content: true
   field_content_supplementary: true
   field_image: true
   field_meta_tags: true
+  field_published: true
+  field_video: true
   langcode: true
   links: true

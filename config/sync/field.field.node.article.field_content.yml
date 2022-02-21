@@ -1,10 +1,10 @@
-uuid: 883225a0-5cad-4487-8bb6-eb0867561025
+uuid: 54c3819e-a4d7-4ecb-a838-0df937cedf85
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_content
-    - node.type.news
+    - node.type.article
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_group
     - paragraphs.paragraphs_type.jumbotron
@@ -15,14 +15,14 @@ dependencies:
     - paragraphs.paragraphs_type.text_markdown
   module:
     - entity_reference_revisions
-id: node.news.field_content
+id: node.article.field_content
 field_name: field_content
 entity_type: node
-bundle: news
+bundle: article
 label: Content
 description: 'Items added will display in the primary content region of the page.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -46,19 +46,19 @@ settings:
         weight: -19
         enabled: true
       entity_reference:
-        weight: -14
+        weight: -18
         enabled: false
       jumbotron:
-        weight: -18
-        enabled: true
-      link:
         weight: -17
         enabled: true
-      media:
+      link:
         weight: -16
         enabled: true
-      section:
+      media:
         weight: -15
+        enabled: true
+      section:
+        weight: -14
         enabled: true
       text_formatted:
         weight: -23

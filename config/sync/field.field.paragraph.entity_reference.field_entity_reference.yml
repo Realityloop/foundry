@@ -4,9 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_entity_reference
-    - node.type.blog
+    - node.type.article
     - node.type.event
-    - node.type.news
     - node.type.page
     - paragraphs.paragraphs_type.entity_reference
 id: paragraph.entity_reference.field_entity_reference
@@ -23,13 +22,12 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      blog: blog
+      article: article
       event: event
-      news: news
       page: page
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: blog
+    auto_create_bundle: article
 field_type: entity_reference

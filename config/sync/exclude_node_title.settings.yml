@@ -5,12 +5,12 @@ translation_sync: true
 search: false
 type: remove
 content_types:
-  blog: all
+  article: all
   event: all
   news: all
   page: all
 content_type_modes:
-  blog:
+  article:
     - card
     - full
     - landing
