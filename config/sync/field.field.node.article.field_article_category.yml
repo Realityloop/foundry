@@ -11,7 +11,7 @@ field_name: field_article_category
 entity_type: node
 bundle: article
 label: Category
-description: ''
+description: "<p>Listings of articles may allow you to filter by category. <br />\r\nMore than one category can be assigned at a time.<br />\r\nRequest new categories via your Content Administrator/s.</p>"
 required: false
 translatable: false
 default_value: {  }
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      article: article_category
+      article_category: article_category
     sort:
       field: name
       direction: asc

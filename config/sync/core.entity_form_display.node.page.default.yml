@@ -28,19 +28,22 @@ third_party_settings:
   field_group:
     group_meta:
       children:
+        - field_description
         - langcode
         - field_image
       label: Meta
       region: content
       parent_name: ''
-      weight: 0
+      weight: 2
       format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
-        open: false
+        open: true
         description: ''
         required_fields: true
+        weight: 0
     group_content_primary:
       children:
         - field_content
@@ -173,7 +176,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 27
+    weight: 13
     region: content
     settings:
       sidebar: true
@@ -184,7 +187,7 @@ content:
     weight: 4
     region: content
     settings:
-      include_locked: true
+      include_locked: false
     third_party_settings: {  }
   moderation_state:
     type: string_textfield
@@ -223,7 +226,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 2
+    weight: 0
     region: content
     settings:
       size: 60
