@@ -11,7 +11,10 @@ dependencies:
     - field.field.node.news.field_meta_tags
     - node.type.news
   module:
+    - advanced_text_formatter
+    - allowed_formats
     - field_group
+    - maxlength
     - metatag
     - paragraphs
     - paragraphs_ee
@@ -127,7 +130,17 @@ content:
     settings:
       rows: 2
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 160
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
+        maxlength_js_truncate_html: true
+      advanced_text_formatter:
+        show_token_tree: 0
   field_image:
     type: entity_reference_autocomplete
     weight: 7
@@ -144,6 +157,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select
