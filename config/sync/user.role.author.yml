@@ -6,11 +6,10 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.video
-    - node.type.blog
+    - node.type.article
     - node.type.event
-    - node.type.news
     - node.type.page
-    - taxonomy.vocabulary.blog
+    - taxonomy.vocabulary.article_category
   module:
     - coffee
     - content_translation
@@ -43,12 +42,11 @@ permissions:
   - 'access shortcuts'
   - 'access toolbar'
   - 'add linky entities'
-  - 'create blog content'
+  - 'create article content'
   - 'create content translations'
   - 'create document media'
   - 'create event content'
   - 'create image media'
-  - 'create news content'
   - 'create page content'
   - 'create paragraph content card'
   - 'create paragraph content card_group'
@@ -60,7 +58,7 @@ permissions:
   - 'create paragraph content section'
   - 'create paragraph content text_formatted'
   - 'create paragraph content text_markdown'
-  - 'create terms in blog'
+  - 'create terms in article_category'
   - 'create video media'
   - 'delete paragraph content card'
   - 'delete paragraph content card_group'
@@ -72,26 +70,24 @@ permissions:
   - 'delete paragraph content section'
   - 'delete paragraph content text_formatted'
   - 'delete paragraph content text_markdown'
-  - 'delete terms in blog'
-  - 'edit any blog content'
+  - 'delete terms in article_category'
+  - 'edit any article content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any image media'
-  - 'edit any news content'
   - 'edit any page content'
   - 'edit any video media'
   - 'edit linky entities'
-  - 'edit terms in blog'
+  - 'edit terms in article_category'
   - 'exclude any node title'
   - 'notify of path changes'
   - 'take_ownership_on_clone file entity'
   - 'take_ownership_on_clone linky entity'
   - 'take_ownership_on_clone media entity'
   - 'take_ownership_on_clone node entity'
-  - 'translate blog node'
-  - 'translate blog taxonomy_term'
+  - 'translate article node'
+  - 'translate article taxonomy_term'
   - 'translate event node'
-  - 'translate news node'
   - 'translate page node'
   - 'update content translations'
   - 'update paragraph content card'
@@ -107,8 +103,7 @@ permissions:
   - 'view all media revisions'
   - 'view any linky history'
   - 'view any linky revisions'
-  - 'view blog revisions'
+  - 'view article revisions'
   - 'view event revisions'
-  - 'view news revisions'
   - 'view page revisions'
   - 'view the administration theme'

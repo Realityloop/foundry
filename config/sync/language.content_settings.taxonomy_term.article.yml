@@ -1,16 +1,16 @@
-uuid: 6a153185-7e96-4de7-8a77-418d3bbf9e77
+uuid: 77be4bba-9cd7-498b-8405-f0cd894f3a14
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.news
+    - taxonomy.vocabulary.article_category
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-id: node.news
-target_entity_type_id: node
-target_bundle: news
+id: taxonomy_term.article
+target_entity_type_id: taxonomy_term
+target_bundle: article
 default_langcode: site_default
 language_alterable: true

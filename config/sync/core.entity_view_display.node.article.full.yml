@@ -1,36 +1,36 @@
-uuid: 1263eba7-3c72-45fd-a88e-a2058c93cb0a
+uuid: 879cf974-4e67-4e16-ae75-91f76c83bc9a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.blog.field_blog_category
-    - field.field.node.blog.field_content
-    - field.field.node.blog.field_content_supplementary
-    - field.field.node.blog.field_description
-    - field.field.node.blog.field_display_title
-    - field.field.node.blog.field_image
-    - field.field.node.blog.field_meta_tags
-    - field.field.node.blog.field_published
-    - field.field.node.blog.field_video
-    - node.type.blog
+    - core.entity_view_mode.node.full
+    - field.field.node.article.field_article_category
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_content
+    - field.field.node.article.field_content_supplementary
+    - field.field.node.article.field_description
+    - field.field.node.article.field_display_title
+    - field.field.node.article.field_image
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_published
+    - field.field.node.article.field_video
+    - node.type.article
   module:
     - entity_reference_revisions
-    - metatag
-    - text
     - title_field_for_manage_display
     - user
-id: node.blog.default
+id: node.article.full
 targetEntityType: node
-bundle: blog
-mode: default
+bundle: article
+mode: full
 content:
-  field_blog_category:
+  field_article_category:
     type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_content:
     type: entity_reference_revisions_entity_view
@@ -39,7 +39,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_content_supplementary:
     type: entity_reference_revisions_entity_view
@@ -48,14 +48,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_display_title:
     type: title_value_field_formatter
@@ -74,29 +67,21 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
+    weight: 1
     region: content
   field_video:
     type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 2
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
 hidden:
+  field_article_type: true
+  field_description: true
+  field_meta_tags: true
   field_published: true
   langcode: true
+  links: true

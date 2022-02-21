@@ -3,16 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.blog.field_blog_category
-    - field.field.node.blog.field_content
-    - field.field.node.blog.field_content_supplementary
-    - field.field.node.blog.field_description
-    - field.field.node.blog.field_display_title
-    - field.field.node.blog.field_image
-    - field.field.node.blog.field_meta_tags
-    - field.field.node.blog.field_published
-    - field.field.node.blog.field_video
-    - node.type.blog
+    - field.field.node.article.field_article_category
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_content
+    - field.field.node.article.field_content_supplementary
+    - field.field.node.article.field_description
+    - field.field.node.article.field_display_title
+    - field.field.node.article.field_image
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_published
+    - field.field.node.article.field_video
+    - node.type.article
   module:
     - advanced_text_formatter
     - allowed_formats
@@ -35,7 +36,7 @@ third_party_settings:
       label: Meta
       region: content
       parent_name: ''
-      weight: 0
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -50,21 +51,37 @@ third_party_settings:
       label: Content
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: fieldset
       format_settings:
         classes: ''
         id: ''
         description: ''
         required_fields: true
-id: node.blog.default
+id: node.article.default
 targetEntityType: node
-bundle: blog
+bundle: article
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_category:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_article_type:
+    type: options_select
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -136,7 +153,7 @@ content:
           easy_access_count: 0
   field_description:
     type: text_textarea
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 2
@@ -161,7 +178,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 15
+    weight: 16
     region: content
     settings:
       sidebar: true
@@ -169,13 +186,13 @@ content:
     third_party_settings: {  }
   field_published:
     type: datetime_default
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_video:
     type: media_library_widget
-    weight: 4
+    weight: 5
     region: content
     settings:
       media_types: {  }
@@ -197,13 +214,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -217,27 +234,27 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 2
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -246,7 +263,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

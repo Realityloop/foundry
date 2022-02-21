@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_display_title
-    - node.type.blog
-id: node.blog.field_display_title
+    - node.type.article
+id: node.article.field_display_title
 field_name: field_display_title
 entity_type: node
-bundle: blog
+bundle: article
 label: Title
 description: ''
 required: false

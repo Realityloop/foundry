@@ -1,0 +1,8 @@
+uuid: 77c0abf9-a0e0-49c9-be33-91f226458e78
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Category'
+vid: article_category
+description: 'This is for categorisation of article entries.'
+weight: 0

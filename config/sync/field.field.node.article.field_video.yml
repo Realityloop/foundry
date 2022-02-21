@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_video
     - media.type.video
-    - node.type.blog
-id: node.blog.field_video
+    - node.type.article
+id: node.article.field_video
 field_name: field_video
 entity_type: node
-bundle: blog
+bundle: article
 label: Video
 description: ''
 required: false

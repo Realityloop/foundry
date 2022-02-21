@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   force_default: false
   allowed_views:
-    blog: blog
+    article: article
     events: events
     content: '0'
     block_content: '0'

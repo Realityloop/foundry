@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.blog
-id: node.blog.status
+    - node.type.article
+id: node.article.status
 field_name: status
 entity_type: node
-bundle: blog
+bundle: article
 label: Published
 description: ''
 required: false

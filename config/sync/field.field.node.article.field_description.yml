@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_description
-    - node.type.blog
+    - node.type.article
   module:
     - allowed_formats
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - plain_text
-id: node.blog.field_description
+id: node.article.field_description
 field_name: field_description
 entity_type: node
-bundle: blog
+bundle: article
 label: Description
 description: "Description content is used on content teasers and for the meta description.\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>"
 required: true
