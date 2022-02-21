@@ -1,23 +1,23 @@
 diff --git a/config/install/gin.settings.yml b/config/install/gin.settings.yml
-index e43f31971f48b9d93fbbf43d141ab38ed751cfc3..dfc3537eae3f071f0269ceedb0c323f273e9330f 100644
+index cb3e5c3c837acfb9070fc838ff99cda66c50c2d1..c05317dc0e01ac58c84ac771eb80912fd9553818 100644
 --- a/config/install/gin.settings.yml
 +++ b/config/install/gin.settings.yml
 @@ -5,6 +5,7 @@ classic_toolbar: 'vertical'
- icon_default: true
- icon_path: ''
+ logo:
+   use_default: true
  high_contrast_mode: false
 +show_description_toggle: true
  show_user_theme_settings: false
  third_party_settings:
    shortcut:
 diff --git a/config/schema/gin.schema.yml b/config/schema/gin.schema.yml
-index 7417430e0964297a418246959a33a36507f0095d..da53a0294b167f90457734eac31f704b22d570db 100644
+index d03607c9f3568031389c79bbc3a3f44934c5f43b..8ac5bab840137ae4cba14161a011552c5c0beeb5 100644
 --- a/config/schema/gin.schema.yml
 +++ b/config/schema/gin.schema.yml
-@@ -33,6 +33,9 @@ gin.settings:
-     icon_upload:
+@@ -24,6 +24,9 @@ gin.settings:
+     focus_color:
        type: string
-       label: 'The icon upload'
+       label: 'The focus color'
 +    show_description_toggle:
 +      type: boolean
 +      label: 'Display help icon to toggle form description'
@@ -25,10 +25,10 @@ index 7417430e0964297a418246959a33a36507f0095d..da53a0294b167f90457734eac31f704b
        type: boolean
        label: 'Let user override theme'
 diff --git a/dist/css/base/gin.css b/dist/css/base/gin.css
-index 0d8ce1736f001a66f791df4907e19fec05c38452..57fc39e366cc508272c7e2f7721de5ebaf726830 100644
+index 1f694c4e95229cc0715becbbc74e141690a676cb..f9db8cbcef20597ce53b7ee392b6af23160442e4 100644
 --- a/dist/css/base/gin.css
 +++ b/dist/css/base/gin.css
-@@ -2280,6 +2280,12 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
+@@ -2287,6 +2287,12 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
    margin-top: 20px;
  }
  
@@ -195,7 +195,7 @@ index d4f6905e371c5948e688c3a6050bb5e99ab8e31a..d94db328b475493f46911106793a0012
    version: VERSION
    js:
 diff --git a/includes/form.theme b/includes/form.theme
-index 85ae10f8ef8e0a757aa72951faf2ff6e07c837b2..fefcc0bf2c271e9b17d1033b9aef2107b14a3a0c 100644
+index 9e5446b81593be5f391c65692434b673fa7c2083..54d18b4b4b740891147db8a3382e30a9a6996b3e 100644
 --- a/includes/form.theme
 +++ b/includes/form.theme
 @@ -6,6 +6,7 @@
@@ -203,10 +203,10 @@ index 85ae10f8ef8e0a757aa72951faf2ff6e07c837b2..fefcc0bf2c271e9b17d1033b9aef2107
  
  use Drupal\Core\Form\FormStateInterface;
 +use Drupal\gin\GinPreRender;
+ use Drupal\gin\GinContentFormHelper;
  use Drupal\gin\GinSettings;
  
- /**
-@@ -191,6 +192,57 @@ function gin_theme_suggestions_input_alter(array &$suggestions, array $variables
+@@ -119,6 +120,57 @@ function gin_theme_suggestions_input_alter(array &$suggestions, array $variables
    }
  }
  
@@ -265,10 +265,10 @@ index 85ae10f8ef8e0a757aa72951faf2ff6e07c837b2..fefcc0bf2c271e9b17d1033b9aef2107
   * Implements template_preprocess_inline_entity_form_entity_table() for forms.
   */
 diff --git a/includes/helper.theme b/includes/helper.theme
-index 7fc893759b9dddf35621ec0eccfedb3a1462ede4..6366fa8fcb323f2a0666306e7bc238f8a62cdb72 100644
+index 7ef3c09b8f511e25f5d1538525656c31ec1f945e..293c2cf5ca043bb5261fa62418177bc1df3c4c66 100644
 --- a/includes/helper.theme
 +++ b/includes/helper.theme
-@@ -57,6 +57,7 @@ function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
+@@ -56,6 +56,7 @@ function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
        'preset_focus_color' => $form_state->getValue('preset_focus_color'),
        'focus_color' => $form_state->getValue('focus_color'),
        'high_contrast_mode' => (bool) $form_state->getValue('high_contrast_mode'),
@@ -276,10 +276,56 @@ index 7fc893759b9dddf35621ec0eccfedb3a1462ede4..6366fa8fcb323f2a0666306e7bc238f8
      ];
      $settings->setAll($user_settings, $account);
    }
-@@ -181,3 +182,29 @@ function _gin_is_content_form($form = NULL, $form_state = NULL, $form_id = NULL)
+@@ -98,3 +99,75 @@ function _gin_is_active() {
  
-   return $is_content_form;
+   return $gin_activated;
  }
++
++/**
++ * Check if were on a content edit form.
++ */
++function _gin_is_content_form($form = NULL, $form_state = NULL, $form_id = NULL) {
++  $is_content_form = FALSE;
++
++  // Get route name.
++  $route_name = \Drupal::routeMatch()->getRouteName();
++
++  // Routes to include.
++  $route_names = [
++    'node.add',
++    'entity.node.content_translation_add',
++    'entity.node.content_translation_edit',
++    'quick_node_clone.node.quick_clone',
++    'entity.node.edit_form',
++  ];
++
++  if (
++    in_array($route_name, $route_names, TRUE) ||
++    ($form_state && ($form_state->getBuildInfo()['base_form_id'] ?? NULL) === 'node_form') ||
++    ($route_name === 'entity.group_content.create_form' && strpos($form_id, 'group_node') === FALSE)
++  ) {
++    $is_content_form = TRUE;
++  }
++
++  // Forms to exclude.
++  // If media library widget, don't use new content edit form.
++  // gin_preprocess_html is not triggered here, so checking
++  // the form id is enough.
++  $form_ids_to_ignore = [
++    'media_library_add_form_',
++    'views_form_media_library_widget_',
++    'views_exposed_form',
++    'date_recur_modular_sierra_occurrences_modal',
++  ];
++
++  foreach ($form_ids_to_ignore as $form_id_to_ignore) {
++    if ($form_id && strpos($form_id, $form_id_to_ignore) !== FALSE) {
++      $is_content_form = FALSE;
++    }
++  }
++
++  return $is_content_form;
++}
 +
 +/**
 + * @param $variables
@@ -388,11 +434,20 @@ index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f
 +
 +}
 diff --git a/src/GinSettings.php b/src/GinSettings.php
-index 77192e77f4035f0b01b78e9abdb8f287c1ac2595..8569ca8aaf9ab00f09fcf653432f7f63bc55e9cd 100644
+index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..21686cb053768399d002b949352987ef8e4b086b 100644
 --- a/src/GinSettings.php
 +++ b/src/GinSettings.php
-@@ -334,6 +334,14 @@ class GinSettings implements ContainerInjectionInterface {
-       '#after_build' => [],
+@@ -315,7 +315,7 @@ class GinSettings implements ContainerInjectionInterface {
+       '#title' => $this->t('Custom Accent color'),
+       '#description' => $this->t('Use with caution, values should meet a11y criteria.'),
+       '#states' => [
+-      // Show if met.
++        // Show if met.
+         'visible' => [
+           ':input[name="preset_accent_color"]' => ['value' => 'custom'],
+         ],
+@@ -401,6 +401,14 @@ class GinSettings implements ContainerInjectionInterface {
+       ],
      ];
  
 +    $form['show_description_toggle'] = [
@@ -403,9 +458,9 @@ index 77192e77f4035f0b01b78e9abdb8f287c1ac2595..8569ca8aaf9ab00f09fcf653432f7f63
 +      '#weight' => 0,
 +    ];
 +
+     // High contrast mode.
      $form['high_contrast_mode'] = [
        '#type' => 'checkbox',
-       '#title' => $this->t('Increase contrast (EXPERIMENTAL)'),
 diff --git a/styles/base/_form.scss b/styles/base/_form.scss
 index 5fb84318ae3c2f4d1e7510de5d67802c00265e50..cd2e820a24dcce3a3aff75136bc7ca7f89c7cad0 100644
 --- a/styles/base/_form.scss
@@ -861,10 +916,10 @@ index 0000000000000000000000000000000000000000..5c8711e9121a7ec230116a2b3a8307ef
 +  {% endif %}
 +</div>
 diff --git a/webpack.config.js b/webpack.config.js
-index 754c32110b3112e74a815b62d995b13e954a6f5e..0305fc87106cc127c88acc56bc85255d4f716001 100644
+index b6b2b90b0900be12bf77927c35e8064250fdff0e..b0b820687e516c45822f655643fb75bceb32db70 100644
 --- a/webpack.config.js
 +++ b/webpack.config.js
-@@ -17,6 +17,7 @@ module.exports = {
+@@ -16,6 +16,7 @@ module.exports = {
      'messages': ['./js/messages.js'],
      'settings': ['./js/settings.js'],
      'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
@@ -872,7 +927,7 @@ index 754c32110b3112e74a815b62d995b13e954a6f5e..0305fc87106cc127c88acc56bc85255d
      // Base
      'base/gin': ['./styles/gin.scss'],
      // Components
-@@ -45,6 +46,7 @@ module.exports = {
+@@ -44,6 +45,7 @@ module.exports = {
      'components/media_library': ['./styles/components/media_library.scss'],
      'components/contextual_links': ['./styles/components/contextual_links.scss'],
      'components/ajax': ['./styles/components/ajax.scss'],

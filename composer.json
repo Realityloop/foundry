@@ -178,6 +178,7 @@
                 "Preview link accidentally closes the media library https://www.drupal.org/project/focal_point/issues/3162210#comment-13855854": "https://www.drupal.org/files/issues/2020-10-11/preview_link_accidentally_closes_the_media_library-3162210-19.patch"
             },
             "drupal/gin": {
+                "https://www.drupal.org/project/gin/issues/3265533": "./patch/3265533.diff",
                 "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "./patch/3217391.diff",
                 "https://www.drupal.org/project/gin/issues/3194226#comment-14415576": "./patch/3194226.diff"
             },
