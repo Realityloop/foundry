@@ -43,10 +43,10 @@ index 1f694c4e95229cc0715becbbc74e141690a676cb..f9db8cbcef20597ce53b7ee392b6af23
  .form-item__label {
 diff --git a/dist/css/components/description_toggle.css b/dist/css/components/description_toggle.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..cd3586fb2e16bea60907b41576f00f2c27a3e9e5
+index 0000000000000000000000000000000000000000..1701bacdac1d0dde0140b0c7057b7b2322e51421
 --- /dev/null
 +++ b/dist/css/components/description_toggle.css
-@@ -0,0 +1,93 @@
+@@ -0,0 +1,105 @@
 +/* Base wrapper */
 +
 +.help-icon {
@@ -100,6 +100,10 @@ index 0000000000000000000000000000000000000000..cd3586fb2e16bea60907b41576f00f2c
 +  padding-left: 4px;
 +}
 +
++.form-type--checkbox .help-icon__element-has-description .checkbox-toggle {
++  width: 50px !important;
++}
++
 +/*
 + * 1. Subtract description toggle width from input fields.
 + */
@@ -124,6 +128,14 @@ index 0000000000000000000000000000000000000000..cd3586fb2e16bea60907b41576f00f2c
 +
 +fieldset.media-library-widget .help-icon > .help-icon__description-toggle {
 +  margin-top: 1.3rem;
++}
++
++.field--widget-datetime-default fieldset .help-icon > .help-icon__description-toggle {
++  margin-top: 1.3rem;
++}
++
++.simple-sitemap-fieldset .help-icon__element-has-description .checkbox-toggle {
++  width: 50px !important;
 +}
 +
 +/* System Modules Search fields */
@@ -195,18 +207,19 @@ index d4f6905e371c5948e688c3a6050bb5e99ab8e31a..d94db328b475493f46911106793a0012
    version: VERSION
    js:
 diff --git a/includes/form.theme b/includes/form.theme
-index 9e5446b81593be5f391c65692434b673fa7c2083..54d18b4b4b740891147db8a3382e30a9a6996b3e 100644
+index 9e5446b81593be5f391c65692434b673fa7c2083..a9423c181ea525602e4a2f653031a4b22d48f9e9 100644
 --- a/includes/form.theme
 +++ b/includes/form.theme
-@@ -6,6 +6,7 @@
+@@ -6,6 +6,8 @@
   */
  
  use Drupal\Core\Form\FormStateInterface;
++use Drupal\gin\GinDescriptionToggle;
 +use Drupal\gin\GinPreRender;
  use Drupal\gin\GinContentFormHelper;
  use Drupal\gin\GinSettings;
  
-@@ -119,6 +120,57 @@ function gin_theme_suggestions_input_alter(array &$suggestions, array $variables
+@@ -119,6 +121,58 @@ function gin_theme_suggestions_input_alter(array &$suggestions, array $variables
    }
  }
  
@@ -214,27 +227,28 @@ index 9e5446b81593be5f391c65692434b673fa7c2083..54d18b4b4b740891147db8a3382e30a9
 + * Implements template_preprocess_HOOK() for form_element.
 + */
 +function gin_preprocess_form_element(&$variables) {
-+  _gin_add_description_toggle($variables);
++  \Drupal::classResolver(GinDescriptionToggle::class)->preprocess($variables);
 +}
 +
 +/**
 + * Implements template_preprocess_HOOK() for datetime_wrapper.
 + */
 +function gin_preprocess_datetime_wrapper(&$variables) {
-+  _gin_add_description_toggle($variables);}
++  \Drupal::classResolver(GinDescriptionToggle::class)->preprocess($variables);
++}
 +
 +/**
 + * Implements template_preprocess_HOOK() for details.
 + */
 +function gin_preprocess_details(&$variables) {
-+  _gin_add_description_toggle($variables);
++  \Drupal::classResolver(GinDescriptionToggle::class)->preprocess($variables);
 +}
 +
 +/**
 + * Implements template_preprocess_HOOK() for fieldset.
 + */
 +function gin_preprocess_fieldset(&$variables) {
-+  _gin_add_description_toggle($variables);
++  \Drupal::classResolver(GinDescriptionToggle::class)->preprocess($variables);
 +}
 +
 +/**
@@ -265,7 +279,7 @@ index 9e5446b81593be5f391c65692434b673fa7c2083..54d18b4b4b740891147db8a3382e30a9
   * Implements template_preprocess_inline_entity_form_entity_table() for forms.
   */
 diff --git a/includes/helper.theme b/includes/helper.theme
-index 7ef3c09b8f511e25f5d1538525656c31ec1f945e..293c2cf5ca043bb5261fa62418177bc1df3c4c66 100644
+index 7ef3c09b8f511e25f5d1538525656c31ec1f945e..b1cf82af310634386ca694ccb0113b713cd6ce8d 100644
 --- a/includes/helper.theme
 +++ b/includes/helper.theme
 @@ -56,6 +56,7 @@ function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
@@ -276,82 +290,6 @@ index 7ef3c09b8f511e25f5d1538525656c31ec1f945e..293c2cf5ca043bb5261fa62418177bc1
      ];
      $settings->setAll($user_settings, $account);
    }
-@@ -98,3 +99,75 @@ function _gin_is_active() {
- 
-   return $gin_activated;
- }
-+
-+/**
-+ * Check if were on a content edit form.
-+ */
-+function _gin_is_content_form($form = NULL, $form_state = NULL, $form_id = NULL) {
-+  $is_content_form = FALSE;
-+
-+  // Get route name.
-+  $route_name = \Drupal::routeMatch()->getRouteName();
-+
-+  // Routes to include.
-+  $route_names = [
-+    'node.add',
-+    'entity.node.content_translation_add',
-+    'entity.node.content_translation_edit',
-+    'quick_node_clone.node.quick_clone',
-+    'entity.node.edit_form',
-+  ];
-+
-+  if (
-+    in_array($route_name, $route_names, TRUE) ||
-+    ($form_state && ($form_state->getBuildInfo()['base_form_id'] ?? NULL) === 'node_form') ||
-+    ($route_name === 'entity.group_content.create_form' && strpos($form_id, 'group_node') === FALSE)
-+  ) {
-+    $is_content_form = TRUE;
-+  }
-+
-+  // Forms to exclude.
-+  // If media library widget, don't use new content edit form.
-+  // gin_preprocess_html is not triggered here, so checking
-+  // the form id is enough.
-+  $form_ids_to_ignore = [
-+    'media_library_add_form_',
-+    'views_form_media_library_widget_',
-+    'views_exposed_form',
-+    'date_recur_modular_sierra_occurrences_modal',
-+  ];
-+
-+  foreach ($form_ids_to_ignore as $form_id_to_ignore) {
-+    if ($form_id && strpos($form_id, $form_id_to_ignore) !== FALSE) {
-+      $is_content_form = FALSE;
-+    }
-+  }
-+
-+  return $is_content_form;
-+}
-+
-+/**
-+ * @param $variables
-+ */
-+function _gin_add_description_toggle(&$variables) {
-+  if (_gin_is_description_toggle_enabled()){
-+    if (!empty($variables['description'])) {
-+      $variables['description_display'] = 'invisible';
-+      $variables['description_toggle'] = TRUE;
-+    }
-+    // Add toggle for text_format, description is in wrapper.
-+    elseif (!empty($variables['element']['#description_toggle'])) {
-+      $variables['description_toggle'] = TRUE;
-+    }
-+  }
-+}
-+
-+/**
-+ * @return array|bool|mixed|string|null
-+ */
-+function _gin_is_description_toggle_enabled() {
-+  /** @var \Drupal\gin\GinSettings $settings */
-+  $settings = \Drupal::classResolver(GinSettings::class);
-+  return $settings->get('show_description_toggle') && _gin_is_content_form();
-+}
-+
 diff --git a/js/description_toggle.js b/js/description_toggle.js
 new file mode 100644
 index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5596ab302
@@ -386,9 +324,97 @@ index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5
 +    },
 +  };
 +})(Drupal);
+diff --git a/src/GinDescriptionToggle.php b/src/GinDescriptionToggle.php
+new file mode 100644
+index 0000000000000000000000000000000000000000..6e745edb0b29facd16ba3c97d0b44392a249147e
+--- /dev/null
++++ b/src/GinDescriptionToggle.php
+@@ -0,0 +1,82 @@
++<?php
++
++namespace Drupal\gin;
++
++use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Service to handle toggling form descriptions.
++ */
++class GinDescriptionToggle implements ContainerInjectionInterface {
++
++
++  /**
++   * The content form helper class.
++   *
++   * @var \Drupal\gin\GinContentFormHelper
++   */
++  protected GinContentFormHelper $contentFormHelper;
++
++  /**
++   * The gin theme settings class.
++   *
++   * @var \Drupal\gin\GinSettings
++   */
++  protected GinSettings $ginSettings;
++
++  /**
++   * GinDescriptionToggle constructor.
++   *
++   * @param \Drupal\gin\GinSettings $ginSettings
++   *   The gin theme settings class.
++   * @param \Drupal\gin\GinContentFormHelper $contentFormHelper
++   *   The content form helper class.
++   */
++  public function __construct(GinSettings $ginSettings, GinContentFormHelper $contentFormHelper) {
++    $this->ginSettings = $ginSettings;
++    $this->contentFormHelper = $contentFormHelper;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container) {
++    $classResolver = $container->get('class_resolver');
++
++    return new static(
++      $classResolver->getInstanceFromDefinition(GinSettings::class),
++      $classResolver->getInstanceFromDefinition(GinContentFormHelper::class),
++    );
++  }
++
++  /**
++   * Generic preprocess enabling toggle.
++   *
++   * @param array $variables
++   *   The variables array (modify in place).
++   */
++  public function preprocess(array &$variables) {
++    if ($this->isEnabled()) {
++      if (!empty($variables['description'])) {
++        $variables['description_display'] = 'invisible';
++        $variables['description_toggle'] = TRUE;
++      }
++      // Add toggle for text_format, description is in wrapper.
++      elseif (!empty($variables['element']['#description_toggle'])) {
++        $variables['description_toggle'] = TRUE;
++      }
++    }
++  }
++
++  /**
++   * Functionality is enabled via setting on content forms.
++   *
++   * @return bool
++   *   Wether feature is enabled or not.
++   */
++  public function isEnabled() {
++    return $this->ginSettings->get('show_description_toggle') && $this->contentFormHelper->isContentForm();
++  }
++
++}
 diff --git a/src/GinPreRender.php b/src/GinPreRender.php
 new file mode 100644
-index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f163316a9
+index 0000000000000000000000000000000000000000..81ab7977db2aecdf34eff63ea5f78f5a066e4a24
 --- /dev/null
 +++ b/src/GinPreRender.php
 @@ -0,0 +1,41 @@
@@ -410,7 +436,7 @@ index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f
 +   */
 +  public static function textFormat($element) {
 +
-+    if (_gin_is_description_toggle_enabled() && !empty($element['#description'])) {
++    if (\Drupal::classResolver(GinDescriptionToggle::class)->isEnabled() && !empty($element['#description'])) {
 +      if ($element['#type'] === 'text_format') {
 +        $element['value']['#description_toggle'] = TRUE;
 +      }
@@ -420,7 +446,7 @@ index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f
 +      }
 +
 +    }
-+     return $element;
++    return $element;
 +  }
 +
 +  /**
@@ -434,7 +460,7 @@ index 0000000000000000000000000000000000000000..775ddd65607866219b848426a070b04f
 +
 +}
 diff --git a/src/GinSettings.php b/src/GinSettings.php
-index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..21686cb053768399d002b949352987ef8e4b086b 100644
+index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..c5aa2247de19816171df06b67f30599720fe7bc1 100644
 --- a/src/GinSettings.php
 +++ b/src/GinSettings.php
 @@ -315,7 +315,7 @@ class GinSettings implements ContainerInjectionInterface {
@@ -452,8 +478,8 @@ index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..21686cb053768399d002b949352987ef
  
 +    $form['show_description_toggle'] = [
 +      '#type' => 'checkbox',
-+      '#title' => t('Enable form description toggle.'),
-+      '#description' => t('Show a help icon to show/hide form descriptions on content forms.'),
++      '#title' => $this->t('Enable form description toggle.'),
++      '#description' => $this->t('Show a help icon to show/hide form descriptions on content forms.'),
 +      '#default_value' => $account ? $this->get('show_description_toggle', $account) : $this->getDefault('show_description_toggle'),
 +      '#weight' => 0,
 +    ];
@@ -479,10 +505,10 @@ index 5fb84318ae3c2f4d1e7510de5d67802c00265e50..cd2e820a24dcce3a3aff75136bc7ca7f
  .form-item__label {
 diff --git a/styles/components/description_toggle.scss b/styles/components/description_toggle.scss
 new file mode 100644
-index 0000000000000000000000000000000000000000..3abb3c624dd0c48351107c9d8bbdfc9ddfa21a7e
+index 0000000000000000000000000000000000000000..41fb0b1fd096e30db2e24e3fd0ffae44f49ca50c
 --- /dev/null
 +++ b/styles/components/description_toggle.scss
-@@ -0,0 +1,90 @@
+@@ -0,0 +1,106 @@
 +/* Base wrapper */
 +.help-icon {
 +  display: flex;
@@ -530,6 +556,14 @@ index 0000000000000000000000000000000000000000..3abb3c624dd0c48351107c9d8bbdfc9d
 +  }
 +}
 +
++.form-type-checkbox {
++  .help-icon__element-has-description {
++    .checkbox-toggle {
++      width: 50px !important;
++    }
++  }
++}
++
 +/*
 + * 1. Subtract description toggle width from input fields.
 + */
@@ -555,6 +589,14 @@ index 0000000000000000000000000000000000000000..3abb3c624dd0c48351107c9d8bbdfc9d
 +}
 +
 +fieldset.media-library-widget {
++  .help-icon {
++    > .help-icon__description-toggle {
++      margin-top: 1.3rem;
++    }
++  }
++}
++
++.field--type-datetime fieldset {
 +  .help-icon {
 +    > .help-icon__description-toggle {
 +      margin-top: 1.3rem;
