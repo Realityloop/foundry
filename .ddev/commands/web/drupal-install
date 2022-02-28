@@ -7,3 +7,4 @@
 composer install
 drush -y site:install --existing-config
 drush php-eval 'node_access_rebuild();'
+drush cache:rebuild
