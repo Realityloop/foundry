@@ -192,6 +192,9 @@
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff"
+            },
+            "drupal/tome": {
+                "https://www.drupal.org/project/tome/issues/3257363#comment-14395629": "https://www.drupal.org/files/issues/2022-02-02/3257363-3.patch"
             }
         }
     }
