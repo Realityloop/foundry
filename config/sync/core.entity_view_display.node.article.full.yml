@@ -16,6 +16,7 @@ dependencies:
     - node.type.article
   module:
     - entity_reference_revisions
+    - layout_paragraphs
     - title_field_for_manage_display
     - user
 id: node.article.full
@@ -32,7 +33,7 @@ content:
     weight: 4
     region: content
   field_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default

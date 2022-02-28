@@ -14,6 +14,7 @@ dependencies:
   module:
     - entity_display_mode
     - entity_reference_revisions
+    - layout_paragraphs
     - metatag
     - title_field_for_manage_display
     - user
@@ -28,7 +29,7 @@ content:
     weight: 6
     region: content
   field_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
