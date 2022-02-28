@@ -16,7 +16,6 @@ dependencies:
     - field.field.node.article.field_video
     - node.type.article
   module:
-    - advanced_text_formatter
     - title_field_for_manage_display
     - user
 id: node.article.teaser
@@ -33,32 +32,9 @@ content:
     weight: 2
     region: content
   field_description:
-    type: advanced_text
+    type: basic_string
     label: hidden
-    settings:
-      trim_length: '160'
-      ellipsis: '1'
-      word_boundary: '1'
-      filter: input
-      format: plain_text
-      allowed_html:
-        - a
-        - b
-        - br
-        - dd
-        - dl
-        - dt
-        - em
-        - i
-        - li
-        - ol
-        - p
-        - strong
-        - u
-        - ul
-      use_summary: 0
-      token_replace: 0
-      autop: 0
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content

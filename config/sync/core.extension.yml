@@ -64,9 +64,13 @@ module:
   jsonapi_hypermedia: 0
   jsonapi_menu_items: 0
   jsonapi_node_preview: 0
+  jsonapi_node_preview_tab: 0
   jsonapi_resources: 0
   jsonapi_views: 0
   language: 0
+  layout_discovery: 0
+  layout_paragraphs: 0
+  layout_paragraphs_library: 0
   length_indicator: 0
   link: 0
   linky: 0
@@ -89,6 +93,7 @@ module:
   options: 0
   page_cache: 0
   paragraphs_features: 0
+  paragraphs_library: 0
   paragraphs_type_permissions: 0
   path: 0
   path_alias: 0

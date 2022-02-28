@@ -17,7 +17,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - metatag
-    - text
     - title_field_for_manage_display
     - user
 id: node.article.default
@@ -52,11 +51,11 @@ content:
     weight: 6
     region: content
   field_description:
-    type: text_default
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 9
     region: content
   field_display_title:
     type: title_value_field_formatter
@@ -79,7 +78,7 @@ content:
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 8

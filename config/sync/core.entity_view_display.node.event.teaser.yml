@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.event.field_meta_tags
     - node.type.event
   module:
-    - advanced_text_formatter
     - datetime
     - title_field_for_manage_display
     - user
@@ -29,37 +28,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_description:
-    type: advanced_text
+    type: basic_string
     label: hidden
-    settings:
-      trim_length: '160'
-      ellipsis: '1'
-      word_boundary: '1'
-      filter: input
-      format: plain_text
-      allowed_html:
-        - a
-        - b
-        - br
-        - dd
-        - dl
-        - dt
-        - em
-        - i
-        - li
-        - ol
-        - p
-        - strong
-        - u
-        - ul
-      use_summary: 0
-      token_replace: 0
-      autop: 0
+    settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_display_title:
     type: title_value_field_formatter

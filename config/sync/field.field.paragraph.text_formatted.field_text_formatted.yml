@@ -12,6 +12,7 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - formatted
+      - markdown
 id: paragraph.text_formatted.field_text_formatted
 field_name: field_text_formatted
 entity_type: paragraph

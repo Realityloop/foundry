@@ -1,7 +1,16 @@
 uuid: 82e9b9c7-121b-4d1d-b6b2-8f60a06e99dc
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - contextual
+    - file
+    - media
+    - redirect
+    - role_delegation
+    - shortcut
+    - system
+    - toolbar
 id: admin_developer
 label: 'Admin: Developer'
 weight: -3

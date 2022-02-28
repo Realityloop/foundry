@@ -2,10 +2,13 @@ uuid: 545b8e9c-5942-481f-b5b5-f9ea2b41104d
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.formatted
   module:
     - coffee
     - contextual
     - entity_usage
+    - filter
     - media
     - pathauto
     - system
@@ -20,5 +23,6 @@ permissions:
   - 'access entity usage statistics'
   - 'access toolbar'
   - 'notify of path changes'
+  - 'use text format formatted'
   - 'view all media revisions'
   - 'view the administration theme'

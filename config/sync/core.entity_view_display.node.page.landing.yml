@@ -1,6 +1,6 @@
 uuid: 0d013d70-7977-405c-b1aa-b2b284b0cf69
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.landing
@@ -15,7 +15,6 @@ dependencies:
   module:
     - entity_display_mode
     - entity_reference_revisions
-    - text
     - title_field_for_manage_display
     - user
 id: node.page.landing
@@ -42,11 +41,11 @@ content:
     weight: 4
     region: content
   field_description:
-    type: text_default
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_display:
     type: entity_display_mode_default
@@ -72,7 +71,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true

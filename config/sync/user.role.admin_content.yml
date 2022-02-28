@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.markdown
+    - filter.format.formatted
     - media.type.document
     - media.type.image
     - media.type.video
@@ -80,7 +80,7 @@ permissions:
   - 'revert page revisions'
   - 'translate any entity'
   - 'use exclude node title'
-  - 'use text format markdown'
+  - 'use text format formatted'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view the administration theme'

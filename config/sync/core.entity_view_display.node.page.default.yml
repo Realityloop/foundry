@@ -15,7 +15,6 @@ dependencies:
     - entity_display_mode
     - entity_reference_revisions
     - metatag
-    - text
     - title_field_for_manage_display
     - user
 id: node.page.default
@@ -35,30 +34,30 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_content_supplementary:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_description:
-    type: text_default
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 6
     region: content
   field_display:
     type: entity_display_mode_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_display_title:
     type: title_value_field_formatter
@@ -77,14 +76,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
 hidden:
   langcode: true

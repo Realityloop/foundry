@@ -8,12 +8,12 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    ],
+    },
     "require": {
         "php": ">=8.1",
         "composer/installers": "^2.0",
@@ -49,6 +49,8 @@
         "drupal/gin_toolbar": "1.x-dev",
         "drupal/jsonapi_hypermedia": "^1.6",
         "drupal/jsonapi_node_preview": "^1.0@beta",
+        "drupal/jsonapi_node_preview_tab": "1.0.x-dev",
+        "drupal/layout_paragraphs": "2.0.x-dev@dev",
         "drupal/length_indicator": "^1.2",
         "drupal/linky": "^1.0",
         "drupal/linky_revision_ui": "^2.127",
@@ -182,6 +184,11 @@
             },
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "./patch/3217393.diff"
+            },
+            "drupal/layout_paragraphs": {
+                "https://www.drupal.org/project/layout_paragraphs/issues/3259729": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/60.diff",
+                "https://www.drupal.org/project/layout_paragraphs/issues/3265807": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/68.diff",
+                "https://www.drupal.org/project/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff"
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff"

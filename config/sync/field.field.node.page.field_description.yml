@@ -1,26 +1,19 @@
-uuid: 405365c1-e583-473a-91a5-3d19d993b9bc
+uuid: 041ccb1e-2f83-4137-ac02-57e5193f55a6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_description
     - node.type.page
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - plain_text
 id: node.page.field_description
 field_name: field_description
 entity_type: node
 bundle: page
 label: Description
-description: "Description content is used on content teasers and for the meta description.\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>"
+description: "<p>Description content is used on content teasers and for the meta description.\r\n\r\n<ul>\r\n<li>50–160 characters</li>\r\n<li>entice reader</li>\r\n<li>use active voice</li>\r\n<li>include a call to action</li>\r\n<li>use focus keyword</li>\r\n</ul>\r\n</p>"
 required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long
