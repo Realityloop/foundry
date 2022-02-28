@@ -1,0 +1,33 @@
+image: drupalpod/drupalpod-gitpod-base:20220218-optimized
+
+tasks:
+  - init: |
+      .gitpod/scripts/ddev-setup.sh
+      ddev drupal-install
+    command: |
+      .gitpod/scripts/ddev-setup.sh
+
+ports:
+  - port: 2222
+    onOpen: ignore
+  - port: 3306
+    onOpen: ignore
+  - port: 8025
+    onOpen: ignore
+  - port: 8036
+    onOpen: ignore
+  - port: 8080
+    onOpen: ignore
+  - port: 9003
+    onOpen: ignore
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: true
