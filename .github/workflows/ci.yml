@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup ddev
+        uses: jonaseberle/github-action-setup-ddev@v1
+        with:
+          autostart: false
+      - name: Start ddev
+        run: ddev start
+
+      - name: Install Drupal 👨🏻‍💻
+        run: ddev drupal-install
