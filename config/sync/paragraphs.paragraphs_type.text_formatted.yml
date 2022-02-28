@@ -13,7 +13,7 @@ third_party_settings:
     display_configuration:
       field_name: ''
 id: text_formatted
-label: 'Text'
+label: Text
 icon_uuid: null
 icon_default: null
 description: 'Create HTML formatted text using a GUI editor.'

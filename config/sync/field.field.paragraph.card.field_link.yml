@@ -191,4 +191,7 @@ settings:
   base_field_override:
     handler: 'default:base_field_override'
     handler_settings: {  }
+  paragraphs_library_item:
+    handler: 'default:paragraphs_library_item'
+    handler_settings: {  }
 field_type: dynamic_entity_reference

@@ -11,11 +11,9 @@ dependencies:
     - field.field.node.article.field_display_title
     - field.field.node.article.field_image
     - field.field.node.article.field_meta_tags
-    - field.field.node.article.field_published
     - field.field.node.article.field_video
     - node.type.article
   module:
-    - datetime
     - field_group
     - layout_paragraphs
     - media_library
@@ -31,6 +29,8 @@ third_party_settings:
         - langcode
         - field_description
         - field_image
+        - uid
+        - created
       label: Meta
       region: content
       parent_name: ''
@@ -66,7 +66,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -168,12 +168,6 @@ content:
       sidebar: true
       use_details: true
     third_party_settings: {  }
-  field_published:
-    type: datetime_default
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_video:
     type: media_library_widget
     weight: 4
@@ -238,7 +232,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
