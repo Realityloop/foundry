@@ -25,10 +25,10 @@ index d03607c9f3568031389c79bbc3a3f44934c5f43b..8ac5bab840137ae4cba14161a011552c
        type: boolean
        label: 'Let user override theme'
 diff --git a/dist/css/base/gin.css b/dist/css/base/gin.css
-index 1f694c4e95229cc0715becbbc74e141690a676cb..f9db8cbcef20597ce53b7ee392b6af23160442e4 100644
+index 0569f4ff5206483001e38059b3a447e6a44b2974..ed52d6dd1ca467e16b43b6adaac7418ec6ad6927 100644
 --- a/dist/css/base/gin.css
 +++ b/dist/css/base/gin.css
-@@ -2287,6 +2287,12 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
+@@ -2280,6 +2280,12 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
    margin-top: 20px;
  }
  
@@ -43,17 +43,13 @@ index 1f694c4e95229cc0715becbbc74e141690a676cb..f9db8cbcef20597ce53b7ee392b6af23
  .form-item__label {
 diff --git a/dist/css/components/description_toggle.css b/dist/css/components/description_toggle.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..1701bacdac1d0dde0140b0c7057b7b2322e51421
+index 0000000000000000000000000000000000000000..9c06eee94210543d2b22775ffad06d73358eaec3
 --- /dev/null
 +++ b/dist/css/components/description_toggle.css
-@@ -0,0 +1,105 @@
-+/* Base wrapper */
-+
+@@ -0,0 +1,99 @@
 +.help-icon {
 +  display: flex;
 +}
-+
-+/* Size of svg + border added by claro. */
 +
 +.help-icon__description-toggle {
 +  all: unset;
@@ -100,13 +96,9 @@ index 0000000000000000000000000000000000000000..1701bacdac1d0dde0140b0c7057b7b23
 +  padding-left: 4px;
 +}
 +
-+.form-type--checkbox .help-icon__element-has-description .checkbox-toggle {
++.form-type-checkbox .help-icon__element-has-description .checkbox-toggle {
 +  width: 50px !important;
 +}
-+
-+/*
-+ * 1. Subtract description toggle width from input fields.
-+ */
 +
 +.help-icon__element-has-description input:not(.form-checkbox):not(.form-autocomplete):not(.form-file),
 +.help-icon__element-has-description select {
@@ -114,31 +106,33 @@ index 0000000000000000000000000000000000000000..1701bacdac1d0dde0140b0c7057b7b23
 +  /* 1 */
 +}
 +
-+/* Float toggle in detail summary. */
-+
-+details.help-icon__description-container .help-icon__description-toggle {
-+  float: right;
++.field-group-details.help-icon__description-container .help-icon__description-toggle {
++  margin-top: 0;
 +}
-+
-+/* Fieldgroup adjustments */
 +
 +fieldset:not(.fieldgroup) .help-icon > .fieldset__legend .fieldset__label {
 +  padding-right: 0;
 +}
 +
-+fieldset.media-library-widget .help-icon > .help-icon__description-toggle {
++.field-group-fieldset > .help-icon > .help-icon__description-toggle,
++fieldset.media-library-widget .help-icon > .help-icon__description-toggle,
++.field--type-datetime fieldset .help-icon > .help-icon__description-toggle {
 +  margin-top: 1.3rem;
 +}
 +
-+.field--widget-datetime-default fieldset .help-icon > .help-icon__description-toggle {
-+  margin-top: 1.3rem;
++.field-group-fieldset > .fieldset__description,
++fieldset.media-library-widget .fieldset__description,
++.field--type-datetime fieldset .fieldset__description {
++  padding-left: 1rem;
 +}
 +
-+.simple-sitemap-fieldset .help-icon__element-has-description .checkbox-toggle {
-+  width: 50px !important;
++@media (min-width: 768px) {
++  .field-group-fieldset > .fieldset__description,
++fieldset.media-library-widget .fieldset__description,
++.field--type-datetime fieldset .fieldset__description {
++    padding-left: 1.5rem;
++  }
 +}
-+
-+/* System Modules Search fields */
 +
 +.system-modules .table-filter .form-type--search,
 +.system-modules-uninstall .table-filter .form-type--search {
@@ -153,10 +147,20 @@ index 0000000000000000000000000000000000000000..1701bacdac1d0dde0140b0c7057b7b23
 +}
 +
 diff --git a/dist/css/theme/dialog.css b/dist/css/theme/dialog.css
-index d801e27665ad8397436cd064e677fa1c62f34bf6..cdbe4d63cc426a63bd22eb03b2bface2853650e7 100644
+index a3bb96d7b0b1ff75db0d89f137a4ac76e2ed7cd7..7f0f76a74dcfdcee67f1fabe59ed834918c7f947 100644
 --- a/dist/css/theme/dialog.css
 +++ b/dist/css/theme/dialog.css
-@@ -591,6 +591,10 @@
+@@ -1,5 +1,9 @@
+ @charset "UTF-8";
+ 
++.ui-dialog {
++  /* Align fieldset label positioning to regular form item label, see claro form.css. */
++}
++
+ .ui-dialog a,
+ .ui-dialog .link,
+ .ui-dialog button.link,
+@@ -584,6 +588,10 @@
    margin-top: 20px;
  }
  
@@ -169,27 +173,35 @@ index d801e27665ad8397436cd064e677fa1c62f34bf6..cdbe4d63cc426a63bd22eb03b2bface2
  .ui-dialog .form-item__label {
 diff --git a/dist/js/description_toggle.js b/dist/js/description_toggle.js
 new file mode 100644
-index 0000000000000000000000000000000000000000..13fa3cacc6d7a0571494b3e90926c05e659990a9
+index 0000000000000000000000000000000000000000..665be154d7ec6fb6de3e2aaa37349ff86c36c52c
 --- /dev/null
 +++ b/dist/js/description_toggle.js
-@@ -0,0 +1,14 @@
+@@ -0,0 +1,22 @@
 +(Drupal => {
 +  Drupal.behaviors.formDescriptionToggle = {
 +    attach: function(context) {
 +      context.querySelectorAll(".help-icon__description-toggle").forEach((elem => {
-+        elem.dataset.formDescriptionToggleAttached || (elem.dataset.formDescriptionToggleAttached = !0, 
-+        elem.addEventListener("click", (event => {
-+          event.preventDefault(), event.currentTarget.focus(), event.currentTarget.closest(".help-icon__description-container").querySelectorAll(".claro-details__description, .fieldset__description, .form-item__description").forEach((description => {
-+            description.classList.toggle("visually-hidden");
++        if (elem.dataset.formDescriptionToggleAttached) return;
++        elem.dataset.formDescriptionToggleAttached = !0;
++        const a11yLabel = "help-icon-label--" + Math.floor(1e4 * Math.random());
++        elem.setAttribute("id", a11yLabel), elem.setAttribute("aria-expanded", "false"), 
++        elem.setAttribute("aria-controls", "target"), elem.closest(".help-icon__description-container").querySelectorAll(".claro-details__description, .fieldset__description, .form-item__description").forEach((description => {
++          description.setAttribute("aria-labelledby", a11yLabel);
++        })), elem.addEventListener("click", (event => {
++          event.preventDefault(), event.stopPropagation(), "SUMMARY" === event.currentTarget.parentElement.tagName && !1 === event.currentTarget.parentElement.parentElement.open && (event.currentTarget.parentElement.parentElement.open = !0), 
++          event.currentTarget.focus(), event.currentTarget.closest(".help-icon__description-container").querySelectorAll(".claro-details__description, .fieldset__description, .form-item__description").forEach((description => {
++            const setStatus = description.classList.contains("visually-hidden");
++            event.currentTarget.setAttribute("aria-expanded", setStatus), description.classList.toggle("visually-hidden"), 
++            description.setAttribute("aria-hidden", !setStatus);
 +          }));
-+        })));
++        }));
 +      }));
 +    }
 +  };
 +})(Drupal);
 \ No newline at end of file
 diff --git a/gin.libraries.yml b/gin.libraries.yml
-index d4f6905e371c5948e688c3a6050bb5e99ab8e31a..d94db328b475493f46911106793a00128161da54 100644
+index 9d21913cdc8ee0ebb2499dd2d49ba0caaebdca47..c356604e3165584587ac49c5d53d45e7ff064c92 100644
 --- a/gin.libraries.yml
 +++ b/gin.libraries.yml
 @@ -89,6 +89,13 @@ gin_dialog:
@@ -292,10 +304,10 @@ index 7ef3c09b8f511e25f5d1538525656c31ec1f945e..b1cf82af310634386ca694ccb0113b71
    }
 diff --git a/js/description_toggle.js b/js/description_toggle.js
 new file mode 100644
-index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5596ab302
+index 0000000000000000000000000000000000000000..ee445666f7e482faed27cc77c7d74122de91585d
 --- /dev/null
 +++ b/js/description_toggle.js
-@@ -0,0 +1,28 @@
+@@ -0,0 +1,50 @@
 +((Drupal) => {
 +  Drupal.behaviors.formDescriptionToggle = {
 +    attach: function attach(context) {
@@ -306,19 +318,41 @@ index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5
 +            return;
 +          }
 +          elem.dataset.formDescriptionToggleAttached = true;
++          const a11yLabel = 'help-icon-label--' + Math.floor(Math.random() * 10000);
++          elem.setAttribute('id', a11yLabel);
++          elem.setAttribute('aria-expanded', 'false');
++          elem.setAttribute('aria-controls', 'target');
++          elem
++            .closest('.help-icon__description-container')
++            .querySelectorAll(
++              '.claro-details__description, .fieldset__description, .form-item__description',
++            )
++            .forEach((description) => {
++              description.setAttribute('aria-labelledby', a11yLabel);
++            });
 +
 +          elem.addEventListener('click', (event) => {
-+            const toggleFunction = (description) => {
-+              description.classList.toggle('visually-hidden');
-+            };
 +            event.preventDefault();
++            event.stopPropagation();
++
++            // Open details element on toggle.
++            if (event.currentTarget.parentElement.tagName === 'SUMMARY'
++              && event.currentTarget.parentElement.parentElement.open === false) {
++              event.currentTarget.parentElement.parentElement.open = true;
++            }
++
 +            event.currentTarget.focus(); // firefox button focus issue
 +            event.currentTarget
 +              .closest('.help-icon__description-container')
 +              .querySelectorAll(
 +                '.claro-details__description, .fieldset__description, .form-item__description',
 +              )
-+              .forEach(toggleFunction);
++              .forEach((description) => {
++                const setStatus = description.classList.contains('visually-hidden');
++                event.currentTarget.setAttribute('aria-expanded', setStatus);
++                description.classList.toggle('visually-hidden');
++                description.setAttribute('aria-hidden', !setStatus);
++              });
 +          });
 +        });
 +    },
@@ -326,7 +360,7 @@ index 0000000000000000000000000000000000000000..32e6e49c4c65756b5ec331aec2a113f5
 +})(Drupal);
 diff --git a/src/GinDescriptionToggle.php b/src/GinDescriptionToggle.php
 new file mode 100644
-index 0000000000000000000000000000000000000000..6e745edb0b29facd16ba3c97d0b44392a249147e
+index 0000000000000000000000000000000000000000..14271c15182ef0e5277d61d8bc67b3d0910a535a
 --- /dev/null
 +++ b/src/GinDescriptionToggle.php
 @@ -0,0 +1,82 @@
@@ -348,14 +382,14 @@ index 0000000000000000000000000000000000000000..6e745edb0b29facd16ba3c97d0b44392
 +   *
 +   * @var \Drupal\gin\GinContentFormHelper
 +   */
-+  protected GinContentFormHelper $contentFormHelper;
++  protected $contentFormHelper;
 +
 +  /**
 +   * The gin theme settings class.
 +   *
 +   * @var \Drupal\gin\GinSettings
 +   */
-+  protected GinSettings $ginSettings;
++  protected $ginSettings;
 +
 +  /**
 +   * GinDescriptionToggle constructor.
@@ -460,7 +494,7 @@ index 0000000000000000000000000000000000000000..81ab7977db2aecdf34eff63ea5f78f5a
 +
 +}
 diff --git a/src/GinSettings.php b/src/GinSettings.php
-index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..c5aa2247de19816171df06b67f30599720fe7bc1 100644
+index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..c427f3506c470c73686ea641396d7c1fdf1ebd8f 100644
 --- a/src/GinSettings.php
 +++ b/src/GinSettings.php
 @@ -315,7 +315,7 @@ class GinSettings implements ContainerInjectionInterface {
@@ -472,7 +506,7 @@ index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..c5aa2247de19816171df06b67f305997
          'visible' => [
            ':input[name="preset_accent_color"]' => ['value' => 'custom'],
          ],
-@@ -401,6 +401,14 @@ class GinSettings implements ContainerInjectionInterface {
+@@ -426,6 +426,13 @@ class GinSettings implements ContainerInjectionInterface {
        ],
      ];
  
@@ -481,17 +515,16 @@ index 9b4a1f79ecbd2d4d577758dea9532a41c16f1952..c5aa2247de19816171df06b67f305997
 +      '#title' => $this->t('Enable form description toggle.'),
 +      '#description' => $this->t('Show a help icon to show/hide form descriptions on content forms.'),
 +      '#default_value' => $account ? $this->get('show_description_toggle', $account) : $this->getDefault('show_description_toggle'),
-+      '#weight' => 0,
 +    ];
 +
-     // High contrast mode.
-     $form['high_contrast_mode'] = [
-       '#type' => 'checkbox',
+     if (!$account) {
+       foreach ($form as $key => $element) {
+         $form[$key]['#after_build'][] = [
 diff --git a/styles/base/_form.scss b/styles/base/_form.scss
-index 5fb84318ae3c2f4d1e7510de5d67802c00265e50..cd2e820a24dcce3a3aff75136bc7ca7f89c7cad0 100644
+index 11d6bfd1d5c65db5615276a8acd85cd9293d30d6..5801bcb0197bf15421e8daa03ddf37b240395a91 100644
 --- a/styles/base/_form.scss
 +++ b/styles/base/_form.scss
-@@ -359,6 +359,11 @@ fieldset:not(.fieldgroup) {
+@@ -352,6 +352,11 @@ fieldset:not(.fieldgroup) {
    }
  }
  
@@ -505,16 +538,16 @@ index 5fb84318ae3c2f4d1e7510de5d67802c00265e50..cd2e820a24dcce3a3aff75136bc7ca7f
  .form-item__label {
 diff --git a/styles/components/description_toggle.scss b/styles/components/description_toggle.scss
 new file mode 100644
-index 0000000000000000000000000000000000000000..41fb0b1fd096e30db2e24e3fd0ffae44f49ca50c
+index 0000000000000000000000000000000000000000..544b4f4baf7ef7440ca837ac762e60002bf5fe4d
 --- /dev/null
 +++ b/styles/components/description_toggle.scss
 @@ -0,0 +1,106 @@
-+/* Base wrapper */
++// Base wrapper
 +.help-icon {
 +  display: flex;
 +}
 +
-+/* Size of svg + border added by claro. */
++// Size of svg + border added by claro
 +.help-icon__description-toggle {
 +  all: unset;
 +  flex-shrink: 0;
@@ -564,9 +597,7 @@ index 0000000000000000000000000000000000000000..41fb0b1fd096e30db2e24e3fd0ffae44
 +  }
 +}
 +
-+/*
-+ * 1. Subtract description toggle width from input fields.
-+ */
++// Subtract description toggle width from input fields
 +.help-icon__element-has-description {
 +  input:not(.form-checkbox):not(.form-autocomplete):not(.form-file),
 +  select {
@@ -574,12 +605,12 @@ index 0000000000000000000000000000000000000000..41fb0b1fd096e30db2e24e3fd0ffae44
 +  }
 +}
 +
-+/* Float toggle in detail summary. */
-+details.help-icon__description-container .help-icon__description-toggle {
-+  float: right;
++// Detail summary
++.field-group-details.help-icon__description-container .help-icon__description-toggle {
++  margin-top: 0;
 +}
 +
-+/* Fieldgroup adjustments */
++// Fieldgroup adjustments
 +fieldset:not(.fieldgroup) {
 +  .help-icon {
 +    > .fieldset__legend .fieldset__label {
@@ -588,23 +619,25 @@ index 0000000000000000000000000000000000000000..41fb0b1fd096e30db2e24e3fd0ffae44
 +  }
 +}
 +
-+fieldset.media-library-widget {
-+  .help-icon {
-+    > .help-icon__description-toggle {
-+      margin-top: 1.3rem;
-+    }
-+  }
-+}
-+
++.field-group-fieldset >,
++fieldset.media-library-widget,
 +.field--type-datetime fieldset {
 +  .help-icon {
 +    > .help-icon__description-toggle {
 +      margin-top: 1.3rem;
 +    }
 +  }
++
++  .fieldset__description {
++    padding-left: 1rem;
++
++    @include mq($breakpointSmall) {
++      padding-left: 1.5rem;
++    }
++  }
 +}
 +
-+/* System Modules Search fields */
++// System Modules Search fields
 +.system-modules .table-filter .form-type--search,
 +.system-modules-uninstall .table-filter .form-type--search {
 +  position: relative;
@@ -724,10 +757,10 @@ index 78534960770dedb127040d204e611222270995a2..2c501bfb4f2bfe8641d0a08581e6c2cf
          {{ children }}
 diff --git a/templates/form/fieldset.html.twig b/templates/form/fieldset.html.twig
 new file mode 100644
-index 0000000000000000000000000000000000000000..8a02c80fd13fb60b04fd88ebb05e135942165325
+index 0000000000000000000000000000000000000000..3ff7b978a37ac922762165cb51e4fc345af35458
 --- /dev/null
 +++ b/templates/form/fieldset.html.twig
-@@ -0,0 +1,89 @@
+@@ -0,0 +1,92 @@
 +{#
 +/**
 + * @file
@@ -790,6 +823,9 @@ index 0000000000000000000000000000000000000000..8a02c80fd13fb60b04fd88ebb05e1359
 +      {{ attach_library('gin/gin_description_toggle') }}
 +      <button class="help-icon__description-toggle"></button>
 +    </div>
++    {% if description.content %}
++      <div{{ description.attributes.addClass(description_classes) }}>{{ description.content }}</div>
++    {% endif %}
 +  {% endif %}
 +  <div{{ content_attributes.addClass(wrapper_classes) }}>
 +    {% if inline_items %}
@@ -808,7 +844,7 @@ index 0000000000000000000000000000000000000000..8a02c80fd13fb60b04fd88ebb05e1359
 +          {{ errors }}
 +        </div>
 +      {% endif %}
-+      {% if description.content %}
++      {% if description.content and not description_toggle %}
 +        <div{{ description.attributes.addClass(description_classes) }}>{{ description.content }}</div>
 +      {% endif %}
 +
@@ -958,22 +994,22 @@ index 0000000000000000000000000000000000000000..5c8711e9121a7ec230116a2b3a8307ef
 +  {% endif %}
 +</div>
 diff --git a/webpack.config.js b/webpack.config.js
-index b6b2b90b0900be12bf77927c35e8064250fdff0e..b0b820687e516c45822f655643fb75bceb32db70 100644
+index 8e1a052e3854e8c7d1f40c594b3b13015fc5ce73..61d535d437503ea19ef2163cf58a005daa611126 100644
 --- a/webpack.config.js
 +++ b/webpack.config.js
-@@ -16,6 +16,7 @@ module.exports = {
-     'messages': ['./js/messages.js'],
-     'settings': ['./js/settings.js'],
-     'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
+@@ -10,6 +10,7 @@ module.exports = {
+   entry: {
+     // Javascript
+     'accent': ['./js/accent.js'],
 +    'description_toggle': ['./js/description_toggle.js'],
-     // Base
-     'base/gin': ['./styles/gin.scss'],
-     // Components
-@@ -44,6 +45,7 @@ module.exports = {
-     'components/media_library': ['./styles/components/media_library.scss'],
+     'edit_form': ['./js/edit_form.js'],
+     'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
+     'init': ['./js/init.js'],
+@@ -26,6 +27,7 @@ module.exports = {
+     'components/ckeditor': ['./styles/components/ckeditor.scss'],
+     'components/coffee': ['./styles/components/coffee.scss'],
      'components/contextual_links': ['./styles/components/contextual_links.scss'],
-     'components/ajax': ['./styles/components/ajax.scss'],
 +    'components/description_toggle': ['./styles/components/description_toggle.scss'],
-     // Layout
-     'layout/toolbar': ['./styles/layout/toolbar.scss'],
-     'layout/horizontal_toolbar': ['./styles/layout/horizontal_toolbar.scss'],
+     'components/dialog': ['./styles/components/dialog.scss'],
+     'components/dropzonejs': ['./styles/components/dropzonejs.scss'],
+     'components/edit_form': ['./styles/components/edit_form.scss'],
