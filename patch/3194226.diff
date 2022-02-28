@@ -43,10 +43,10 @@ index 0569f4ff5206483001e38059b3a447e6a44b2974..ed52d6dd1ca467e16b43b6adaac7418e
  .form-item__label {
 diff --git a/dist/css/components/description_toggle.css b/dist/css/components/description_toggle.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..9c06eee94210543d2b22775ffad06d73358eaec3
+index 0000000000000000000000000000000000000000..b8f4c2b8c81ac19847f3618bdd57e76eef7dc9f2
 --- /dev/null
 +++ b/dist/css/components/description_toggle.css
-@@ -0,0 +1,99 @@
+@@ -0,0 +1,100 @@
 +.help-icon {
 +  display: flex;
 +}
@@ -116,7 +116,8 @@ index 0000000000000000000000000000000000000000..9c06eee94210543d2b22775ffad06d73
 +
 +.field-group-fieldset > .help-icon > .help-icon__description-toggle,
 +fieldset.media-library-widget .help-icon > .help-icon__description-toggle,
-+.field--type-datetime fieldset .help-icon > .help-icon__description-toggle {
++.field--type-datetime fieldset .help-icon > .help-icon__description-toggle,
++fieldset > .help-icon > .help-icon__description-toggle {
 +  margin-top: 1.3rem;
 +}
 +
@@ -538,10 +539,10 @@ index 11d6bfd1d5c65db5615276a8acd85cd9293d30d6..5801bcb0197bf15421e8daa03ddf37b2
  .form-item__label {
 diff --git a/styles/components/description_toggle.scss b/styles/components/description_toggle.scss
 new file mode 100644
-index 0000000000000000000000000000000000000000..544b4f4baf7ef7440ca837ac762e60002bf5fe4d
+index 0000000000000000000000000000000000000000..dfeef28a1811d3cdf66e76feecfbaa112797201b
 --- /dev/null
 +++ b/styles/components/description_toggle.scss
-@@ -0,0 +1,106 @@
+@@ -0,0 +1,107 @@
 +// Base wrapper
 +.help-icon {
 +  display: flex;
@@ -621,7 +622,8 @@ index 0000000000000000000000000000000000000000..544b4f4baf7ef7440ca837ac762e6000
 +
 +.field-group-fieldset >,
 +fieldset.media-library-widget,
-+.field--type-datetime fieldset {
++.field--type-datetime fieldset,
++fieldset {
 +  .help-icon {
 +    > .help-icon__description-toggle {
 +      margin-top: 1.3rem;
