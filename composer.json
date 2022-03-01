@@ -66,6 +66,7 @@
         "drupal/oembed_providers": "^2.0",
         "drupal/paragraphs_ee": "^2.0",
         "drupal/pathauto": "^1.8",
+        "drupal/permissions_filter": "^1.2",
         "drupal/prevent_homepage_deletion": "^1.4",
         "drupal/redirect": "^1.7",
         "drupal/revision_log_default": "^1.2",
