@@ -14,10 +14,35 @@ composer create-project -s dev realityloop/foundry [destination]
 
 ## Install Drupal using quickstart
 
-This method is ideal for development purposes or to test out the profile.
+This method is ideal for testing quickly.
 
 ```
 php ./web/core/scripts/drupal quick-start foundry
 ```
 
+## Install Drupal using ddev
+
+This method is great for development purposes.
+
+1. First install ddev https://ddev.com/get-started/
+2. Then from the project root execute the following:
+
+```
+ddev start
+```
+
+
 For production use we suggest a contaier based workflow such as docker or kubernetes.
+
+## Contributing
+
+This project uses conventional commits https://www.conventionalcommits.org/en/v1.0.0/ 
+
+Before undertaking any development tasks on your local machine we request that you execute the following 2 commands from the project directory so that your commits meet the standards:
+
+```
+npm i
+git config core.hooksPath .git-hooks
+```
+
+Any PR's without conventional commit messages will be closed.

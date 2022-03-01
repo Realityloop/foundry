@@ -11,3 +11,7 @@ ddev config global --instrumentation-opt-in=true
 
 # Start ddev
 cd $DRUPAL_DIR && ddev start -y
+
+# Enable conventional commits
+ddev exec npm i
+git config core.hooksPath .git-hooks
