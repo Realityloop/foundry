@@ -194,4 +194,10 @@ settings:
   paragraphs_library_item:
     handler: 'default:paragraphs_library_item'
     handler_settings: {  }
+  config_pages:
+    handler: 'default:config_pages'
+    handler_settings: {  }
+  config_pages_type:
+    handler: 'default:config_pages_type'
+    handler_settings: {  }
 field_type: dynamic_entity_reference
