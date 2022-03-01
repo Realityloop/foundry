@@ -25,18 +25,21 @@ jobs:
       - name: Start ddev
         run: ddev start
 
+      - name: Validate composer.json 🔍
+        run: ddev composer validate
+
       - name: Install Drupal 👨🏻‍💻
         run: ddev drupal-install
 
       # - name: Run Drupal tests
       #   run: ddev drupal-tests
 
-  lint:
-    runs-on: ubuntu-latest
+  # lint:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout 🛎
-      uses: actions/checkout@master
+  #   steps:
+  #   - name: Checkout 🛎
+  #     uses: actions/checkout@master
 
-    - name: Drupal coding standards
-      uses: guix77/phpcs-drupal-action@v1.0.0
+  #   - name: Drupal coding standards
+  #     uses: guix77/phpcs-drupal-action@v1.0.0
