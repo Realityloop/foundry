@@ -38,6 +38,7 @@ module:
   dblog: 0
   decoupled_router: 0
   diff: 0
+  documentation_generator: 0
   druxt: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
