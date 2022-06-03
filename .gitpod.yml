@@ -6,7 +6,8 @@ tasks:
       .gitpod/scripts/ddev-setup.sh
       ddev drupal-install
     command: |
-      .gitpod/scripts/ddev-setup.sh
+      ddev start -y
+      gp preview $(gp url 8080)
 
 ports:
   - port: 2222
