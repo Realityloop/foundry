@@ -5,6 +5,8 @@ tasks:
       .gitpod/scripts/ddev-setup.sh
       ddev drupal-install
     command: |
+      curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+      sudo apt-get install -y nodejs
       .gitpod/scripts/ddev-setup.sh
 
 ports:
