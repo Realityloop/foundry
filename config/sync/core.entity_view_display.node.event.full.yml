@@ -6,16 +6,16 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.event.field_content
     - field.field.node.event.field_content_supplementary
-    - field.field.node.event.field_date
     - field.field.node.event.field_description
     - field.field.node.event.field_display_title
     - field.field.node.event.field_image
     - field.field.node.event.field_meta_tags
+    - field.field.node.event.field_date
     - node.type.event
   module:
-    - datetime
     - entity_reference_revisions
     - layout_paragraphs
+    - smart_date
     - title_field_for_manage_display
     - user
 id: node.event.full
@@ -30,7 +30,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_content_supplementary:
     type: entity_reference_revisions_entity_view
@@ -39,16 +39,20 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_date:
-    type: datetime_default
+    type: smartdate_default
     label: hidden
     settings:
       timezone_override: ''
       format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_display_title:
     type: title_value_field_formatter

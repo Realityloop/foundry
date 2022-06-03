@@ -38,9 +38,12 @@ For production use we suggest a contaier based workflow such as docker or kubern
 
 This project uses conventional commits https://www.conventionalcommits.org/en/v1.0.0/ 
 
-Before undertaking any development tasks on your local machine we request that you execute the following 2 commands from the project directory so that your commits meet the standards:
+You will need nodejs v16.x installed for local development, we assume you will be using nvm.
+
+Before undertaking any development tasks on your local machine we request that you execute the following 3 commands from the project directory so that your commits meet the standards:
 
 ```
+nvm use stable
 npm i
 git config core.hooksPath .git-hooks
 ```
