@@ -41,16 +41,6 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_display_title:
-    type: title_value_field_formatter
-    label: hidden
-    settings:
-      tag: h1
-      classes: ''
-      linked: 0
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_date:
     type: smartdate_default
     label: hidden
@@ -63,6 +53,16 @@ content:
       time_wrapper: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_display_title:
+    type: title_value_field_formatter
+    label: hidden
+    settings:
+      tag: h1
+      classes: ''
+      linked: 0
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   field_description: true

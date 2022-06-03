@@ -7,12 +7,17 @@ dependencies:
     - node.type.event
   module:
     - smart_date
+    - smart_date_recur
+third_party_settings:
+  smart_date_recur:
+    allow_recurring: true
+    month_limit: 12
 id: node.event.field_date
 field_name: field_date
 entity_type: node
 bundle: event
-label: 'Date'
-description: ''
+label: Date
+description: 'If you want to remove some date occurrences, blank all populated values in the instances you want to remove then save the content.'
 required: false
 translatable: false
 default_value:

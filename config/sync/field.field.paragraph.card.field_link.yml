@@ -200,4 +200,13 @@ settings:
   config_pages_type:
     handler: 'default:config_pages_type'
     handler_settings: {  }
+  smart_date_format:
+    handler: 'default:smart_date_format'
+    handler_settings: {  }
+  smart_date_override:
+    handler: 'default:smart_date_override'
+    handler_settings: {  }
+  smart_date_rule:
+    handler: 'default:smart_date_rule'
+    handler_settings: {  }
 field_type: dynamic_entity_reference
