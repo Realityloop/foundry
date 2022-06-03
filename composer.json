@@ -46,13 +46,13 @@
         "drupal/field_group": "^3.2",
         "drupal/field_tools": "^1.0",
         "drupal/focal_point": "^1.5",
-        "drupal/gin": "^3.x-dev",
+        "drupal/gin": "^3.0@beta",
         "drupal/gin_login": "^1.2",
-        "drupal/gin_toolbar": "1.x-dev@dev",
+        "drupal/gin_toolbar": "^1.0@beta",
         "drupal/jsonapi_hypermedia": "^1.6",
         "drupal/jsonapi_node_preview": "^1.0@beta",
-        "drupal/jsonapi_node_preview_tab": "1.0.x-dev",
-        "drupal/layout_paragraphs": "2.0.x-dev@dev",
+        "drupal/jsonapi_node_preview_tab": "^1.0.x-dev",
+        "drupal/layout_paragraphs": "^2.0.x-dev@dev",
         "drupal/length_indicator": "^1.2",
         "drupal/linky": "^1.0",
         "drupal/linky_revision_ui": "^2.127",
@@ -85,7 +85,9 @@
     },
     "require-dev": {
         "drupal/core-dev": "^9.3",
-        "drush/drush": "^11.0"
+        "drush/drush": "^11.0",
+        "phpspec/prophecy-phpunit": "^2",
+        "sllh/composer-lint": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -100,7 +102,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "sllh/composer-lint": true
         }
     },
     "scripts": {

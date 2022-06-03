@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "git-conventional-commits": "^1.2.0"
+  }
+}
