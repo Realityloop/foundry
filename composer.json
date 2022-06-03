@@ -62,6 +62,7 @@
         "drupal/masquerade": "^2.0",
         "drupal/maxlength": "^2.0",
         "drupal/media_file_delete": "^1.1",
+        "drupal/media_revisions_ui": "^2.1",
         "drupal/memcache": "^2.3",
         "drupal/node_edit_protection": "^1.0",
         "drupal/oembed_providers": "^2.0",
