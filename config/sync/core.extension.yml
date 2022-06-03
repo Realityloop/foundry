@@ -119,6 +119,7 @@ module:
   toolbar: 0
   transliterate_filenames: 0
   update: 0
+  upgrade_status: 0
   user: 0
   username_enumeration_prevention: 0
   viewfield: 0
