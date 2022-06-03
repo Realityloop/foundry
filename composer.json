@@ -45,9 +45,9 @@
         "drupal/field_group": "^3.2",
         "drupal/field_tools": "^1.0",
         "drupal/focal_point": "^1.5",
-        "drupal/gin": "^3.x-dev",
-        "drupal/gin_login": "^1.x-dev",
-        "drupal/gin_toolbar": "^1.x-dev",
+        "drupal/gin": "^3.0@beta",
+        "drupal/gin_login": "^1.2",
+        "drupal/gin_toolbar": "^1.0@beta",
         "drupal/jsonapi_hypermedia": "^1.6",
         "drupal/jsonapi_node_preview": "^1.0@beta",
         "drupal/jsonapi_node_preview_tab": "^1.0.x-dev",
@@ -184,26 +184,20 @@
                 "Preview link accidentally closes the media library https://www.drupal.org/project/focal_point/issues/3162210#comment-13855854": "https://www.drupal.org/files/issues/2020-10-11/preview_link_accidentally_closes_the_media_library-3162210-19.patch"
             },
             "drupal/gin": {
-                "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "./patch/3217391.diff",
-                "https://www.drupal.org/project/gin/issues/3194226#comment-14415576": "./patch/3194226.diff"
+                "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "./patch/3217391.diff"
             },
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "./patch/3217393.diff"
             },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3259729": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/60.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3265807": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/68.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3266834#comment-14427605": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/71.diff"
+                "https://www.drupal.org/project/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff"
             },
             "drupal/metatag": {
                 "https://www.drupal.org/project/metatag/issues/2945817#comment-14420231": "https://www.drupal.org/files/issues/2022-02-21/metatag-n2945817-143.patch"
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff"
-            },
-            "drupal/tome": {
-                "https://www.drupal.org/project/tome/issues/3257363#comment-14395629": "https://www.drupal.org/files/issues/2022-02-02/3257363-3.patch"
             }
         }
     }
