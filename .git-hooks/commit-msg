@@ -3,4 +3,11 @@
 # fix for windows systems
 PATH="/c/Program Files/nodejs:$HOME/AppData/Roaming/npm/:$PATH"
 
+if [[ $OSTYPE == 'darwin'* ]]; then
+    ## NVM
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+	[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
 ./node_modules/.bin/git-conventional-commits commit-msg-hook "$1"
