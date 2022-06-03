@@ -1,4 +1,4 @@
-uuid: 24cbc867-5fb9-4e0b-b8ac-ddac98fa17d6
+uuid: 14aedcba-bcf3-49e1-b914-495f39100467
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,21 @@ dependencies:
     - field.storage.node.field_date
     - node.type.event
   module:
-    - datetime
+    - smart_date
 id: node.event.field_date
 field_name: field_date
 entity_type: node
 bundle: event
-label: Date
-description: 'Enter the date and time this event will ocurr.'
-required: true
+label: 'Date'
+description: ''
+required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
 default_value_callback: ''
 settings: {  }
-field_type: datetime
+field_type: smartdate

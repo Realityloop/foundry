@@ -5,14 +5,13 @@ dependencies:
   config:
     - field.field.node.event.field_content
     - field.field.node.event.field_content_supplementary
-    - field.field.node.event.field_date
     - field.field.node.event.field_description
     - field.field.node.event.field_display_title
     - field.field.node.event.field_image
     - field.field.node.event.field_meta_tags
+    - field.field.node.event.field_date
     - node.type.event
   module:
-    - datetime
     - field_group
     - layout_paragraphs
     - media_library
@@ -21,6 +20,7 @@ dependencies:
     - paragraphs_ee
     - paragraphs_features
     - path
+    - smart_date
 third_party_settings:
   field_group:
     group_content_primary:
@@ -31,7 +31,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -67,7 +67,7 @@ content:
     third_party_settings: {  }
   field_content:
     type: layout_paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       preview_view_mode: default
@@ -77,7 +77,7 @@ content:
     third_party_settings: {  }
   field_content_supplementary:
     type: paragraphs
-    weight: 3
+    weight: 4
     region: content
     settings:
       title: Content
@@ -105,12 +105,6 @@ content:
           dialog_off_canvas: false
           dialog_style: tiles
           easy_access_count: 0
-  field_date:
-    type: datetime_default
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_description:
     type: string_textarea
     weight: 4
@@ -146,6 +140,26 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_date:
+    type: smartdate_timezone
+    weight: 2
+    region: content
+    settings:
+      modal: false
+      default_tz: ''
+      custom_tz: Australia/Melbourne
+      allowed_timezones: {  }
+      default_duration: 60
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+      add_abbreviations: ''
     third_party_settings: {  }
   langcode:
     type: language_select
