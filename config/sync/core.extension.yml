@@ -104,6 +104,7 @@ module:
   prevent_homepage_deletion: 0
   redirect: 0
   revision_log_default: 0
+  robotstxt: 0
   role_delegation: 0
   serialization: 0
   shortcut: 0
