@@ -31,7 +31,7 @@
         "drupal/content_lock": "^2.2",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
-        "drupal/core-recommended": "^9.3",
+        "drupal/core-recommended": "~9.4",
         "drupal/diff": "^1.0",
         "drupal/documentation_generator": "^2.0",
         "drupal/druxt": "^1.1.1",
