@@ -6,7 +6,11 @@ dependencies:
     - field.storage.media.field_media_caption
     - media.type.image
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
 id: media.image.field_media_caption
 field_name: field_media_caption
 entity_type: media

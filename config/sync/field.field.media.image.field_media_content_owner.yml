@@ -10,8 +10,8 @@ field_name: field_media_content_owner
 entity_type: media
 bundle: image
 label: 'Content owner'
-description: 'Enter the organisational person or role that is primary contact regarding this image.'
-required: true
+description: 'Enter the person or role that is primary contact regarding this image.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

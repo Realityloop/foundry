@@ -10,7 +10,7 @@ field_name: field_media_usage_terms
 entity_type: media
 bundle: document
 label: 'Usage Terms & Conditions'
-description: ''
+description: 'Please describe any limitations/conditions for usage of this document.'
 required: false
 translatable: true
 default_value: {  }

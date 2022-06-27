@@ -10,8 +10,8 @@ field_name: field_media_content_owner
 entity_type: media
 bundle: document
 label: 'Content owner'
-description: ''
-required: true
+description: 'Enter the person or role that is primary contact regarding this document.'
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

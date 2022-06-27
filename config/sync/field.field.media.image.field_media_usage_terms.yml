@@ -10,7 +10,7 @@ field_name: field_media_usage_terms
 entity_type: media
 bundle: image
 label: 'Usage Terms & Conditions'
-description: ''
+description: 'Please describe any limitations in usage of this image.'
 required: false
 translatable: false
 default_value: {  }
