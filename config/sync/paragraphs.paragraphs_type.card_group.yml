@@ -1,10 +1,15 @@
 uuid: ed0c8294-5604-4014-ac64-a6c84e0c2c72
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: card_group
 label: 'Card group'
 icon_uuid: null
 icon_default: null
 description: 'Create a group of cards.'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

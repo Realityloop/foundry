@@ -1,10 +1,15 @@
 uuid: de92403a-058f-4cec-acf8-95dd4bc4b11e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: entity_reference
 label: 'Entity reference'
 icon_uuid: null
 icon_default: null
 description: 'A reference to content from within this website.'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

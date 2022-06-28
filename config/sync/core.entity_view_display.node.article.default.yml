@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.article.field_article_category
     - field.field.node.article.field_article_type
     - field.field.node.article.field_content
-    - field.field.node.article.field_content_supplementary
     - field.field.node.article.field_description
     - field.field.node.article.field_display_title
     - field.field.node.article.field_image
@@ -14,7 +13,6 @@ dependencies:
     - field.field.node.article.field_video
     - node.type.article
   module:
-    - entity_reference_revisions
     - layout_paragraphs
     - metatag
     - title_field_for_manage_display
@@ -40,15 +38,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_content_supplementary:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_description:
     type: basic_string

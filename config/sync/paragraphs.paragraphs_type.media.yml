@@ -1,10 +1,15 @@
 uuid: b6b88d1a-0278-4841-bb9a-d16436f93cdb
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: media
 label: Media
 icon_uuid: null
 icon_default: null
 description: 'Add a file (Document), Image, or Video to your content'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

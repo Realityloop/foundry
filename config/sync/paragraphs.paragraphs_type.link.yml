@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - entity_display_mode
+    - layout_paragraphs
     - paragraphs_ee
 third_party_settings:
   paragraphs_ee:
@@ -17,4 +18,7 @@ label: Link
 icon_uuid: null
 icon_default: null
 description: 'Create a link to internal or external content.'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

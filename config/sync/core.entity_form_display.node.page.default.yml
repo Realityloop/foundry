@@ -4,22 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_content
-    - field.field.node.page.field_content_supplementary
     - field.field.node.page.field_description
-    - field.field.node.page.field_display
     - field.field.node.page.field_display_title
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_tags
     - node.type.page
   module:
-    - entity_display_mode
     - field_group
     - layout_paragraphs
     - media_library
     - metatag
-    - paragraphs
-    - paragraphs_ee
-    - paragraphs_features
     - path
 third_party_settings:
   field_group:
@@ -76,36 +70,6 @@ content:
       require_layouts: 1
       empty_message: 'Click add section and select a layout for the content components within that section. You can add multiple sections.'
     third_party_settings: {  }
-  field_content_supplementary:
-    type: paragraphs
-    weight: 13
-    region: content
-    settings:
-      title: Content
-      title_plural: Content
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings:
-      paragraphs_features:
-        add_in_between: true
-        add_in_between_link_count: 0
-        delete_confirmation: true
-        split_text: false
-        show_drag_and_drop: true
-      paragraphs_ee:
-        paragraphs_ee:
-          dialog_off_canvas: false
-          dialog_style: tiles
-          easy_access_count: 0
   field_description:
     type: string_textarea
     weight: 5
@@ -127,12 +91,6 @@ content:
         maxlength_js_truncate_html: false
       advanced_text_formatter:
         show_token_tree: 0
-  field_display:
-    type: entity_display_mode_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 6
@@ -175,6 +133,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

@@ -209,4 +209,7 @@ settings:
   smart_date_rule:
     handler: 'default:smart_date_rule'
     handler_settings: {  }
+  oauth2_scope:
+    handler: 'default:oauth2_scope'
+    handler_settings: {  }
 field_type: dynamic_entity_reference

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.field_article_category
     - field.field.node.article.field_article_type
     - field.field.node.article.field_content
-    - field.field.node.article.field_content_supplementary
     - field.field.node.article.field_description
     - field.field.node.article.field_display_title
     - field.field.node.article.field_image
@@ -60,7 +59,6 @@ hidden:
   field_article_category: true
   field_article_type: true
   field_content: true
-  field_content_supplementary: true
   field_meta_tags: true
   langcode: true
   links: true

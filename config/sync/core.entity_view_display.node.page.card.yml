@@ -5,9 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.page.field_content
-    - field.field.node.page.field_content_supplementary
     - field.field.node.page.field_description
-    - field.field.node.page.field_display
     - field.field.node.page.field_display_title
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_tags
@@ -49,8 +47,6 @@ content:
 hidden:
   content_moderation_control: true
   field_content: true
-  field_content_supplementary: true
-  field_display: true
   field_meta_tags: true
   langcode: true
   links: true
