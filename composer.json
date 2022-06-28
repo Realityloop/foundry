@@ -54,6 +54,7 @@
         "drupal/jsonapi_node_preview_tab": "^1.0@beta",
         "drupal/layout_paragraphs": "^2.0@beta",
         "drupal/length_indicator": "^1.2",
+        "drupal/linkit": "^6.0",
         "drupal/linky": "^1.0",
         "drupal/linky_revision_ui": "^2.127",
         "drupal/linkychecker": "^2.0",
@@ -199,7 +200,8 @@
             },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3259729": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/60.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff"
+                "https://www.drupal.org/projectc/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff",
+                "https://www.drupal.org/project/layout_paragraphs/issues/3265794": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/84.diff"
             },
             "drupal/metatag": {
                 "https://www.drupal.org/project/metatag/issues/2945817#comment-14420231": "https://www.drupal.org/files/issues/2022-02-21/metatag-n2945817-143.patch"

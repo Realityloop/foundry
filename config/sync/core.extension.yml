@@ -76,6 +76,7 @@ module:
   layout_paragraphs_library: 0
   length_indicator: 0
   link: 0
+  linkit: 0
   linky: 0
   linky_revision_ui: 0
   linkychecker: 0
