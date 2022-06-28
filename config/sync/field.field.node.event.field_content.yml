@@ -52,9 +52,6 @@ settings:
       jumbotron:
         weight: -18
         enabled: true
-      layout:
-        weight: 17
-        enabled: false
       link:
         weight: -17
         enabled: true

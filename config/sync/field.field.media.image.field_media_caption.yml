@@ -18,7 +18,7 @@ bundle: image
 label: Caption
 description: "Alt text is a description of what an image shows, eg. 'Small dog'. \r\nThe caption should convey information as to why you have placed the image, it usually include image title and credits, who is shown in the photo, etc. eg. 'Rufus the Corgi as a puppy. Photo taken by Brian Gilbert'"
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

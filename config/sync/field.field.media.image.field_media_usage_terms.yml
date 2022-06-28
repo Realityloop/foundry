@@ -12,7 +12,7 @@ bundle: image
 label: 'Usage Terms & Conditions'
 description: 'Please describe any limitations in usage of this image.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

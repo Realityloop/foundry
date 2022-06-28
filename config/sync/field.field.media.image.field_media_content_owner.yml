@@ -12,7 +12,7 @@ bundle: image
 label: 'Content owner'
 description: 'Enter the person or role that is primary contact regarding this image.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

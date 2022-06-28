@@ -67,6 +67,7 @@
         "drupal/memcache": "^2.3",
         "drupal/node_edit_protection": "^1.0",
         "drupal/oembed_providers": "^2.0",
+        "drupal/paragraphs_asymmetric_translation_widgets": "^1.0",
         "drupal/paragraphs_ee": "^2.0",
         "drupal/pathauto": "^1.10",
         "drupal/permissions_filter": "^1.2",
@@ -203,11 +204,21 @@
                 "https://www.drupal.org/projectc/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff",
                 "https://www.drupal.org/project/layout_paragraphs/issues/3265794": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/84.diff"
             },
+            "drupal/linkit": {
+                "https://www.drupal.org/project/linkit/issues/3022261#comment-14257900": "https://www.drupal.org/files/issues/2021-10-15/3022261_linkit_add-better-support-for-linking-to-anchors_22.patch"
+            },
             "drupal/metatag": {
                 "https://www.drupal.org/project/metatag/issues/2945817#comment-14420231": "https://www.drupal.org/files/issues/2022-02-21/metatag-n2945817-143.patch"
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff"
+            },
+            "drupal/paragraphs": {
+                "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13918715": "https://www.drupal.org/files/issues/2020-11-27/paragraphs_support_asym_translations-2904705-122.patch"
+            },
+            "drupal/paragraphs_asymmetric_translation_widgets": {
+                "https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3175491#comment-13891174": "https://www.drupal.org/files/issues/2020-11-03/3175491-2.patch",
+                "https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3180118#comment-14188544": "https://www.drupal.org/files/issues/2021-08-12/3180118-7.patch"
             }
         }
     }

@@ -21,7 +21,7 @@ bundle: article
 label: Content
 description: 'Items added will display in the primary content region of the page.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -52,9 +52,6 @@ settings:
       jumbotron:
         weight: -17
         enabled: true
-      layout:
-        weight: 17
-        enabled: false
       link:
         weight: -16
         enabled: true

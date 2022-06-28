@@ -12,7 +12,7 @@ bundle: image
 label: Description
 description: 'Enter a very short description to help editors find relevant media.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

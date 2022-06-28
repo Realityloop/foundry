@@ -12,7 +12,7 @@ bundle: entity_reference
 label: 'Title override'
 description: 'Override the title used for the link.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

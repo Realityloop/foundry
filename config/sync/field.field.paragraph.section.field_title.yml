@@ -12,7 +12,7 @@ bundle: section
 label: 'Section title'
 description: '<p>If populated this will be displayed as a H2 above the section. <br />It will also be used to generate in page contents listing.</p>'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
