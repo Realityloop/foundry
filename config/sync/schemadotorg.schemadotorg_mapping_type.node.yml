@@ -1,0 +1,398 @@
+uuid: ac3b72d3-24f8-4431-94c7-b53e796a27b8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 001WYjWeqYxAXjuBpbYcNtbop4GkezQsurmqMCTCvYg
+id: node
+target_entity_type_id: node
+multiple: false
+recommended_schema_types:
+  quick_start:
+    label: 'Quick Start'
+    types:
+      - Place
+      - Organization
+      - Person
+      - Event
+      - FAQPage
+      - HowTo
+      - Recipe
+  common:
+    label: Common
+    types:
+      - Place
+      - Organization
+      - Person
+      - Event
+  web:
+    label: Web
+    types:
+      - WebPage
+      - WebSite
+      - FAQPage
+      - MediaGallery
+      - ImageGallery
+      - VideoGallery
+  content:
+    label: Content
+    types:
+      - Article
+      - HowTo
+      - SpecialAnnouncement
+      - ItemList
+  organization:
+    label: Organization
+    types:
+      - LocalBusiness
+      - LodgingBusiness
+      - Service
+      - JobPosting
+  education:
+    label: Education
+    types:
+      - EducationalOrganization
+      - CourseInstance
+      - Course
+  food:
+    label: Food
+    types:
+      - FoodEstablishment
+      - Menu
+      - Recipe
+      - Diet
+  entertainment:
+    label: Entertainment
+    types:
+      - Movie
+      - TVSeries
+      - TVSeason
+      - TVEpisode
+      - PodcastSeries
+      - PodcastSeason
+      - PodcastEpisode
+  medical_organization:
+    label: 'Medical organization'
+    types:
+      - MedicalTest
+      - MedicalWebPage
+      - Hospital
+      - MedicalBusiness
+      - MedicalClinic
+      - DiagnosticLab
+      - Physician
+  medical_information:
+    label: 'Medical information'
+    types:
+      - HealthTopicContent
+      - Drug
+      - DietarySupplement
+      - MedicalStudy
+      - MedicalTrial
+      - MedicalCondition
+default_schema_types:
+  article: Article
+  page: WebPage
+default_schema_type_properties:
+  CreativeWork:
+    - name
+    - description
+    - dateCreated
+    - dateModified
+default_schema_type_subtypes:
+  - AdministrativeArea
+  - Article
+  - CivicStructure
+  - EducationalOrganization
+  - Event
+  - FoodEstablishment
+  - LocalBusiness
+  - MedicalBusiness
+  - WebPage
+default_base_fields:
+  uuid: {  }
+  revision_uid: {  }
+  uid: {  }
+  promote: {  }
+  sticky: {  }
+  path: {  }
+  langcode:
+    - inLanguage
+  title:
+    - name
+    - headline
+    - title
+  body:
+    - description
+    - articleBody
+    - text
+  created:
+    - dateCreated
+  changed:
+    - dateModified
+  field_tags:
+    - keywords
+default_field_weights:
+  - seasonNumber
+  - episodeNumber
+  - episode
+  - containsSeason
+  - director
+  - actor
+  - productionCompany
+  - countryOfOrigin
+  - musicBy
+  - dietFeatures
+  - expertConsiderations
+  - physiologicalBenefits
+  - risks
+  - webFeed
+  - hasPart
+  - hasMenuSection
+  - itemListElement
+  - announcementLocation
+  - newsUpdatesAndGuidelines
+  - publicTransportClosuresInfo
+  - schoolClosuresInfo
+  - travelBans
+default_field_groups:
+  general:
+    label: 'General information'
+    properties:
+      - type
+      - title
+      - name
+      - headline
+      - alternativeHeadline
+      - description
+      - about
+      - articleBody
+      - text
+      - author
+  main_content:
+    label: 'Main content'
+    properties:
+      - mainEntity
+  media:
+    label: Media/Assets
+    properties:
+      - logo
+      - image
+      - photo
+      - primaryImageOfPage
+      - video
+      - trailer
+      - thumbnail
+      - thumbnailUrl
+      - contentUrl
+  biographical:
+    label: 'Biographical information'
+    properties:
+      - givenName
+      - additionalName
+      - familyName
+      - honorificPrefix
+      - honorificSuffix
+      - gender
+      - birthDate
+      - knowsLanguage
+      - nationality
+  professional:
+    label: 'Professional information'
+    properties:
+      - jobTitle
+      - worksFor
+      - affiliation
+      - alumniOf
+      - award
+  employment:
+    label: 'Employment information'
+    properties:
+      - benefits
+      - datePosted
+      - validThrough
+      - employmentType
+      - experienceRequirements
+      - qualifications
+      - responsibilities
+      - skills
+      - educationRequirements
+      - estimatedSalary
+      - jobBenefits
+      - jobLocation
+      - jobLocationType
+      - eligibilityToWorkRequirement
+      - employerOverview
+      - applicationContact
+  organization:
+    label: 'Organization information'
+    properties:
+      - nonprofitStatus
+      - founder
+      - employee
+      - member
+      - memberOf
+      - department
+      - parentOrganization
+      - alumni
+  education:
+    label: 'Education information'
+    properties:
+      - instructor
+      - teaches
+      - assesses
+      - numberOfCredits
+      - educationalLevel
+      - courseCode
+      - courseMode
+      - coursePrerequisites
+      - courseWorkload
+      - educationalCredentialAwarded
+      - occupationalCredentialAwarded
+      - educationalUse
+      - learningResourceType
+      - hasCourseInstance
+  business:
+    label: 'Business information'
+    properties:
+      - openingHours
+      - paymentAccepted
+      - priceRange
+      - acceptsReservations
+      - servesCuisine
+      - hasMenu
+      - availableService
+  service:
+    label: 'Service information'
+    properties:
+      - availableChannel
+      - hoursAvailable
+      - provider
+      - serviceArea
+      - serviceAudience
+      - serviceOutput
+      - serviceType
+  lodging:
+    label: 'Lodging information'
+    properties:
+      - starRating
+      - amenityFeature
+      - numberOfRooms
+      - checkinTime
+      - checkoutTime
+      - petsAllowed
+      - smokingAllowed
+  contact:
+    label: 'Contact information'
+    properties:
+      - address
+      - contactPoint
+      - telephone
+      - faxNumber
+      - email
+  event:
+    label: 'Event information'
+    properties:
+      - startDate
+      - endDate
+      - eventStatus
+      - duration
+      - performer
+      - audience
+      - attendee
+      - organizer
+      - location
+  medical:
+    label: 'Medical information'
+    properties:
+      - availableTest
+      - medicalAudience
+      - medicineSystem
+      - medicalSpecialty
+      - relevantSpecialty
+      - healthCondition
+      - hasHealthAspect
+      - usedToDiagnose
+      - affectedBy
+      - causeOf
+      - usesDevice
+      - hospitalAffiliation
+      - healthPlanNetworkId
+      - isAcceptingNewPatients
+  medical_substance:
+    label: 'Medical substance'
+    properties:
+      - proprietaryName
+      - nonProprietaryName
+      - isProprietary
+      - isAvailableGenerically
+      - drugClass
+      - drugUnit
+      - mechanismOfAction
+      - clinicalPharmacology
+      - overdosage
+      - foodWarning
+      - safetyConsideration
+      - targetPopulation
+      - dosageForm
+      - doseSchedule
+      - recommendedIntake
+      - maximumIntake
+      - manufacturer
+      - relatedDrug
+      - activeIngredient
+  medical_condition:
+    label: 'Medical condition'
+    properties:
+      - epidemiology
+      - riskFactor
+      - primaryPrevention
+      - secondaryPrevention
+      - signOrSymptom
+      - possibleTreatment
+      - possibleComplication
+      - expectedPrognosis
+  medical_study:
+    label: 'Medical study information'
+    properties:
+      - status
+      - studySubject
+      - trialDesign
+      - sponsor
+      - studyLocation
+  how_to:
+    label: 'How to'
+    properties:
+      - supply
+      - tool
+      - step
+      - prepTime
+      - performTime
+      - totalTime
+      - yield
+  recipe:
+    label: 'Recipe information'
+    properties:
+      - recipeCategory
+      - recipeCuisine
+      - recipeIngredient
+      - suitableForDiet
+      - recipeYield
+      - cookingMethod
+      - cookTime
+      - recipeInstructions
+      - nutrition
+  meta:
+    label: 'Meta data'
+    properties:
+      - keywords
+  links:
+    label: Links
+    properties:
+      - sameAs
+      - mentions
+      - relatedLink
+      - significantLink
+default_field_group_label_suffix: information
+default_field_group_form_type: details
+default_field_group_view_type: fieldset

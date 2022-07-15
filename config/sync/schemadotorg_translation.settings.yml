@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: uCgTin5aBbOAzOncSpywETzipZqSxO6XMOQLWeRmGrI
+excluded_schema_types: {  }
+excluded_schema_properties: {  }
+excluded_field_names: {  }
+included_field_names:
+  - changed
+  - created
+  - path
+  - status
+  - uid
+included_field_types:
+  - address
+  - image
+  - link
+  - string
+  - string_long
+  - text_long
+  - text_with_summary

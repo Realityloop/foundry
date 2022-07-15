@@ -1,0 +1,58 @@
+uuid: bfdf4e9c-7d5d-408f-85ef-179e7ddd1806
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_link
+    - node.type.page
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: node.page.field_related_link
+field_name: field_related_link
+entity_type: node
+bundle: page
+label: 'Related links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      link: link
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 11
+        enabled: false
+      card_group:
+        weight: 12
+        enabled: false
+      entity_reference:
+        weight: 13
+        enabled: false
+      from_library:
+        weight: 14
+        enabled: false
+      jumbotron:
+        weight: 15
+        enabled: false
+      link:
+        weight: 16
+        enabled: true
+      listing:
+        weight: 17
+        enabled: false
+      media:
+        weight: 18
+        enabled: false
+      section:
+        weight: 19
+        enabled: false
+      text_formatted:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

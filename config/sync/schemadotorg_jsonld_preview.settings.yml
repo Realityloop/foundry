@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: 0SQJQjA5FEEv_c9urNUriGHaWv_eBIzDuhKYCT4s-XY
+visibility:
+  request_path:
+    negate: true
+    pages: "*/layout\r\n/dashboard/*"

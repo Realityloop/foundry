@@ -27,6 +27,7 @@ module:
   config_filter: 0
   config_ignore: 0
   config_pages: 0
+  config_translation: 0
   consumers: 0
   contact: 0
   content_lock: 0
@@ -63,6 +64,7 @@ module:
   help: 0
   image: 0
   jsonapi: 0
+  jsonapi_extras: 0
   jsonapi_hypermedia: 0
   jsonapi_menu_items: 0
   jsonapi_node_preview: 0
@@ -81,6 +83,7 @@ module:
   linky_revision_ui: 0
   linkychecker: 0
   linkyreplacer: 0
+  locale: 0
   m4032404: 0
   masquerade: 0
   maxlength: 0
@@ -110,6 +113,19 @@ module:
   revision_log_default: 0
   robotstxt: 0
   role_delegation: 0
+  schemadotorg: 0
+  schemadotorg_descriptions: 0
+  schemadotorg_jsonld: 0
+  schemadotorg_jsonld_breadcrumb: 0
+  schemadotorg_jsonld_embed: 0
+  schemadotorg_jsonld_endpoint: 0
+  schemadotorg_jsonld_preview: 0
+  schemadotorg_mapping_set: 0
+  schemadotorg_paragraphs: 0
+  schemadotorg_report: 0
+  schemadotorg_taxonomy: 0
+  schemadotorg_translation: 0
+  schemadotorg_ui: 0
   serialization: 0
   shortcut: 0
   simple_oauth: 0

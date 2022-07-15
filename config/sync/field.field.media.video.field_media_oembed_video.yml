@@ -10,9 +10,9 @@ field_name: field_media_oembed_video
 entity_type: media
 bundle: video
 label: 'Remote video URL'
-description: ''
+description: 'An embedded video object.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

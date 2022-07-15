@@ -1,0 +1,51 @@
+uuid: 12039a61-b6ad-4203-b95b-493ff87a0415
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: CqcsgnobO5YmqjMRFaPlp4fkjzShjK7KJa-80b798wc
+id: taxonomy_term
+target_entity_type_id: taxonomy_term
+multiple: true
+recommended_schema_types:
+  term:
+    label: Term
+    types:
+      - DefinedTerm
+      - CategoryCode
+  menu:
+    label: Menu
+    types:
+      - MenuItem
+      - MenuSection
+      - Menu
+default_schema_types:
+  tags: DefinedTerm
+default_schema_type_properties: {  }
+default_schema_type_subtypes: {  }
+default_base_fields:
+  status: {  }
+  uuid:
+    - termCode
+  changed:
+    - dateModified
+  langcode:
+    - inLanguage
+  name:
+    - name
+  description:
+    - description
+default_field_weights:
+  - name
+  - description
+  - image
+  - offers
+  - suitableForDiet
+  - nutrition
+  - menuAddOn
+  - hasMenuItem
+  - hasMenuSection
+default_field_groups: {  }
+default_field_group_label_suffix: ''
+default_field_group_form_type: ''
+default_field_group_view_type: ''

@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: ZZIoFhNvKIFSoQB1tcB0TASu7Czu7MOots_JjIogdpg
+paragraphs_library:
+  - ContactPoint
+  - MedicalAudience
+  - MedicalContraindication
+  - MedicalIndication
+  - MedicalCause
+  - MedicalProcedure
+  - MedicalRiskFactor
+  - MedicalTherapy
+  - MedicalSignOrSymptom

@@ -1,0 +1,23 @@
+uuid: 376696a2-dd28-41b1-9880-093d67036478
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_copyright
+    - field.field.media.image.field_media_description
+    - field.field.media.image.field_media_image
+    - media.type.image
+id: media.image
+target_entity_type_id: media
+target_bundle: image
+type: ImageObject
+subtype: null
+properties:
+  field_media_copyright: copyrightNotice
+  created: dateCreated
+  changed: dateModified
+  field_media_description: description
+  field_media_image: image
+  langcode: inLanguage
+  name: name
+  thumbnail: thumbnail

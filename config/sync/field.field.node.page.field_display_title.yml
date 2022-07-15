@@ -10,8 +10,8 @@ field_name: field_display_title
 entity_type: node
 bundle: page
 label: Title
-description: ''
-required: false
+description: 'The name of the item. '
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

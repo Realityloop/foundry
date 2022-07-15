@@ -1,0 +1,182 @@
+uuid: dd57e9ef-69db-4a1c-9d3d-a62facc2858e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: oBSbZIhEWAhr-b8fetnmeB_S3EORYiP3RErd808UUyc
+id: paragraph
+target_entity_type_id: paragraph
+multiple: false
+recommended_schema_types:
+  quick_start:
+    label: 'Quick Start'
+    types:
+      - ContactPoint
+      - NutritionInformation
+      - Offer
+      - Question
+  common:
+    label: Common
+    types:
+      - ContactPoint
+      - PostalAddress
+      - Language
+      - Occupation
+  web:
+    label: Web
+    types:
+      - DefinedTerm
+      - ItemList
+  content:
+    label: Content
+    types:
+      - Question
+      - HowToSupply
+      - HowToTool
+      - HowToDirection
+      - HowToTip
+      - HowToStep
+      - HowToSection
+  organization:
+    label: Organization
+    types:
+      - OpeningHoursSpecification
+      - ServiceChannel
+      - ProgramMembership
+  food:
+    label: Food
+    types:
+      - NutritionInformation
+      - MenuSection
+      - MenuItem
+  education:
+    label: Education
+    types:
+      - EducationalOccupationalProgram
+  medical:
+    label: Medical
+    types:
+      - MedicalAudience
+      - MedicalContraindication
+      - MedicalIndication
+      - MedicalCause
+      - MedicalProcedure
+      - MedicalRiskFactor
+      - MedicalTest
+      - MedicalTherapy
+      - MedicalSignOrSymptom
+default_schema_types:
+  - MedicalIndication
+  - MedicalProcedure
+  - MedicalStudy
+  - MedicalTest
+default_schema_type_properties: {  }
+default_schema_type_subtypes: {  }
+default_base_fields:
+  uuid: {  }
+  created: {  }
+  langcode:
+    - inLanguage
+default_field_weights:
+  - name
+  - title
+  - alternateName
+  - description
+  - text
+  - acceptedAnswer
+  - image
+  - logo
+  - slogan
+  - author
+  - contactType
+  - telephone
+  - email
+  - streetAddress
+  - postOfficeBoxNumber
+  - addressLocality
+  - addressRegion
+  - addressCountry
+  - postalCode
+  - startDate
+  - endDate
+  - dayOfWeek
+  - opens
+  - hoursAvailable
+  - closes
+  - termCode
+  - value
+  - valueReference
+  - unitText
+  - unitCode
+  - currency
+  - prepTime
+  - performTime
+  - totalTime
+  - requiredQuantity
+  - servingSize
+  - calories
+  - fatContent
+  - saturatedFatContent
+  - unsaturatedFatContent
+  - transFatContent
+  - cholesterolContent
+  - sodiumContent
+  - carbohydrateContent
+  - fiberContent
+  - sugarContent
+  - proteinContent
+  - itemListElement
+  - itemReviewed
+  - reviewRating
+  - reviewBody
+  - positiveNotes
+  - negativeNotes
+  - hasMenuItem
+  - offers
+  - price
+  - suitableForDiet
+  - datePosted
+  - validThrough
+  - aggregateRating
+  - programName
+  - programType
+  - programPrerequisites
+  - member
+  - membershipNumber
+  - roleName
+  - audienceType
+  - timeOfDay
+  - timeToComplete
+  - affectedBy
+  - applicationDeadline
+  - applicationStartDate
+  - educationalCredentialAwarded
+  - educationalProgramMode
+  - numberOfCredits
+  - monthsOfExperience
+  - maximumEnrollment
+  - namedPosition
+  - occupationalCategory
+  - hostingOrganization
+  - provider
+  - ratingExplanation
+  - ratingValue
+  - review
+  - epidemiology
+  - primaryPrevention
+  - possibleTreatment
+  - bodyLocation
+  - procedureType
+  - preparation
+  - howPerformed
+  - followup
+  - causeOf
+  - hasCourse
+  - healthCondition
+  - increasesRiskOf
+  - usedToDiagnose
+  - usesDevice
+default_field_groups: {  }
+default_field_group_label_suffix: ''
+default_field_group_form_type: ''
+default_field_group_view_type: fieldset

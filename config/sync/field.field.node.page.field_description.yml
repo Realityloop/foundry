@@ -1,10 +1,17 @@
-uuid: 041ccb1e-2f83-4137-ac02-57e5193f55a6
+uuid: b8a6edef-d458-45b7-afb6-f4057357d665
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_description
     - node.type.page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - formatted
 id: node.page.field_description
 field_name: field_description
 entity_type: node
@@ -15,5 +22,7 @@ required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

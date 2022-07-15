@@ -7,8 +7,6 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.video
-    - node.type.article
-    - node.type.event
     - node.type.page
     - taxonomy.vocabulary.article_category
   module:
@@ -56,9 +54,7 @@ permissions:
   - 'create content translations'
   - 'create terms in article_category'
   - 'create url aliases'
-  - 'delete any article content'
   - 'delete any document media'
-  - 'delete any event content'
   - 'delete any file'
   - 'delete any image media'
   - 'delete any linky revisions'
@@ -79,9 +75,7 @@ permissions:
   - 'notify of path changes'
   - 'revert all revisions'
   - 'revert any linky revisions'
-  - 'revert article revisions'
   - 'revert document media revisions'
-  - 'revert event revisions'
   - 'revert image media revisions'
   - 'revert page revisions'
   - 'revert video media revisions'

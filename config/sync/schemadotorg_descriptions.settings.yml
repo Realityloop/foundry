@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: fItDDphHgthiO6CyUEKMmsj6AhMp01uOR6Y2H4-crK8
+trim_descriptions: true
+custom_descriptions:
+  itemListElement: null
+  mainEntity: null
+  MenuItem--offers: 'The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.'

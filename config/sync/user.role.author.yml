@@ -7,8 +7,6 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.video
-    - node.type.article
-    - node.type.event
     - node.type.page
     - taxonomy.vocabulary.article_category
   module:
@@ -45,10 +43,8 @@ permissions:
   - 'access shortcuts'
   - 'access toolbar'
   - 'add linky entities'
-  - 'create article content'
   - 'create content translations'
   - 'create document media'
-  - 'create event content'
   - 'create image media'
   - 'create page content'
   - 'create paragraph content card'
@@ -74,9 +70,7 @@ permissions:
   - 'delete paragraph content text_formatted'
   - 'delete paragraph content text_markdown'
   - 'delete terms in article_category'
-  - 'edit any article content'
   - 'edit any document media'
-  - 'edit any event content'
   - 'edit any image media'
   - 'edit any page content'
   - 'edit any video media'
@@ -88,9 +82,7 @@ permissions:
   - 'take_ownership_on_clone linky entity'
   - 'take_ownership_on_clone media entity'
   - 'take_ownership_on_clone node entity'
-  - 'translate article node'
   - 'translate article taxonomy_term'
-  - 'translate event node'
   - 'translate page node'
   - 'update content translations'
   - 'update paragraph content card'
@@ -107,9 +99,7 @@ permissions:
   - 'view all media revisions'
   - 'view any linky history'
   - 'view any linky revisions'
-  - 'view article revisions'
   - 'view document media revisions'
-  - 'view event revisions'
   - 'view image media revisions'
   - 'view page revisions'
   - 'view the administration theme'

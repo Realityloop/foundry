@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_link
-    - node.type.article
-    - node.type.event
     - node.type.page
     - paragraphs.paragraphs_type.link
   module:
@@ -25,14 +23,12 @@ settings:
     handler: 'default:node'
     handler_settings:
       target_bundles:
-        article: article
-        event: event
         page: page
       sort:
         field: _none
         direction: ASC
       auto_create: false
-      auto_create_bundle: article
+      auto_create_bundle: null
   linky:
     handler: 'default:linky'
     handler_settings:
@@ -214,5 +210,14 @@ settings:
     handler_settings: {  }
   linkit_profile:
     handler: 'default:linkit_profile'
+    handler_settings: {  }
+  jsonapi_resource_config:
+    handler: 'default:jsonapi_resource_config'
+    handler_settings: {  }
+  schemadotorg_mapping:
+    handler: 'default:schemadotorg_mapping'
+    handler_settings: {  }
+  schemadotorg_mapping_type:
+    handler: 'default:schemadotorg_mapping_type'
     handler_settings: {  }
 field_type: dynamic_entity_reference

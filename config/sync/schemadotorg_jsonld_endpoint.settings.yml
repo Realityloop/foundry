@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: HN8xJ5_eG8tpqebITsMDUV61dYwopWHeZMBkrHhmJN4
+entity_type_endpoints:
+  block_content: block
+  node: content

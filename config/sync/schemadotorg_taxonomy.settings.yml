@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: DBwPLSQG7pwA3F_yut-d12I3LNX87mbr0pAAzTqoWgQ
+property_vocabularies:
+  recipeCategory:
+    id: recipe_category
+    label: 'Recipe category'

@@ -1,0 +1,25 @@
+uuid: ced64072-fffe-4bbc-8d8c-37d0eed36229
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_description
+    - field.field.node.page.field_display_title
+    - field.field.node.page.field_image
+    - field.field.node.page.field_related_link
+    - field.field.node.page.field_significant_link
+    - node.type.page
+id: node.page
+target_entity_type_id: node
+target_bundle: page
+type: WebPage
+subtype: true
+properties:
+  created: dateCreated
+  changed: dateModified
+  field_description: description
+  langcode: inLanguage
+  field_display_title: name
+  field_image: primaryImageOfPage
+  field_related_link: relatedLink
+  field_significant_link: significantLink

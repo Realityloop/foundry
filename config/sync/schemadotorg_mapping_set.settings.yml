@@ -1,0 +1,116 @@
+_core:
+  default_config_hash: gwZLLNmyZmGEN_bHIu4de-9rT0GswR9MOvM4-66eUuo
+sets:
+  required:
+    label: Required
+    types:
+      - 'media:ImageObject'
+      - 'media:VideoObject'
+      - 'taxonomy_term:DefinedTerm'
+      - 'paragraph:ContactPoint'
+      - 'node:Person'
+  common:
+    label: Common
+    types:
+      - 'media:AudioObject'
+      - 'media:DataDownload'
+      - 'media:ImageObject'
+      - 'media:VideoObject'
+      - 'taxonomy_term:DefinedTerm'
+      - 'paragraph:ContactPoint'
+      - 'node:Place'
+      - 'node:Organization'
+      - 'node:Person'
+      - 'node:Event'
+      - 'node:Article'
+      - 'node:WebPage'
+  block:
+    label: Block
+    types:
+      - 'block_content:Quotation'
+      - 'block_content:WebContent'
+      - 'block_content:ItemList'
+  howto:
+    label: 'How to'
+    types:
+      - 'paragraph:HowToSupply'
+      - 'paragraph:HowToTool'
+      - 'paragraph:HowToDirection'
+      - 'paragraph:HowToTip'
+      - 'paragraph:HowToStep'
+      - 'paragraph:HowToSection'
+      - 'node:HowTo'
+  food:
+    label: Food
+    types:
+      - 'paragraph:NutritionInformation'
+      - 'paragraph:MenuItem'
+      - 'paragraph:MenuSection'
+      - 'node:Menu'
+      - 'node:Recipe'
+      - 'node:FoodEstablishment'
+  entertainment:
+    label: Entertainment
+    types:
+      - 'node:Movie'
+      - 'node:TVEpisode'
+      - 'node:TVSeason'
+      - 'node:TVSeries'
+      - 'node:PodcastEpisode'
+      - 'node:PodcastSeason'
+      - 'node:PodcastSeries'
+  web:
+    label: Web
+    types:
+      - 'paragraph:Question'
+      - 'node:WebPage'
+      - 'node:WebSite'
+      - 'node:FAQPage'
+      - 'node:MediaGallery'
+      - 'node:ImageGallery'
+      - 'node:VideoGallery'
+  education:
+    label: Education
+    types:
+      - 'node:EducationalOrganization'
+      - 'node:CourseInstance'
+      - 'node:Course'
+  organization:
+    label: Organization
+    types:
+      - 'paragraph:OpeningHoursSpecification'
+      - 'paragraph:Rating'
+      - 'paragraph:ServiceChannel'
+      - 'node:Service'
+      - 'node:JobPosting'
+      - 'node:LocalBusiness'
+      - 'node:LodgingBusiness'
+  medical_organization:
+    label: 'Medical organization'
+    types:
+      - 'paragraph:MedicalAudience'
+      - 'node:MedicalTest'
+      - 'node:MedicalWebPage'
+      - 'node:Hospital'
+      - 'node:MedicalBusiness'
+      - 'node:MedicalClinic'
+      - 'node:DiagnosticLab'
+      - 'node:Physician'
+  medical_information:
+    label: 'Medical information'
+    types:
+      - 'paragraph:MedicalDevice'
+      - 'paragraph:MedicalContraindication'
+      - 'paragraph:MedicalIndication'
+      - 'paragraph:MedicalCause'
+      - 'paragraph:MedicalProcedure'
+      - 'paragraph:MedicalRiskFactor'
+      - 'paragraph:MedicalTherapy'
+      - 'paragraph:MedicalSignOrSymptom'
+      - 'paragraph:MedicalTest'
+      - 'node:HealthTopicContent'
+      - 'node:Drug'
+      - 'node:DietarySupplement'
+      - 'node:MedicalStudy'
+      - 'node:MedicalTrial'
+      - 'node:MedicalCondition'
