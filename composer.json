@@ -28,6 +28,7 @@
         "drupal/config_filter": "^2.3",
         "drupal/config_ignore": "^3.0",
         "drupal/config_pages": "^2.9",
+        "drupal/config_rewrite": "^1.5",
         "drupal/content_lock": "^2.2",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
@@ -194,7 +195,7 @@
                 "Preview link accidentally closes the media library https://www.drupal.org/project/focal_point/issues/3162210#comment-13855854": "https://www.drupal.org/files/issues/2020-10-11/preview_link_accidentally_closes_the_media_library-3162210-19.patch"
             },
             "drupal/gin": {
-                "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "./patch/3217391.diff"
+                "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "https://git.drupalcode.org/project/gin/-/merge_requests/92.diff"
             },
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "https://git.drupalcode.org/project/gin_toolbar/-/merge_requests/9.diff"
@@ -215,10 +216,6 @@
             },
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13918715": "https://www.drupal.org/files/issues/2020-11-27/paragraphs_support_asym_translations-2904705-122.patch"
-            },
-            "drupal/paragraphs_asymmetric_translation_widgets": {
-                "https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3175491#comment-13891174": "https://www.drupal.org/files/issues/2020-11-03/3175491-2.patch",
-                "https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3180118#comment-14188544": "https://www.drupal.org/files/issues/2021-08-12/3180118-7.patch"
             }
         }
     }
