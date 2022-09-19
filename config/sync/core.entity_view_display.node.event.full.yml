@@ -10,10 +10,13 @@ dependencies:
     - field.field.node.event.field_display_title
     - field.field.node.event.field_image
     - field.field.node.event.field_meta_tags
+    - field.field.node.event.field_related_link
+    - field.field.node.event.field_significant_link
     - node.type.event
   module:
     - layout_paragraphs
     - smart_date
+    - text
     - title_field_for_manage_display
     - user
 id: node.event.full
@@ -41,6 +44,13 @@ content:
       add_classes: false
       time_wrapper: true
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 2
     region: content
   field_display_title:
@@ -54,8 +64,9 @@ content:
     weight: 0
     region: content
 hidden:
-  field_description: true
   field_image: true
   field_meta_tags: true
+  field_related_link: true
+  field_significant_link: true
   langcode: true
   links: true

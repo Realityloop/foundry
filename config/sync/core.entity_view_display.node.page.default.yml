@@ -8,12 +8,63 @@ dependencies:
     - field.field.node.page.field_display_title
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_page_subtype
+    - field.field.node.page.field_related_link
+    - field.field.node.page.field_significant_link
     - node.type.page
   module:
+    - entity_reference_revisions
+    - field_group
     - layout_paragraphs
     - metatag
+    - options
+    - text
     - title_field_for_manage_display
     - user
+third_party_settings:
+  field_group:
+    group_general:
+      children:
+        - field_page_subtype
+        - field_display_title
+        - field_description
+      label: 'General information'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_media:
+      children:
+        - field_image
+      label: Media/Assets
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+    group_links:
+      children:
+        - field_related_link
+        - field_significant_link
+      label: Links
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -34,11 +85,11 @@ content:
     weight: 2
     region: content
   field_description:
-    type: basic_string
-    label: hidden
+    type: text_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 10
     region: content
   field_display_title:
     type: title_value_field_formatter
@@ -48,7 +99,7 @@ content:
       classes: ''
       linked: 0
     third_party_settings: {  }
-    weight: 0
+    weight: 9
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -57,14 +108,39 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
+    region: content
+  field_page_subtype:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_related_link:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     weight: 5
+    region: content
+  field_significant_link:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   langcode: true
