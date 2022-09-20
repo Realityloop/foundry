@@ -34,7 +34,7 @@
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "~9.4",
         "drupal/diff": "^1.0",
-        "drupal/documentation_generator": "^2.0",
+        "drupal/documentation_generator": "2.0.x-dev@dev",
         "drupal/druxt": "^1.1.1",
         "drupal/dynamic_entity_reference": "^2.0",
         "drupal/entity_browser": "^2.6",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa486e7b6c5a43edea06ae0ee748141f",
+    "content-hash": "983ed24d91fbcb62442610c3c95997df",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1488,21 +1488,22 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v1.2.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "5031045d9640b38cfc14aac9667470df09c9e090"
+                "reference": "79573d8b8a141ec8a17312515de8740eed014fa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/5031045d9640b38cfc14aac9667470df09c9e090",
-                "reference": "5031045d9640b38cfc14aac9667470df09c9e090",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/79573d8b8a141ec8a17312515de8740eed014fa9",
+                "reference": "79573d8b8a141ec8a17312515de8740eed014fa9",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-mbstring": "*",
+                "masterminds/html5": "^2.0",
                 "phenx/php-font-lib": "^0.5.4",
                 "phenx/php-svg-lib": "^0.3.3 || ^0.4.0",
                 "php": "^7.1 || ^8.0"
@@ -1551,9 +1552,9 @@
             "homepage": "https://github.com/dompdf/dompdf",
             "support": {
                 "issues": "https://github.com/dompdf/dompdf/issues",
-                "source": "https://github.com/dompdf/dompdf/tree/v1.2.2"
+                "source": "https://github.com/dompdf/dompdf/tree/v2.0.0"
             },
-            "time": "2022-04-27T13:50:54+00:00"
+            "time": "2022-06-21T21:14:57+00:00"
         },
         {
             "name": "drupal-tome/tome_drush",
@@ -2955,31 +2956,28 @@
         },
         {
             "name": "drupal/documentation_generator",
-            "version": "2.0.4",
+            "version": "dev-2.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/documentation_generator.git",
-                "reference": "2.0.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/documentation_generator-2.0.4.zip",
-                "reference": "2.0.4",
-                "shasum": "9a62798783d21dfb68ec817b125573742ac8a722"
+                "reference": "afe70d4c3a3152eb2ae6e8cc29fe3350ac9e8a3a"
             },
             "require": {
-                "dompdf/dompdf": "^1.1.1",
-                "drupal/core": "^8.8 || ^9",
+                "dompdf/dompdf": "^2.0.0",
+                "drupal/core": "^9.3 || ^10",
                 "phpoffice/phpword": "^0.18.2"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.0.x": "2.0.x-dev"
+                },
                 "drupal": {
-                    "version": "2.0.4",
-                    "datestamp": "1641711261",
+                    "version": "2.0.4+2-dev",
+                    "datestamp": "1663668563",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2989,12 +2987,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nixou",
-                    "homepage": "https://www.drupal.org/user/2304734"
-                },
-                {
                     "name": "gaurav.kapoor",
                     "homepage": "https://www.drupal.org/user/3495331"
+                },
+                {
+                    "name": "Nixou",
+                    "homepage": "https://www.drupal.org/user/2304734"
                 }
             ],
             "description": "Allows administrators to generate documentation describing site features.",
@@ -16945,6 +16943,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal-tome/tome_drush": 20,
+        "drupal/documentation_generator": 20,
         "drupal/gin": 10,
         "drupal/gin_toolbar": 10,
         "drupal/jsonapi_node_preview": 10,
