@@ -180,7 +180,8 @@
         "patches": {
             "drupal/core": {
                 "https://www.drupal.org/project/drupal/issues/3247553#comment-14280389": "https://www.drupal.org/files/issues/2021-11-04/3247553-3.patch",
-                "https://www.drupal.org/project/drupal/issues/2350939#comment-14289157": "https://www.drupal.org/files/issues/2021-11-12/2350939-202.patch"
+                "https://www.drupal.org/project/drupal/issues/2350939#comment-14289157": "https://www.drupal.org/files/issues/2021-11-12/2350939-202.patch",
+                "#3312270 - Twig LoaderError after upgrading Twig to 2.15.3": "https://www.drupal.org/files/issues/2022-09-28/3312270-claro-menu-twig-fix.patch"
             },
             "drupal/entity_clone": {
                 "Batch field creation https://www.drupal.org/project/entity_clone/issues/2845094#comment-14163283": "https://git.drupalcode.org/project/entity_clone/-/merge_requests/8.diff"
