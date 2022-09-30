@@ -4,5 +4,8 @@
     "group:allNonMajor",
     ":semanticCommitTypeAll(chore)"
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "ignoreDeps": [
+    "drupal/gin_toolbar"
+  ]
 }
