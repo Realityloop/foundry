@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6b523d8b45300467259a583e2d756f0",
+    "content-hash": "8c1ed0036b0fb532e2f9c7fd15734943",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4440,32 +4440,30 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "6.0.0-beta3",
+            "version": "dev-6.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "6.0.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.0-beta3.zip",
-                "reference": "6.0.0-beta3",
-                "shasum": "39a5bf54cbc88324d788a573df7b3fecf7622065"
+                "reference": "d95a39274cb73b0096e16fbbc9d5abe80e790c79"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9.4 || ^10"
             },
             "require-dev": {
+                "drupal/ckeditor": "*",
                 "drupal/imce": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-6.0.x": "6.0.x-dev"
+                },
                 "drupal": {
-                    "version": "6.0.0-beta3",
-                    "datestamp": "1632946984",
+                    "version": "6.0.0-beta3+7-dev",
+                    "datestamp": "1667937361",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16977,6 +16975,7 @@
         "drupal/jsonapi_node_preview": 10,
         "drupal/jsonapi_node_preview_tab": 10,
         "drupal/layout_paragraphs": 10,
+        "drupal/linkit": 20,
         "drupal/scheduled_transitions": 20
     },
     "prefer-stable": true,

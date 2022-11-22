@@ -2,6 +2,10 @@ uuid: 85e24346-5ac3-4523-8ab3-634dadecb6fb
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.approver
+    - user.role.authenticated
+    - user.role.author
   module:
     - admin_audit_trail
     - coffee

@@ -7,7 +7,7 @@ dependencies:
     - linky
 name: Formatted
 format: formatted
-weight: -10
+weight: -9
 filters:
   filter_html:
     id: filter_html
@@ -15,7 +15,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <a href hreflang href data-entity-substitution data-entity-type data-entity-uuid title>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <cite> <dl> <dt> <dd> <blockquote cite> <ul type> <ol type start> <h5 id> <h6 id> <a hreflang title href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <code> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   linky_direct_link_filter:
