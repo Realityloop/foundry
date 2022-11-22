@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.article.field_article_category
-    - field.field.node.article.field_article_type
     - field.field.node.article.field_content
     - field.field.node.article.field_description
     - field.field.node.article.field_display_title
@@ -70,7 +69,6 @@ content:
     weight: 2
     region: content
 hidden:
-  field_article_type: true
   field_description: true
   field_meta_tags: true
   field_related_link: true

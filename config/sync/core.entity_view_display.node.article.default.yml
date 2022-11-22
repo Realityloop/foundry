@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_article_category
-    - field.field.node.article.field_article_type
     - field.field.node.article.field_content
     - field.field.node.article.field_description
     - field.field.node.article.field_display_title
@@ -155,5 +154,4 @@ content:
     weight: 5
     region: content
 hidden:
-  field_article_type: true
   langcode: true
