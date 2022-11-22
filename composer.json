@@ -210,7 +210,7 @@
                 "https://www.drupal.org/project/linkit/issues/3022261#comment-14257900": "https://www.drupal.org/files/issues/2021-10-15/3022261_linkit_add-better-support-for-linking-to-anchors_22.patch"
             },
             "drupal/metatag": {
-                "https://www.drupal.org/project/metatag/issues/2945817#comment-14420231": "https://www.drupal.org/files/issues/2022-02-21/metatag-n2945817-143.patch"
+                "https://www.drupal.org/project/metatag/issues/2945817#comment-14740067": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff"
