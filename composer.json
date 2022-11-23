@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.1.13",
         "composer/installers": "^2.2",
         "cweagans/composer-patches": "^1.7.2",
         "drupal-tome/tome_drush": "dev-master",
@@ -29,7 +29,7 @@
         "drupal/config_ignore": "^3.0",
         "drupal/config_pages": "^2.10",
         "drupal/config_rewrite": "^1.5",
-        "drupal/content_lock": "^2.2",
+        "drupal/content_lock": "^2.3.0",
         "drupal/core-composer-scaffold": "9.4.8",
         "drupal/core-project-message": "9.4.8",
         "drupal/core-recommended": "9.4.8",
@@ -86,7 +86,7 @@
         "drupal/title_field_for_manage_display": "^2.1",
         "drupal/tome": "^1.7",
         "drupal/transliterate_filenames": "^2.0.1",
-        "drupal/upgrade_status": "^3.17",
+        "drupal/upgrade_status": "^3.18.0",
         "drupal/username_enumeration_prevention": "^1.2",
         "drupal/viewfield": "^3.0"
     },
