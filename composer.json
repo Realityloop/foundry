@@ -22,7 +22,7 @@
         "drupal/admin_audit_trail": "^1.0.1",
         "drupal/admin_toolbar": "^3.2.1",
         "drupal/advanced_text_formatter": "^2.1.1",
-        "drupal/allowed_formats": "^1.5",
+        "drupal/allowed_formats": "^2.0.0",
         "drupal/anonymous_redirect": "^2.2",
         "drupal/coffee": "^1.2",
         "drupal/config_filter": "^2.4",
