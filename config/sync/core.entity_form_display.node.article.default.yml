@@ -14,8 +14,11 @@ dependencies:
     - field.field.node.article.field_video
     - node.type.article
   module:
+    - advanced_text_formatter
+    - allowed_formats
     - field_group
     - layout_paragraphs
+    - maxlength
     - media_library
     - metatag
     - path
@@ -25,7 +28,6 @@ third_party_settings:
     group_general:
       children:
         - langcode
-        - field_article_type
         - field_article_category
         - title
         - field_description
@@ -119,7 +121,18 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_summary: 150
+        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+      advanced_text_formatter:
+        show_token_tree: 0
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
   field_image:
     type: media_library_widget
     weight: 4

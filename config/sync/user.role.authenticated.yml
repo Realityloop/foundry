@@ -28,4 +28,3 @@ permissions:
   - 'view paragraph content media'
   - 'view paragraph content section'
   - 'view paragraph content text_formatted'
-  - 'view paragraph content text_markdown'
