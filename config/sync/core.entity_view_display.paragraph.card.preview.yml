@@ -1,0 +1,63 @@
+uuid: e4fb33c4-535b-4ebf-9db4-78d8fdf8ddc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.card.field_image
+    - field.field.paragraph.card.field_link
+    - field.field.paragraph.card.field_text_formatted
+    - field.field.paragraph.card.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.card
+  module:
+    - layout_builder
+    - linky
+    - media
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.card.preview
+targetEntityType: paragraph
+bundle: card
+mode: preview
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: linky_label
+    label: hidden
+    settings:
+      link: true
+      parent_entity_label_link_text: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text_formatted:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

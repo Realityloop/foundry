@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "438324da975f13a4d5b0231024ea1bee",
+    "content-hash": "b7c4752a5d9527c07dd8481ad7ca0e3a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5685,6 +5685,59 @@
             "homepage": "https://www.drupal.org/project/paragraphs_features",
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs_features"
+            }
+        },
+        {
+            "name": "drupal/paragraphs_viewmode",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/paragraphs_viewmode.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/paragraphs_viewmode-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "46b95d74c4bf33665d04e7ac01e58f158772294f"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/paragraphs": "^1.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1605320322",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                },
+                {
+                    "name": "mikelutz",
+                    "homepage": "https://www.drupal.org/user/2972409"
+                }
+            ],
+            "description": "Allows you to select the paragraph view mode on a per paragraph basis",
+            "homepage": "https://www.drupal.org/project/paragraphs_viewmode",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/paragraphs_viewmode",
+                "issues": "https://www.drupal.org/project/issues/paragraphs_viewmode"
             }
         },
         {
