@@ -1,0 +1,64 @@
+uuid: 8e51038a-2a35-4709-8b61-cc15f7d9937b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.promo
+    - paragraphs.paragraphs_type.text_formatted
+  module:
+    - entity_reference_revisions
+id: paragraph.promo.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: promo
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_formatted: text_formatted
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 13
+        enabled: false
+      card:
+        weight: 14
+        enabled: false
+      card_group:
+        weight: 15
+        enabled: false
+      entity_reference:
+        weight: 16
+        enabled: false
+      from_library:
+        weight: 17
+        enabled: false
+      jumbotron:
+        weight: 18
+        enabled: false
+      link:
+        weight: 19
+        enabled: false
+      listing:
+        weight: 20
+        enabled: false
+      media:
+        weight: 21
+        enabled: false
+      promo:
+        weight: 22
+        enabled: false
+      section:
+        weight: 23
+        enabled: false
+      text_formatted:
+        weight: 24
+        enabled: true
+field_type: entity_reference_revisions

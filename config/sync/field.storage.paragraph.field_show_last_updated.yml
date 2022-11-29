@@ -1,0 +1,18 @@
+uuid: fe29ef12-c807-4da9-9109-5a33254cf66d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_show_last_updated
+field_name: field_show_last_updated
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

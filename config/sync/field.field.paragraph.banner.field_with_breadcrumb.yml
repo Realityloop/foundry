@@ -1,0 +1,23 @@
+uuid: 1d276657-28bd-4adb-9e03-001310f90414
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_with_breadcrumb
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_with_breadcrumb
+field_name: field_with_breadcrumb
+entity_type: paragraph
+bundle: banner
+label: 'With breadcrumb'
+description: 'This should only be checked if this banner instance is the first content item within your page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

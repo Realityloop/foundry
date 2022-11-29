@@ -1,0 +1,23 @@
+uuid: 532e83c7-f135-4e59-8f2d-49f02a5a00e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_theme
+    - paragraphs.paragraphs_type.banner
+  module:
+    - options
+id: paragraph.banner.field_theme
+field_name: field_theme
+entity_type: paragraph
+bundle: banner
+label: Theme
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: dark
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 81edc916-88c5-4cc9-b6ba-3d8fd50b9cbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_decorative
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_decorative
+field_name: field_decorative
+entity_type: paragraph
+bundle: banner
+label: Decorative
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

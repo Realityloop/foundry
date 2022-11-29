@@ -1,0 +1,16 @@
+uuid: d8aafcdb-fb2b-4ccd-a1ab-4084ec3d8cbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      basics: basics
+id: promo
+label: Promo
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

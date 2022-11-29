@@ -1,22 +1,22 @@
-uuid: 1eb23877-9051-41c3-a9ca-1fe2aec628dc
+uuid: ef701fa6-65cc-4ce7-9998-ea17f658af0c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_content
-    - paragraphs.paragraphs_type.jumbotron
+    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.link
     - paragraphs.paragraphs_type.text_formatted
   module:
     - entity_reference_revisions
-id: paragraph.jumbotron.field_content
+id: paragraph.banner.field_content
 field_name: field_content
 entity_type: paragraph
-bundle: jumbotron
+bundle: banner
 label: Content
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -27,34 +27,37 @@ settings:
       text_formatted: text_formatted
     negate: 0
     target_bundles_drag_drop:
-      card:
-        weight: 11
-        enabled: false
-      card_group:
+      banner:
         weight: 12
         enabled: false
-      entity_reference:
+      card:
         weight: 13
         enabled: false
-      jumbotron:
+      card_group:
         weight: 14
         enabled: false
-      link:
+      entity_reference:
         weight: 15
-        enabled: true
-      media:
+        enabled: false
+      from_library:
         weight: 16
         enabled: false
-      section:
+      jumbotron:
         weight: 17
         enabled: false
-      text_formatted:
+      link:
         weight: 18
         enabled: true
-      text_markdown:
+      listing:
         weight: 19
-        enabled: true
-      text_plain:
+        enabled: false
+      media:
         weight: 20
+        enabled: false
+      section:
+        weight: 21
+        enabled: false
+      text_formatted:
+        weight: 22
         enabled: true
 field_type: entity_reference_revisions

@@ -1,0 +1,23 @@
+uuid: e4eeddec-1e93-493c-84d3-5588a51d7c7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_theme
+    - paragraphs.paragraphs_type.promo
+  module:
+    - options
+id: paragraph.promo.field_theme
+field_name: field_theme
+entity_type: paragraph
+bundle: promo
+label: Theme
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: dark
+default_value_callback: ''
+settings: {  }
+field_type: list_string

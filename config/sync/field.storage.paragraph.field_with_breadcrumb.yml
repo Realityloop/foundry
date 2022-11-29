@@ -1,0 +1,18 @@
+uuid: 337d92fa-a8d7-4084-b043-fa02f85b5e31
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_with_breadcrumb
+field_name: field_with_breadcrumb
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

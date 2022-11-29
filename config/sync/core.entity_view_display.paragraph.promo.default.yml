@@ -1,0 +1,52 @@
+uuid: 3be0cc84-3510-4e2e-8de6-f6c01e9d9051
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promo.field_content
+    - field.field.paragraph.promo.field_link
+    - field.field.paragraph.promo.field_theme
+    - field.field.paragraph.promo.field_title
+    - paragraphs.paragraphs_type.promo
+  module:
+    - dynamic_entity_reference
+    - entity_reference_revisions
+    - options
+id: paragraph.promo.default
+targetEntityType: paragraph
+bundle: promo
+mode: default
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link:
+    type: dynamic_entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_theme:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

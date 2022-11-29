@@ -1,0 +1,23 @@
+uuid: c7c11c04-8958-44ea-822d-658a166d77ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_last_updated
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_show_last_updated
+field_name: field_show_last_updated
+entity_type: paragraph
+bundle: banner
+label: 'Show Last Updated Date'
+description: "Date derived from last update of parent page.\r\neg: Last updated: 26 Oct 2020"
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
