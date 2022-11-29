@@ -16,6 +16,7 @@ dependencies:
   module:
     - layout_paragraphs
     - text
+    - title_field_for_manage_display
     - user
 id: node.page.full
 targetEntityType: node
@@ -39,10 +40,12 @@ content:
     weight: 1
     region: content
   field_display_title:
-    type: string
+    type: title_value_field_formatter
     label: hidden
     settings:
-      link_to_entity: false
+      tag: h1
+      classes: ''
+      linked: 0
     third_party_settings: {  }
     weight: 0
     region: content

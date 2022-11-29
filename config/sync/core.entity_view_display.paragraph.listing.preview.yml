@@ -1,0 +1,70 @@
+uuid: 09183c57-18b1-4eb8-b976-2215a48182ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.listing.field_listing
+    - paragraphs.paragraphs_type.listing
+  module:
+    - layout_builder
+    - layout_discovery
+    - viewfield
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e4c1c356-17ae-40c1-b101-ec03605796d4:
+            uuid: e4c1c356-17ae-40c1-b101-ec03605796d4
+            region: content
+            configuration:
+              id: 'field_block:paragraph:listing:field_listing'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewfield_title
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          c2411b3d-358a-46cc-b1fa-624fffcd71e9:
+            uuid: c2411b3d-358a-46cc-b1fa-624fffcd71e9
+            region: content
+            configuration:
+              id: 'field_block:paragraph:listing:type'
+              label: 'Component type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.listing.preview
+targetEntityType: paragraph
+bundle: listing
+mode: preview
+content:
+  field_listing:
+    type: viewfield_title
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -95,4 +95,121 @@ settings:
   smart_date_rule:
     handler: 'default:smart_date_rule'
     handler_settings: {  }
+  block:
+    handler: 'default:block'
+    handler_settings: {  }
+  block_content_type:
+    handler: 'default:block_content_type'
+    handler_settings: {  }
+  config_pages_type:
+    handler: 'default:config_pages_type'
+    handler_settings: {  }
+  contact_form:
+    handler: 'default:contact_form'
+    handler_settings: {  }
+  crop_type:
+    handler: 'default:crop_type'
+    handler_settings: {  }
+  editor:
+    handler: 'default:editor'
+    handler_settings: {  }
+  environment_indicator:
+    handler: 'default:environment_indicator'
+    handler_settings: {  }
+  field_config:
+    handler: 'default:field_config'
+    handler_settings: {  }
+  field_storage_config:
+    handler: 'default:field_storage_config'
+    handler_settings: {  }
+  filter_format:
+    handler: 'default:filter_format'
+    handler_settings: {  }
+  image_style:
+    handler: 'default:image_style'
+    handler_settings: {  }
+  configurable_language:
+    handler: 'default:configurable_language'
+    handler_settings: {  }
+  language_content_settings:
+    handler: 'default:language_content_settings'
+    handler_settings: {  }
+  linkit_profile:
+    handler: 'default:linkit_profile'
+    handler_settings: {  }
+  media_type:
+    handler: 'default:media_type'
+    handler_settings: {  }
+  metatag_defaults:
+    handler: 'default:metatag_defaults'
+    handler_settings: {  }
+  node_type:
+    handler: 'default:node_type'
+    handler_settings: {  }
+  oembed_provider:
+    handler: 'default:oembed_provider'
+    handler_settings: {  }
+  oembed_provider_bucket:
+    handler: 'default:oembed_provider_bucket'
+    handler_settings: {  }
+  shortcut_set:
+    handler: 'default:shortcut_set'
+    handler_settings: {  }
+  oauth2_token_type:
+    handler: 'default:oauth2_token_type'
+    handler_settings: {  }
+  simple_sitemap:
+    handler: 'default:simple_sitemap'
+    handler_settings: {  }
+  simple_sitemap_type:
+    handler: 'default:simple_sitemap_type'
+    handler_settings: {  }
+  simple_sitemap_engine:
+    handler: 'default:simple_sitemap_engine'
+    handler_settings: {  }
+  smart_date_format:
+    handler: 'default:smart_date_format'
+    handler_settings: {  }
+  action:
+    handler: 'default:action'
+    handler_settings: {  }
+  menu:
+    handler: 'default:menu'
+    handler_settings: {  }
+  taxonomy_vocabulary:
+    handler: 'default:taxonomy_vocabulary'
+    handler_settings: {  }
+  user_role:
+    handler: 'default:user_role'
+    handler_settings: {  }
+  pathauto_pattern:
+    handler: 'default:pathauto_pattern'
+    handler_settings: {  }
+  view:
+    handler: 'default:view'
+    handler_settings: {  }
+  paragraphs_type:
+    handler: 'default:paragraphs_type'
+    handler_settings: {  }
+  paragraphs_category:
+    handler: 'default:paragraphs_category'
+    handler_settings: {  }
+  date_format:
+    handler: 'default:date_format'
+    handler_settings: {  }
+  entity_form_display:
+    handler: 'default:entity_form_display'
+    handler_settings: {  }
+  entity_form_mode:
+    handler: 'default:entity_form_mode'
+    handler_settings: {  }
+  entity_view_display:
+    handler: 'default:entity_view_display'
+    handler_settings: {  }
+  entity_view_mode:
+    handler: 'default:entity_view_mode'
+    handler_settings: {  }
+  base_field_override:
+    handler: 'default:base_field_override'
+    handler_settings: {  }
 field_type: dynamic_entity_reference

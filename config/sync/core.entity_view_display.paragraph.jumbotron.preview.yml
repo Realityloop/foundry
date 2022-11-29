@@ -1,0 +1,99 @@
+uuid: d27d09aa-aef1-4274-8431-c5bf34a5de99
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.jumbotron.field_content
+    - field.field.paragraph.jumbotron.field_title
+    - paragraphs.paragraphs_type.jumbotron
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          005058f7-c44e-4156-a642-750e824be202:
+            uuid: 005058f7-c44e-4156-a642-750e824be202
+            region: content
+            configuration:
+              id: 'field_block:paragraph:jumbotron:field_title'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          d8f93405-46ca-4d68-bdd8-edfcc40cb711:
+            uuid: d8f93405-46ca-4d68-bdd8-edfcc40cb711
+            region: content
+            configuration:
+              id: 'field_block:paragraph:jumbotron:field_content'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: jumbotron
+                  link: ''
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          62b68fe5-05f4-4746-8919-a77dc21b65fa:
+            uuid: 62b68fe5-05f4-4746-8919-a77dc21b65fa
+            region: content
+            configuration:
+              id: 'field_block:paragraph:jumbotron:type'
+              label: 'Component type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.jumbotron.preview
+targetEntityType: paragraph
+bundle: jumbotron
+mode: preview
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: jumbotron
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

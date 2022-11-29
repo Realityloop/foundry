@@ -37,7 +37,7 @@ content:
     region: content
   field_text_formatted:
     type: advanced_text
-    label: above
+    label: hidden
     settings:
       trim_length: '160'
       ellipsis: '1'

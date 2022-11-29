@@ -1,67 +1,41 @@
-uuid: e4fb33c4-535b-4ebf-9db4-78d8fdf8ddc0
+uuid: 13037cd4-29ce-479c-b59f-36d74dbc189d
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.preview
+    - core.entity_view_mode.paragraph.preview_sans_type
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_text_formatted
     - field.field.paragraph.card.field_title
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.card
   module:
+    - advanced_text_formatter
     - layout_builder
-    - layout_discovery
     - linky
-    - media
-    - text
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: false
     sections:
       -
-        layout_id: layout_onecol
+        layout_id: layout_twocol_section
         layout_settings:
           label: ''
           context_mapping: {  }
+          column_widths: 75-25
         components:
-          7971414a-64a1-4def-8efd-e2c5a6121daf:
-            uuid: 7971414a-64a1-4def-8efd-e2c5a6121daf
-            region: content
+          1e052519-a021-495a-b563-a07bd03ecaa6:
+            uuid: 1e052519-a021-495a-b563-a07bd03ecaa6
+            region: second
             configuration:
-              id: 'field_block:paragraph:card:type'
-              label: 'Component type'
+              id: 'field_block:paragraph:card:field_image'
+              label: Image
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: inline
-                settings:
-                  link: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_twocol_section
-        layout_settings:
-          label: Card
-          context_mapping: {  }
-          column_widths: 75-25
-        components:
-          ca6112bf-0c2f-43c4-aad0-083379daa853:
-            uuid: ca6112bf-0c2f-43c4-aad0-083379daa853
-            region: second
-            configuration:
-              id: 'field_block:paragraph:card:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
               formatter:
                 type: media_thumbnail
                 label: hidden
@@ -71,10 +45,10 @@ third_party_settings:
                   image_loading:
                     attribute: lazy
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
-          4cd8467c-0ce1-466b-9d73-bcec47090a53:
-            uuid: 4cd8467c-0ce1-466b-9d73-bcec47090a53
+          525e3e2a-b00c-4126-b1fc-a0b957b666e6:
+            uuid: 525e3e2a-b00c-4126-b1fc-a0b957b666e6
             region: first
             configuration:
               id: 'field_block:paragraph:card:field_title'
@@ -87,10 +61,10 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 4
+            weight: 0
             additional: {  }
-          17d9534f-1f3d-4a99-8811-7798c503941c:
-            uuid: 17d9534f-1f3d-4a99-8811-7798c503941c
+          2319186c-1182-4a73-b14c-3c7517e3c1b0:
+            uuid: 2319186c-1182-4a73-b14c-3c7517e3c1b0
             region: first
             configuration:
               id: 'field_block:paragraph:card:field_text_formatted'
@@ -98,15 +72,37 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: text_trimmed
+                type: advanced_text
                 label: hidden
                 settings:
-                  trim_length: 160
+                  trim_length: '160'
+                  ellipsis: '1'
+                  word_boundary: '1'
+                  filter: input
+                  format: plain_text
+                  allowed_html:
+                    - a
+                    - b
+                    - br
+                    - dd
+                    - dl
+                    - dt
+                    - em
+                    - i
+                    - li
+                    - ol
+                    - p
+                    - strong
+                    - u
+                    - ul
+                  use_summary: 0
+                  token_replace: 0
+                  autop: 0
                 third_party_settings: {  }
-            weight: 5
+            weight: 1
             additional: {  }
-          087ce3f8-2c50-40d9-93c6-dd1ecbd90dad:
-            uuid: 087ce3f8-2c50-40d9-93c6-dd1ecbd90dad
+          6e776f74-70e6-41f7-bae6-32b64d05a129:
+            uuid: 6e776f74-70e6-41f7-bae6-32b64d05a129
             region: first
             configuration:
               id: 'field_block:paragraph:card:field_link'
@@ -120,22 +116,20 @@ third_party_settings:
                   link: true
                   parent_entity_label_link_text: false
                 third_party_settings: {  }
-            weight: 6
+            weight: 2
             additional: {  }
         third_party_settings: {  }
-id: paragraph.card.preview
+id: paragraph.card.preview_sans_type
 targetEntityType: paragraph
 bundle: card
-mode: preview
+mode: preview_sans_type
 content:
   field_image:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -149,10 +143,32 @@ content:
     weight: 3
     region: content
   field_text_formatted:
-    type: text_trimmed
+    type: advanced_text
     label: hidden
     settings:
-      trim_length: 160
+      trim_length: '160'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: input
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
     third_party_settings: {  }
     weight: 2
     region: content

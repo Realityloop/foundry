@@ -1,0 +1,116 @@
+uuid: 9e1ec7c1-eb1e-496f-8a7b-ce0f27d624d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.text_formatted.field_text_formatted
+    - paragraphs.paragraphs_type.text_formatted
+  module:
+    - advanced_text_formatter
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          50444255-0ece-40b0-a281-cfbfb8b805e2:
+            uuid: 50444255-0ece-40b0-a281-cfbfb8b805e2
+            region: content
+            configuration:
+              id: 'field_block:paragraph:text_formatted:field_text_formatted'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: advanced_text
+                label: hidden
+                settings:
+                  trim_length: '160'
+                  ellipsis: '1'
+                  word_boundary: '1'
+                  filter: input
+                  format: plain_text
+                  allowed_html:
+                    - a
+                    - b
+                    - br
+                    - dd
+                    - dl
+                    - dt
+                    - em
+                    - i
+                    - li
+                    - ol
+                    - p
+                    - strong
+                    - u
+                    - ul
+                  use_summary: 0
+                  token_replace: 0
+                  autop: 0
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          b16e23dd-bbe2-4daa-8d5e-75fc4d15565e:
+            uuid: b16e23dd-bbe2-4daa-8d5e-75fc4d15565e
+            region: content
+            configuration:
+              id: 'field_block:paragraph:text_formatted:type'
+              label: 'Component type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.text_formatted.preview
+targetEntityType: paragraph
+bundle: text_formatted
+mode: preview
+content:
+  field_text_formatted:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '160'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: input
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

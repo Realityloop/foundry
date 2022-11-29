@@ -1,0 +1,73 @@
+uuid: fe5d737d-cde1-46e9-854b-186ca44be6d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.media.field_media
+    - paragraphs.paragraphs_type.media
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          fbb2a853-6f4d-4692-a882-2798a81f8752:
+            uuid: fbb2a853-6f4d-4692-a882-2798a81f8752
+            region: content
+            configuration:
+              id: 'field_block:paragraph:media:field_media'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: preview
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          91810a64-650b-47f9-bd39-0cf22e006f6b:
+            uuid: 91810a64-650b-47f9-bd39-0cf22e006f6b
+            region: content
+            configuration:
+              id: 'field_block:paragraph:media:type'
+              label: 'Component type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.media.preview
+targetEntityType: paragraph
+bundle: media
+mode: preview
+content:
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

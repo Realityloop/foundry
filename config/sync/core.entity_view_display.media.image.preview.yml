@@ -1,0 +1,78 @@
+uuid: edb33cbb-7387-48f2-bbb7-7def6211dac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.preview
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_content_owner
+    - field.field.media.image.field_media_copyright
+    - field.field.media.image.field_media_description
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_usage_terms
+    - image.style.medium
+    - media.type.image
+  module:
+    - advanced_text_formatter
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.preview
+targetEntityType: media
+bundle: image
+mode: preview
+content:
+  field_media_caption:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '160'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: input
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_content_owner: true
+  field_media_copyright: true
+  field_media_description: true
+  field_media_usage_terms: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

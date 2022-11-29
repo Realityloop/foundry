@@ -1,23 +1,29 @@
-uuid: 92956fee-3c4b-4abf-be4a-739983da24f0
+uuid: ca2e382d-8404-49e5-9446-f69e6b41fa97
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.preview
     - field.field.media.video.field_media_oembed_video
     - media.type.video
   module:
+    - layout_builder
     - media
-id: media.video.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.video.preview
 targetEntityType: media
 bundle: video
-mode: default
+mode: preview
 content:
   field_media_oembed_video:
     type: oembed
     label: visually_hidden
     settings:
-      max_width: null
-      max_height: null
+      max_width: 400
+      max_height: 225
     third_party_settings: {  }
     weight: 0
     region: content

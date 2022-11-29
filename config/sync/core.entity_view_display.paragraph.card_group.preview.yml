@@ -1,0 +1,76 @@
+uuid: f9682950-a8d1-4d2e-8252-838163b234a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.card_group.field_cards
+    - paragraphs.paragraphs_type.card_group
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          170f091a-f591-4ff2-9403-134ddc631009:
+            uuid: 170f091a-f591-4ff2-9403-134ddc631009
+            region: content
+            configuration:
+              id: 'field_block:paragraph:card_group:field_cards'
+              label: Cards
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: preview_sans_type
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          5554fa16-f0a6-432e-8ff5-8a9e671bcf9d:
+            uuid: 5554fa16-f0a6-432e-8ff5-8a9e671bcf9d
+            region: content
+            configuration:
+              id: 'field_block:paragraph:card_group:type'
+              label: 'Component type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.card_group.preview
+targetEntityType: paragraph
+bundle: card_group
+mode: preview
+content:
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

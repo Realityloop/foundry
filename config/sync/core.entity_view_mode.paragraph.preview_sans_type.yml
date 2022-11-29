@@ -1,0 +1,10 @@
+uuid: 4d439496-4f73-4b92-b128-a080395882a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.preview_sans_type
+label: 'Preview sans-type'
+targetEntityType: paragraph
+cache: true

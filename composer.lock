@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b897d67be11d4ec3bfbca7e81121e32e",
+    "content-hash": "76f64925b2981c3791ac83d54f80b13f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -17197,7 +17197,6 @@
         "drupal/jsonapi_menu_items": 20,
         "drupal/jsonapi_node_preview": 10,
         "drupal/jsonapi_node_preview_tab": 10,
-        "drupal/layout_paragraphs": 10,
         "drupal/linkit": 20,
         "drupal/linky_revision_ui": 20,
         "drupal/maxlength": 20,
