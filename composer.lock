@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76f64925b2981c3791ac83d54f80b13f",
+    "content-hash": "70b8080a6d169e5a97a17aa9b66a7c8b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6989,6 +6989,65 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/viewfield",
                 "issues": "https://www.drupal.org/project/issues/viewfield"
+            }
+        },
+        {
+            "name": "drupal/wpf",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/wpf.git",
+                "reference": "1.0.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/wpf-1.0.0-alpha2.zip",
+                "reference": "1.0.0-alpha2",
+                "shasum": "04300898a3799ea966e2223f5552ac44c0a117af"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "ext-gd": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha2",
+                    "datestamp": "1655830169",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dudás József",
+                    "homepage": "https://www.drupal.org/user/387119",
+                    "email": "dj@brainsum.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "pedrop",
+                    "homepage": "https://www.drupal.org/user/1043368"
+                },
+                {
+                    "name": "szato",
+                    "homepage": "https://www.drupal.org/user/389677"
+                }
+            ],
+            "description": "Generates jpg copies of webp image style derivatives.",
+            "homepage": "https://www.drupal.org/project/wpf",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/wpf",
+                "issues": "https://www.drupal.org/project/issues/wpf"
             }
         },
         {
@@ -17200,7 +17259,8 @@
         "drupal/linkit": 20,
         "drupal/linky_revision_ui": 20,
         "drupal/maxlength": 20,
-        "drupal/scheduled_transitions": 20
+        "drupal/scheduled_transitions": 20,
+        "drupal/wpf": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

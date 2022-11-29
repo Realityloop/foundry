@@ -12,8 +12,14 @@ effects:
   7325678a-cf45-45af-abd3-6478720fcdef:
     uuid: 7325678a-cf45-45af-abd3-6478720fcdef
     id: focal_point_scale_and_crop
-    weight: 2
+    weight: -9
     data:
       width: 200
       height: 200
       crop_type: focal_point
+  56a08335-e17e-4935-a40d-8e6e3d6fed4a:
+    uuid: 56a08335-e17e-4935-a40d-8e6e3d6fed4a
+    id: image_convert
+    weight: -10
+    data:
+      extension: webp

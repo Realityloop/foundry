@@ -107,6 +107,7 @@ module:
   permissions_filter: 0
   prevent_homepage_deletion: 0
   redirect: 0
+  responsive_image: 0
   revision_log_default: 0
   robotstxt: 0
   role_delegation: 0
@@ -132,6 +133,7 @@ module:
   username_enumeration_prevention: 0
   viewfield: 0
   views_ui: 0
+  wpf: 0
   pathauto: 1
   content_translation: 10
   views: 10

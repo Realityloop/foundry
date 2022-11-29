@@ -92,7 +92,8 @@
         "drupal/transliterate_filenames": "^2.0.1",
         "drupal/upgrade_status": "^3.18",
         "drupal/username_enumeration_prevention": "^1.2",
-        "drupal/viewfield": "^3.0"
+        "drupal/viewfield": "^3.0",
+        "drupal/wpf": "^1.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "9.4.8",

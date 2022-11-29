@@ -10,8 +10,14 @@ effects:
   b81f2d62-14ec-43cc-8018-80c1f79157e2:
     uuid: b81f2d62-14ec-43cc-8018-80c1f79157e2
     id: focal_point_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 1080
       height: 1920
       crop_type: focal_point
+  32fcb38e-cdca-4ac5-b13b-dbf9c834b66a:
+    uuid: 32fcb38e-cdca-4ac5-b13b-dbf9c834b66a
+    id: image_convert
+    weight: -10
+    data:
+      extension: webp

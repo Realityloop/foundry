@@ -10,8 +10,14 @@ effects:
   2943df29-38ea-459c-ba1d-290489bb1807:
     uuid: 2943df29-38ea-459c-ba1d-290489bb1807
     id: image_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 50
       height: 50
       anchor: center-center
+  2d2e2721-5716-4738-b0b9-8a331d54b301:
+    uuid: 2d2e2721-5716-4738-b0b9-8a331d54b301
+    id: image_convert
+    weight: -10
+    data:
+      extension: webp
