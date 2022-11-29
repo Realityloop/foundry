@@ -38,6 +38,7 @@
         "drupal/documentation_generator": "2.0.x-dev@dev",
         "drupal/druxt": "^1.1.1",
         "drupal/dynamic_entity_reference": "^4.0@alpha",
+        "drupal/eca": "^1.1@beta",
         "drupal/entity_browser": "^2.8",
         "drupal/entity_browser_enhanced": "^1.0",
         "drupal/entity_clone": "^2.0@alpha",
