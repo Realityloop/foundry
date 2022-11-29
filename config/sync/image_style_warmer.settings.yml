@@ -1,0 +1,11 @@
+initial_image_styles:
+  large: large
+  media_library: media_library
+  medium: medium
+  thumbnail: thumbnail
+queue_image_styles:
+  linkit_result_thumbnail: linkit_result_thumbnail
+  meta_facebook: meta_facebook
+  meta_instagram_pinterest: meta_instagram_pinterest
+  meta_linkedin: meta_linkedin
+  meta_twitter: meta_twitter

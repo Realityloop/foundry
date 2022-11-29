@@ -136,6 +136,7 @@ module:
   wpf: 0
   pathauto: 1
   content_translation: 10
+  image_style_warmer: 10
   views: 10
   paragraphs: 11
   paragraphs_ee: 15
