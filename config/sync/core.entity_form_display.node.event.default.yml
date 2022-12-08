@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.event.field_content
     - field.field.node.event.field_date
     - field.field.node.event.field_description
-    - field.field.node.event.field_display_title
     - field.field.node.event.field_image
     - field.field.node.event.field_meta_tags
     - field.field.node.event.field_related_link
@@ -246,5 +245,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_display_title: true
+hidden: {  }

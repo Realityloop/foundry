@@ -212,4 +212,7 @@ settings:
   base_field_override:
     handler: 'default:base_field_override'
     handler_settings: {  }
+  responsive_image_style:
+    handler: 'default:responsive_image_style'
+    handler_settings: {  }
 field_type: dynamic_entity_reference

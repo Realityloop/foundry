@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.page.field_content
     - field.field.node.page.field_description
-    - field.field.node.page.field_display_title
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_tags
     - field.field.node.page.field_page_subtype
@@ -19,7 +18,6 @@ dependencies:
     - metatag
     - options
     - text
-    - title_field_for_manage_display
     - user
 third_party_settings:
   field_group:
@@ -90,16 +88,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 10
-    region: content
-  field_display_title:
-    type: title_value_field_formatter
-    label: hidden
-    settings:
-      tag: h1
-      classes: ''
-      linked: 0
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_image:
     type: entity_reference_entity_view

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.article.field_article_category
     - field.field.node.article.field_content
     - field.field.node.article.field_description
-    - field.field.node.article.field_display_title
     - field.field.node.article.field_image
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_related_link
@@ -16,7 +15,6 @@ dependencies:
     - node.type.article
   module:
     - text
-    - title_field_for_manage_display
     - user
 id: node.article.teaser
 targetEntityType: node
@@ -37,16 +35,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_display_title:
-    type: title_value_field_formatter
-    label: hidden
-    settings:
-      tag: h2
-      linked: '1'
-      classes: ''
-    third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   field_content: true
