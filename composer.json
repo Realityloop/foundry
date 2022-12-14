@@ -53,6 +53,8 @@
         "drupal/gin_login": "^2.0",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/image_style_warmer": "^1.2@RC",
+        "drupal/jquery_ui": "^1.6",
+        "drupal/jquery_ui_draggable": "^2.0",
         "drupal/jsonapi_hypermedia": "^1.9",
         "drupal/jsonapi_menu_items": "1.2.x-dev@dev",
         "drupal/jsonapi_node_preview": "^1.0.0-beta2@beta",
@@ -207,7 +209,8 @@
                 "https://www.drupal.org/project/field_tools/issues/3297214": "https://git.drupalcode.org/project/field_tools/-/merge_requests/5.diff"
             },
             "drupal/focal_point": {
-                "Preview link accidentally closes the media library https://www.drupal.org/project/focal_point/issues/3162210#comment-13855854": "https://www.drupal.org/files/issues/2020-10-11/preview_link_accidentally_closes_the_media_library-3162210-19.patch"
+                "Preview link accidentally closes the media library https://www.drupal.org/project/focal_point/issues/3162210#comment-13855854": "https://www.drupal.org/files/issues/2020-10-11/preview_link_accidentally_closes_the_media_library-3162210-19.patch",
+                "Drupal 10 compatibility fixes https://www.drupal.org/project/focal_point/issues/3295940": "https://git.drupalcode.org/project/focal_point/-/merge_requests/8.diff"
             },
             "drupal/gin": {
                 "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "https://git.drupalcode.org/project/gin/-/merge_requests/92.diff"

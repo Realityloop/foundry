@@ -61,6 +61,8 @@ module:
   gin_toolbar: 0
   help: 0
   image: 0
+  jquery_ui: 0
+  jquery_ui_draggable: 0
   jsonapi: 0
   jsonapi_hypermedia: 0
   jsonapi_menu_items: 0
