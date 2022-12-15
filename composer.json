@@ -93,7 +93,7 @@
         "drupal/tome": "^1.8.0",
         "drupal/transliterate_filenames": "^2.0.1",
         "drupal/upgrade_status": "^3.18",
-        "drupal/username_enumeration_prevention": "1.x-dev@dev",
+        "drupal/username_enumeration_prevention": "^1.3",
         "drupal/viewfield": "^3.0",
         "drupal/wpf": "^1.0.0-alpha2@alpha"
     },
@@ -196,6 +196,10 @@
                 "https://www.drupal.org/project/drupal/issues/2350939#comment-14761757": "https://www.drupal.org/files/issues/2022-10-25/2350939-290.patch",
                 "#3312270 - Twig LoaderError after upgrading Twig to 2.15.3": "https://www.drupal.org/files/issues/2022-09-28/3312270-claro-menu-twig-fix.patch"
             },
+            "drupal/druxt": {
+                "#3315030 - Add a wildcard route translator": "https://git.drupalcode.org/project/druxt/-/merge_requests/11.diff",
+                "#3315035 - Cannot load the 'view' entity with NULL ID": "https://git.drupalcode.org/project/druxt/-/merge_requests/10.diff"
+            },
             "drupal/entity_clone": {
                 "Batch field creation https://www.drupal.org/project/entity_clone/issues/2845094#comment-14163283": "https://git.drupalcode.org/project/entity_clone/-/merge_requests/8.diff"
             },
@@ -249,9 +253,6 @@
             },
             "drupal/paragraphs_ee": {
                 "https://www.drupal.org/project/paragraphs_ee/issues/3288984#comment-14621948": "https://www.drupal.org/files/issues/2022-07-23/paragraphs_ee.2.0.x-dev.rector.patch"
-            },
-            "drupal/username_enumeration_prevention": {
-                "https://www.drupal.org/project/username_enumeration_prevention/issues/3290308#comment-14766522": "https://www.drupal.org/files/issues/2022-10-28/username_enumeration_prevention-3290308-11.patch"
             },
             "drupal/wpf": {
                 "https://www.drupal.org/project/wpf/issues/3299521#comment-14622891": "https://www.drupal.org/files/issues/2022-07-23/wpf.1.0.x-dev.rector.patch"
