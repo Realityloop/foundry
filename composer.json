@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "php": ">=8.2.1",
+        "php": ">=8.1.11",
         "composer/installers": "^2.2",
         "cweagans/composer-patches": "^1.7.3",
         "drupal-tome/tome_drush": "dev-master",
@@ -48,7 +48,7 @@
         "drupal/exclude_node_title": "^1.4",
         "drupal/field_group": "^3.4.0",
         "drupal/field_tools": "^1.0",
-        "drupal/focal_point": "^2.0.0-alpha2@alpha",
+        "drupal/focal_point": "^2.0@alpha",
         "drupal/gin": "^3.0.0-rc1@RC",
         "drupal/gin_login": "^2.0",
         "drupal/gin_toolbar": "^1.0@RC",
@@ -224,9 +224,7 @@
             },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3259729": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/60.diff",
-                "https://www.drupal.org/projectc/layout_paragraphs/issues/3214406#comment-14425196": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/70.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3265794": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/84.diff",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3288247#comment-14776359": "https://www.drupal.org/files/issues/2022-11-08/layout_paragraphs-n3288247-9.patch"
+                "https://www.drupal.org/project/layout_paragraphs/issues/3265794": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/84.diff"
             },
             "drupal/linkit": {
                 "https://www.drupal.org/project/linkit/issues/3022261#comment-14257900": "https://www.drupal.org/files/issues/2021-10-15/3022261_linkit_add-better-support-for-linking-to-anchors_22.patch",
@@ -235,18 +233,12 @@
             "drupal/m4032404": {
                 "https://www.drupal.org/project/m4032404/issues/3288400#comment-14621784": "https://www.drupal.org/files/issues/2022-07-23/m4032404.1.x-dev.rector.patch"
             },
-            "drupal/maxlength": {
-                "https://www.drupal.org/project/maxlength/issues/3295052#comment-14816143": "https://www.drupal.org/files/issues/2022-12-07/maxlength-3295052-14.patch"
-            },
             "drupal/metatag": {
                 "https://www.drupal.org/project/metatag/issues/2945817#comment-14740067": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
             },
             "drupal/node_edit_protection": {
                 "Triggers if button used instead of input https://www.drupal.org/project/node_edit_protection/issues/3208719": "./patch/3208719.diff",
                 "https://www.drupal.org/project/node_edit_protection/issues/3288778#comment-14569186": "https://www.drupal.org/files/issues/2022-06-16/node_edit_protection.1.x-dev.rector.patch"
-            },
-            "drupal/robotstxt": {
-                "https://www.drupal.org/project/robotstxt/issues/3297979#comment-14613644": "https://www.drupal.org/files/issues/2022-07-18/robotstxt.1.x-dev.rector.patch"
             },
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13918715": "https://www.drupal.org/files/issues/2020-11-27/paragraphs_support_asym_translations-2904705-122.patch"
