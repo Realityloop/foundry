@@ -30,12 +30,11 @@
         "drupal/config_pages": "2.11.0@dev",
         "drupal/config_rewrite": "^1.5",
         "drupal/content_lock": "^2.3.0",
-        "drupal/core-composer-scaffold": "9.5.1",
-        "drupal/core-project-message": "9.5.1",
-        "drupal/core-recommended": "9.5.1",
+        "drupal/core-composer-scaffold": "9.5.2",
+        "drupal/core-project-message": "9.5.2",
+        "drupal/core-recommended": "9.5.2",
         "drupal/decoupled_router": "2.0.4@dev",
         "drupal/diff": "^1.1.0",
-        "drupal/documentation_generator": "2.0.4@dev",
         "drupal/druxt": "^1.1.1",
         "drupal/dynamic_entity_reference": "^4.0@alpha",
         "drupal/eca": "1.1.0@beta",
@@ -68,7 +67,7 @@
         "drupal/linkyreplacer": "^2.2.2",
         "drupal/m4032404": "^1.0",
         "drupal/masquerade": "^2.0",
-        "drupal/maxlength": "2.0.1@dev",
+        "drupal/maxlength": "2.0.x-dev@dev",
         "drupal/media_file_delete": "^1.3",
         "drupal/media_revisions_ui": "^2.1",
         "drupal/memcache": "^2.5",
@@ -92,7 +91,7 @@
         "drupal/smart_date": "^3.7",
         "drupal/tome": "^1.10.0",
         "drupal/transliterate_filenames": "^2.0.1",
-        "drupal/upgrade_status": "^3.18",
+        "drupal/upgrade_status": "^4.0@alpha",
         "drupal/username_enumeration_prevention": "^1.3",
         "drupal/viewfield": "^3.0",
         "drupal/wpf": "^1.0.0-alpha2@alpha"
@@ -192,9 +191,8 @@
                 "Automated Drupal Rector fixes https://www.drupal.org/project/anonymous_redirect/issues/3286076#comment-14661558": "https://www.drupal.org/files/issues/2022-08-22/anonymous_redirect.2.x-dev.rector.patch"
             },
             "drupal/core": {
-                "https://www.drupal.org/project/drupal/issues/3247553#comment-14280389": "https://www.drupal.org/files/issues/2021-11-04/3247553-3.patch",
-                "https://www.drupal.org/project/drupal/issues/2350939#comment-14761757": "https://www.drupal.org/files/issues/2022-10-25/2350939-290.patch",
-                "#3312270 - Twig LoaderError after upgrading Twig to 2.15.3": "https://www.drupal.org/files/issues/2022-09-28/3312270-claro-menu-twig-fix.patch"
+                "https://www.drupal.org/project/drupal/issues/3247553#comment-14282335": "https://www.drupal.org/files/issues/2021-11-05/3247553-6.patch",
+                "https://www.drupal.org/project/drupal/issues/2350939#comment-14824654": "https://www.drupal.org/files/issues/2022-12-15/2350939-312-9.4.x.patch"
             },
             "drupal/druxt": {
                 "#3315030 - Add a wildcard route translator": "https://git.drupalcode.org/project/druxt/-/merge_requests/11.diff",
@@ -233,6 +231,9 @@
             "drupal/m4032404": {
                 "https://www.drupal.org/project/m4032404/issues/3288400#comment-14621784": "https://www.drupal.org/files/issues/2022-07-23/m4032404.1.x-dev.rector.patch"
             },
+            "drupal/maxlength": {
+                "https://www.drupal.org/project/maxlength/issues/3295052#comment-14841958": "https://git.drupalcode.org/project/maxlength/-/merge_requests/24.diff"
+            },
             "drupal/metatag": {
                 "https://www.drupal.org/project/metatag/issues/2945817#comment-14740067": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
             },
@@ -244,7 +245,10 @@
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13918715": "https://www.drupal.org/files/issues/2020-11-27/paragraphs_support_asym_translations-2904705-122.patch"
             },
             "drupal/paragraphs_ee": {
-                "https://www.drupal.org/project/paragraphs_ee/issues/3288984#comment-14621948": "https://www.drupal.org/files/issues/2022-07-23/paragraphs_ee.2.0.x-dev.rector.patch"
+                "https://www.drupal.org/project/paragraphs_ee/issues/3288984#comment-14621948": "https://www.drupal.org/files/issues/2023-01-19/drupal10-3288984-7.patch"
+            },
+            "drupal/viewfield": {
+                "https://www.drupal.org/project/viewfield/issues/3299434#comment-14873999": "https://git.drupalcode.org/project/viewfield/-/merge_requests/4.diff"
             },
             "drupal/wpf": {
                 "https://www.drupal.org/project/wpf/issues/3299521#comment-14622891": "https://www.drupal.org/files/issues/2022-07-23/wpf.1.0.x-dev.rector.patch"
