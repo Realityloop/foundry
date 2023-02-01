@@ -32,7 +32,7 @@
         "drupal/content_lock": "^2.3.0",
         "drupal/core-composer-scaffold": "9.5.2",
         "drupal/core-project-message": "9.5.2",
-        "drupal/core-recommended": "9.5.2",
+        "drupal/core-recommended": "10.0.3",
         "drupal/decoupled_router": "2.0.4@dev",
         "drupal/diff": "^1.1.0",
         "drupal/druxt": "^1.1.1",
