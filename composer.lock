@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1366f920cb0cb40aa617dc3060ba62d0",
+    "content-hash": "1a6cd1654c04b259989a01ab767afb73",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2867,11 +2867,17 @@
         },
         {
             "name": "drupal/druxt",
-            "version": "dev-feature/3287092-drupal-10",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/issue/druxt-3287092.git",
-                "reference": "3808a066ee8eb70c1f47bd5045ca2616c0def172"
+                "url": "https://git.drupalcode.org/project/druxt.git",
+                "reference": "1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/druxt-1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": "6947c75245bf124ad53b0569bd76c7f0eb00242a"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9 || ^10",
@@ -2880,17 +2886,32 @@
                 "drupal/jsonapi_views": "^1.0@beta"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.0",
+                    "datestamp": "1676000308",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Stuart Clark",
+                    "homepage": "https://www.drupal.org/user/103796",
                     "email": "stuart@realityloop.com"
                 }
             ],
             "description": "A bridge between frameworks, Drupal in the back, Nuxt.js in the front.",
-            "time": "2023-02-07T01:47:56+00:00"
+            "homepage": "https://www.drupal.org/project/druxt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/druxt"
+            }
         },
         {
             "name": "drupal/dynamic_entity_reference",
@@ -4344,27 +4365,27 @@
         },
         {
             "name": "drupal/jsonapi_views",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_views.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_views-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "e28c0030b279348dbe0247d3a8ce58b50972a024"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_views-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "d2d83e724db1d1ea1a4a83a78007c356bc210f6e"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": ">=8.8",
                 "drupal/jsonapi_resources": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1633070688",
+                    "version": "8.x-1.1",
+                    "datestamp": "1675998787",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8393,58 +8414,6 @@
                 "source": "https://github.com/viossat/arraytotexttable/tree/v1.0.9"
             },
             "time": "2022-08-30T15:33:10+00:00"
-        },
-        {
-            "name": "mglaman/composer-drupal-lenient",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mglaman/composer-drupal-lenient.git",
-                "reference": "97ffd460705b4f7177519b3e29cdee4549f42e15"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/composer-drupal-lenient/zipball/97ffd460705b4f7177519b3e29cdee4549f42e15",
-                "reference": "97ffd460705b4f7177519b3e29cdee4549f42e15",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^2.0",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "composer/composer": "^2.3",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.6",
-                "phpstan/phpstan-phpunit": "^1.1",
-                "phpstan/phpstan-strict-rules": "^1.2",
-                "phpunit/phpunit": "^9.5",
-                "squizlabs/php_codesniffer": "^3.6"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "ComposerDrupalLenient\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "ComposerDrupalLenient\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Glaman",
-                    "email": "nmd.matt@gmail.com"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/mglaman/composer-drupal-lenient/issues",
-                "source": "https://github.com/mglaman/composer-drupal-lenient/tree/1.0.2"
-            },
-            "time": "2022-06-24T20:50:05+00:00"
         },
         {
             "name": "mglaman/phpstan-drupal",
@@ -16708,7 +16677,6 @@
         "drupal/config_ignore": 20,
         "drupal/config_pages": 20,
         "drupal/config_split": 5,
-        "drupal/druxt": 20,
         "drupal/dynamic_entity_reference": 15,
         "drupal/eca": 20,
         "drupal/entity_browser_enhanced": 20,
