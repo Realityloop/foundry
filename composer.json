@@ -257,7 +257,16 @@
             },
             "drupal/gin": {
                 "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "https://git.drupalcode.org/project/gin/-/merge_requests/92.diff",
-                "https://www.drupal.org/project/gin/issues/3335557": "https://git.drupalcode.org/project/gin/-/merge_requests/214.diff"
+                "https://www.drupal.org/project/gin/issues/3335557": "https://git.drupalcode.org/project/gin/-/merge_requests/214.diff",
+                "https://www.drupal.org/project/gin/issues/3340478#comment-14914134": "https://www.drupal.org/files/issues/2023-02-09/3340478-space-issue-between-inline-entity-form-fields.patch",
+                "https://www.drupal.org/project/gin/issues/3281343#comment-14811812": "https://www.drupal.org/files/issues/2022-12-04/edit-form-media-3281343-4.patch",
+                "https://www.drupal.org/project/gin/issues/3336522#comment-14890713": "https://www.drupal.org/files/issues/2023-01-27/native-icons-dark-3336522-1.patch",
+                "https://www.drupal.org/project/gin/issues/3339301": "https://git.drupalcode.org/project/gin/-/merge_requests/223.diff",
+                "https://www.drupal.org/project/gin/issues/3340160": "https://git.drupalcode.org/project/gin/-/merge_requests/221.diff",
+                "https://www.drupal.org/project/gin/issues/3331304": "https://git.drupalcode.org/project/gin/-/merge_requests/210.diff",
+                "https://www.drupal.org/project/gin/issues/3331830": "https://git.drupalcode.org/project/gin/-/merge_requests/211.diff",
+                "https://www.drupal.org/project/gin/issues/3276752#comment-14816160": "https://www.drupal.org/files/issues/2022-12-07/gin-stick-after-ajax-reload-3276752-23.patch",
+                "https://www.drupal.org/project/gin/issues/3339063": "https://git.drupalcode.org/project/gin/-/merge_requests/217.diff"
             },
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "https://git.drupalcode.org/project/gin_toolbar/-/merge_requests/9.diff"
@@ -282,6 +291,9 @@
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13918715": "https://www.drupal.org/files/issues/2020-11-27/paragraphs_support_asym_translations-2904705-122.patch",
                 "https://www.drupal.org/project/paragraphs/issues/3031598#comment-13972961": "https://www.drupal.org/files/issues/2021-01-22/paragraph-entity-type-did-not-specify-translation-halder-3031598-45.patch"
+            },
+            "drupal/wpf": {
+                "https://www.drupal.org/project/wpf/issues/3338291": "https://git.drupalcode.org/project/wpf/-/merge_requests/2.diff"
             }
         },
         "drupal-lenient": {
