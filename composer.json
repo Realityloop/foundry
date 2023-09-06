@@ -64,7 +64,7 @@
         "drupal/admin_audit_trail": "^1.0.1",
         "drupal/admin_toolbar": "^3.3",
         "drupal/advanced_text_formatter": "^3.0@RC",
-        "drupal/allowed_formats": "^2.0",
+        "drupal/allowed_formats": "^3.0.0",
         "drupal/anonymous_redirect": "dev-feature/3286076-automated-drupal-10",
         "drupal/coffee": "^1.3.0",
         "drupal/config_filter": "^2.4",
