@@ -59,4 +59,4 @@ form_settings:
     default_value: false
     disable: false
     hidden: false
-take_ownership: 1
+take_ownership: true

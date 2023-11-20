@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: bMLk1BMYZdizZNW-Bn-_bY0fSNgbC7yjhZfQ4zpT0aA
+role_watchdog_monitor_roles:
+  administrator: administrator
+role_watchdog_notify_email: email@example.com
+role_watchdog_use_watchdog: true

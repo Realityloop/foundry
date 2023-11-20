@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.landing
 label: 'Landing page'
+description: ''
 targetEntityType: node
 cache: true
