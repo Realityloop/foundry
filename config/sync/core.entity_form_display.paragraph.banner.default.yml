@@ -52,8 +52,8 @@ content:
         add_in_between: true
         add_in_between_link_count: 0
         delete_confirmation: true
-        split_text: false
         show_drag_and_drop: true
+        split_text: false
       paragraphs_ee:
         paragraphs_ee:
           dialog_off_canvas: false
