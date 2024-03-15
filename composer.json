@@ -129,7 +129,7 @@
         "drupal/role_delegation": "^1.2",
         "drupal/scheduled_transitions": "2.3.x-dev@dev",
         "drupal/schema_metatag": "^2.4.0",
-        "drupal/security_review": "^2.0",
+        "drupal/security_review": "^3.0.0",
         "drupal/simple_oauth": "^5.2.3",
         "drupal/simple_sitemap": "^4.1.4",
         "drupal/smart_date": "^3.7",
