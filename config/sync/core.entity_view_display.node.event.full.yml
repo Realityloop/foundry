@@ -9,8 +9,6 @@ dependencies:
     - field.field.node.event.field_description
     - field.field.node.event.field_image
     - field.field.node.event.field_meta_tags
-    - field.field.node.event.field_related_link
-    - field.field.node.event.field_significant_link
     - node.type.event
   module:
     - layout_paragraphs
@@ -54,7 +52,5 @@ content:
 hidden:
   field_image: true
   field_meta_tags: true
-  field_related_link: true
-  field_significant_link: true
   langcode: true
   links: true

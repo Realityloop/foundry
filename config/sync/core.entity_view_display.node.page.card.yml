@@ -8,9 +8,6 @@ dependencies:
     - field.field.node.page.field_description
     - field.field.node.page.field_image
     - field.field.node.page.field_meta_tags
-    - field.field.node.page.field_page_subtype
-    - field.field.node.page.field_related_link
-    - field.field.node.page.field_significant_link
     - node.type.page
   module:
     - text
@@ -40,8 +37,5 @@ hidden:
   content_moderation_control: true
   field_content: true
   field_meta_tags: true
-  field_page_subtype: true
-  field_related_link: true
-  field_significant_link: true
   langcode: true
   links: true

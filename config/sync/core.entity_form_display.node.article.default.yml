@@ -8,8 +8,6 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_image
     - field.field.node.article.field_meta_tags
-    - field.field.node.article.field_related_link
-    - field.field.node.article.field_significant_link
     - field.field.node.article.field_video
     - node.type.article
   module:
@@ -50,22 +48,6 @@ third_party_settings:
       region: content
       parent_name: ''
       weight: 1
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_links:
-      children:
-        - field_related_link
-        - field_significant_link
-      label: Links
-      region: content
-      parent_name: ''
-      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -146,26 +128,6 @@ content:
     settings:
       sidebar: true
       use_details: true
-    third_party_settings: {  }
-  field_related_link:
-    type: layout_paragraphs
-    weight: 15
-    region: content
-    settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
-  field_significant_link:
-    type: layout_paragraphs
-    weight: 16
-    region: content
-    settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
     third_party_settings: {  }
   field_video:
     type: media_library_widget
