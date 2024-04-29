@@ -132,7 +132,7 @@
         "drupal/security_review": "^2.0",
         "drupal/simple_oauth": "^5.2.3",
         "drupal/simple_sitemap": "^4.1.4",
-        "drupal/smart_date": "^3.7",
+        "drupal/smart_date": "^4.1.1",
         "drupal/tome": "^1.10.0",
         "drupal/transliterate_filenames": "^2.0.1",
         "drupal/upgrade_status": "^4.0@alpha",
