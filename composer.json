@@ -194,6 +194,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/content_lock": {
+                "https://www.drupal.org/project/content_lock/issues/3443044#comment-15568156": "https://www.drupal.org/files/issues/2024-04-25/content_lock-3443044.patch"
+            },
             "drupal/druxt": {
                 "#3315030 - Add a wildcard route translator": "https://git.drupalcode.org/project/druxt/-/merge_requests/11.diff",
                 "#3315035 - Cannot load the 'view' entity with NULL ID": "https://git.drupalcode.org/project/druxt/-/merge_requests/10.diff"
