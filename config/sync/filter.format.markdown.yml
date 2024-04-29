@@ -8,12 +8,6 @@ name: Markdown
 format: markdown
 weight: -9
 filters:
-  linky_direct_link_filter:
-    id: linky_direct_link_filter
-    provider: linky
-    status: true
-    weight: 10
-    settings: {  }
   filter_url:
     id: filter_url
     provider: filter
@@ -21,3 +15,9 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  linky_direct_link_filter:
+    id: linky_direct_link_filter
+    provider: linky
+    status: true
+    weight: 10
+    settings: {  }

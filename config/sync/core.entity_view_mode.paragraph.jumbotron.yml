@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.jumbotron
 label: Jumbotron
+description: ''
 targetEntityType: paragraph
 cache: true

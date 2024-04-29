@@ -23,9 +23,7 @@ dependencies:
     - file
     - filter
     - linky
-    - linky_revision_ui
     - media
-    - media_file_delete
     - media_revisions_ui
     - node
     - path

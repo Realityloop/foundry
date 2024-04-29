@@ -18,12 +18,6 @@ filters:
       allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <cite> <dl> <dt> <dd> <blockquote cite> <ul type> <ol type start> <h5 id> <h6 id> <a hreflang title href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <code> <li>'
       filter_html_help: true
       filter_html_nofollow: false
-  linky_direct_link_filter:
-    id: linky_direct_link_filter
-    provider: linky
-    status: true
-    weight: 10
-    settings: {  }
   linkit:
     id: linkit
     provider: linkit
@@ -31,3 +25,9 @@ filters:
     weight: 0
     settings:
       title: true
+  linky_direct_link_filter:
+    id: linky_direct_link_filter
+    provider: linky
+    status: true
+    weight: 10
+    settings: {  }

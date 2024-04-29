@@ -12,6 +12,7 @@ dependencies:
     - exclude_node_title
     - masquerade
     - role_delegation
+    - role_watchdog
     - system
     - toolbar
 id: admin_users
@@ -21,6 +22,7 @@ is_admin: null
 permissions:
   - 'access admin audit trail'
   - 'access coffee'
+  - 'access role_watchdog reports'
   - 'access toolbar'
   - 'access user profiles'
   - 'assign admin_content role'

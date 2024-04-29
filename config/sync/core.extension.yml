@@ -65,7 +65,6 @@ module:
   jsonapi: 0
   jsonapi_hypermedia: 0
   jsonapi_menu_items: 0
-  jsonapi_node_preview: 0
   jsonapi_node_preview_tab: 0
   jsonapi_resources: 0
   jsonapi_views: 0
@@ -78,7 +77,6 @@ module:
   link: 0
   linkit: 0
   linky: 0
-  linky_revision_ui: 0
   linkychecker: 0
   linkyreplacer: 0
   m4032404: 0
@@ -105,13 +103,13 @@ module:
   paragraphs_viewmode: 0
   path: 0
   path_alias: 0
-  permissions_filter: 0
   prevent_homepage_deletion: 0
   redirect: 0
   responsive_image: 0
   revision_log_default: 0
   robotstxt: 0
   role_delegation: 0
+  role_watchdog: 0
   serialization: 0
   shortcut: 0
   simple_oauth: 0

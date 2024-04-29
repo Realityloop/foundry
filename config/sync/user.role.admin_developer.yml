@@ -32,6 +32,4 @@ permissions:
   - 'customize shortcut links'
   - 'switch shortcut sets'
   - 'view all media revisions'
-  - 'view any unpublished content'
-  - 'view latest version'
   - 'view the administration theme'

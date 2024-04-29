@@ -111,8 +111,8 @@ content:
         custom
       show_extra: false
       hide_date: true
-      add_abbreviations: ''
       separator: to
+      add_abbreviations: ''
     third_party_settings: {  }
   field_description:
     type: text_textarea_with_summary
