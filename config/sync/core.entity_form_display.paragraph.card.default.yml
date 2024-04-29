@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
+    - field.field.paragraph.card.field_media
     - field.field.paragraph.card.field_text_formatted
     - field.field.paragraph.card.field_title
     - paragraphs.paragraphs_type.card
@@ -17,16 +17,9 @@ targetEntityType: paragraph
 bundle: card
 mode: default
 content:
-  field_image:
-    type: media_library_widget
-    weight: 2
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_link:
     type: linky
-    weight: 3
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -34,6 +27,13 @@ content:
       size: 40
       placeholder: ''
       allow_duplicate_urls: true
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_text_formatted:
     type: text_textarea

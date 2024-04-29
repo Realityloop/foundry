@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
+    - field.field.paragraph.card.field_media
     - field.field.paragraph.card.field_text_formatted
     - field.field.paragraph.card.field_title
     - image.style.thumbnail
@@ -54,25 +54,6 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 75-25
         components:
-          ca6112bf-0c2f-43c4-aad0-083379daa853:
-            uuid: ca6112bf-0c2f-43c4-aad0-083379daa853
-            region: second
-            configuration:
-              id: 'field_block:paragraph:card:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: media_thumbnail
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: thumbnail
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
           4cd8467c-0ce1-466b-9d73-bcec47090a53:
             uuid: 4cd8467c-0ce1-466b-9d73-bcec47090a53
             region: first
@@ -122,23 +103,34 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          9d8f07a5-133c-4d7c-850a-f6d53f5f34b3:
+            uuid: 9d8f07a5-133c-4d7c-850a-f6d53f5f34b3
+            region: second
+            configuration:
+              id: 'field_block:paragraph:card:field_media'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: paragraph.card.preview
 targetEntityType: paragraph
 bundle: card
 mode: preview
 content:
-  field_image:
-    type: media_thumbnail
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_link:
     type: linky_label
     label: hidden
@@ -147,6 +139,17 @@ content:
       parent_entity_label_link_text: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_media:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_text_formatted:
     type: text_trimmed

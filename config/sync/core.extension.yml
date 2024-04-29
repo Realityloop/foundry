@@ -118,6 +118,8 @@ module:
   simple_sitemap_views: 0
   smart_date: 0
   smart_date_recur: 0
+  svg_image: 0
+  svg_image_responsive: 0
   system: 0
   taxonomy: 0
   telephone: 0

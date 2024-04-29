@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
+    - field.field.paragraph.card.field_media
     - field.field.paragraph.card.field_text_formatted
     - field.field.paragraph.card.field_title
     - paragraphs.paragraphs_type.card
@@ -16,15 +16,6 @@ targetEntityType: paragraph
 bundle: card
 mode: default
 content:
-  field_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_link:
     type: linky_label
     label: hidden
@@ -32,14 +23,23 @@ content:
       link: true
       parent_entity_label_link_text: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_text_formatted:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_title:
     type: string

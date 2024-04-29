@@ -1,13 +1,13 @@
-uuid: 2a682f4f-f533-4a13-8f06-f7908e3c1e64
+uuid: 234e05ff-3ce0-4222-801a-a93176713caa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_image
+    - field.storage.paragraph.field_media
     - media.type.image
     - paragraphs.paragraphs_type.card
-id: paragraph.card.field_image
-field_name: field_image
+id: paragraph.card.field_media
+field_name: field_media
 entity_type: paragraph
 bundle: card
 label: Image
@@ -24,6 +24,6 @@ settings:
     sort:
       field: _none
       direction: ASC
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference
