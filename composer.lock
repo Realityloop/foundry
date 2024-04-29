@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e982d54e4f549faceb92202d17919c3",
+    "content-hash": "7d1c62b4c0a2e9bec86343f3fc46e6d4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7016,61 +7016,6 @@
             "homepage": "https://www.drupal.org/project/tome",
             "support": {
                 "source": "https://git.drupalcode.org/project/tome"
-            }
-        },
-        {
-            "name": "drupal/transliterate_filenames",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/transliterate_filenames.git",
-                "reference": "2.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/transliterate_filenames-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "204bcd65f79eeb6c4a43b3c63d0bbd325edfb127"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1698338671",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Dubovskoy",
-                    "homepage": "https://www.drupal.org/u/adubovskoy",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Andrei Ivnitskii",
-                    "homepage": "https://www.drupal.org/u/ivnish",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Krzysztof Domański",
-                    "homepage": "https://www.drupal.org/user/3572982"
-                }
-            ],
-            "description": "Transliteration for all uploading files (includes fields and ckeditor inline upload)",
-            "homepage": "https://www.drupal.org/project/transliterate_filenames",
-            "support": {
-                "source": "https://git.drupalcode.org/project/transliterate_filenames",
-                "issues": "https://www.drupal.org/project/issues/transliterate_filenames"
             }
         },
         {

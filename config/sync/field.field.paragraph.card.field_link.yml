@@ -215,4 +215,7 @@ settings:
   responsive_image_style:
     handler: 'default:responsive_image_style'
     handler_settings: {  }
+  role_watchdog:
+    handler: 'default:role_watchdog'
+    handler_settings: {  }
 field_type: dynamic_entity_reference
