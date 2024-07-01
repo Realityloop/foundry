@@ -43,7 +43,7 @@
         "drupal/eca": "1.1",
         "drupal/eck": "^2.0",
         "drupal/entity_browser": "^2.9.0",
-        "drupal/entity_browser_enhanced": "^1.1.0@dev",
+        "drupal/entity_browser_enhanced": "^2.0.1@dev",
         "drupal/entity_clone": "^2.0@beta",
         "drupal/entity_display_mode": "^2.0@alpha",
         "drupal/entity_route_context": "^4.0",
