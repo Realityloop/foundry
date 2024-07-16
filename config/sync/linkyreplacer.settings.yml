@@ -1,5 +1,6 @@
 _core:
   default_config_hash: OIcKoEcEO9gGsEvIz6XR-_dbcqkA34y2HMDPwl25TiY
+langcode: en
 internal_patterns: ''
 internal: false
 email: true

@@ -6,3 +6,4 @@ name: 'Article Category'
 vid: article_category
 description: 'This is for categorisation of article entries.'
 weight: 0
+new_revision: false

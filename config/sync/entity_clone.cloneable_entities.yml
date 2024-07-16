@@ -60,3 +60,4 @@ cloneable_entities:
   - entity_view_display
   - base_field_override
   - role_watchdog
+  - oauth2_scope

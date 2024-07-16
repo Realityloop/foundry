@@ -11,7 +11,7 @@ third_party_settings:
 name: Article
 type: article
 description: 'An article is content that you typically wish to arrange in some form of listing. It can include content in the form of text, photos, infographics, or videos.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false
