@@ -96,7 +96,7 @@
         "drupal/role_delegation": "^1.2",
         "drupal/role_watchdog": "^2.1",
         "drupal/scheduled_transitions": "2.3.x-dev@dev",
-        "drupal/security_review": "^2.0",
+        "drupal/security_review": "^3.0.3",
         "drupal/simple_oauth": "^6.0@beta",
         "drupal/simple_sitemap": "^4.1",
         "drupal/smart_date": "^4.1",
