@@ -10,7 +10,6 @@ dependencies:
     - entity_usage
     - filter
     - media
-    - media_revisions_ui
     - pathauto
     - system
     - toolbar

@@ -11,7 +11,6 @@ module:
   admin_audit_trail_taxonomy: 0
   admin_audit_trail_user: 0
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   advanced_text_formatter: 0
   allowed_formats: 0
@@ -87,7 +86,6 @@ module:
   media_file_delete: 0
   media_file_delete_entity_usage: 0
   media_library: 0
-  media_revisions_ui: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0

@@ -22,7 +22,6 @@ dependencies:
     - filter
     - linky
     - media
-    - media_revisions_ui
     - node
     - paragraphs_type_permissions
     - pathauto
