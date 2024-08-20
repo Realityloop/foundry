@@ -13,6 +13,7 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8",
             "exclude": [
+                "drupal-tome/tome_drush",
                 "drupal/advanced_text_formatter",
                 "drupal/coffee",
                 "drupal/config_filter",
@@ -35,6 +36,10 @@
                 "drupal/tome",
                 "drupal/username_enumeration_prevention"
             ]
+        },
+        "drupal-tome/tome_drush": {
+            "type": "git",
+             "url": "https://github.com/BrianGilbert/tome_drush.git"
         },
         "drupal/advanced_text_formatter": {
             "type": "git",
@@ -125,6 +130,7 @@
         "php": ">=8.3",
         "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7.3",
+        "drupal-tome/tome_drush": "dev-patch-1",
         "drupal/admin_audit_trail": "^1.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/advanced_text_formatter": "3.0.x",
@@ -209,6 +215,7 @@
         "drupal/smart_date": "^4.1",
         "drupal/svg_image": "dev-project-update-bot-only",
         "drupal/token": "^1.15",
+        "drupal/tome": "dev-project-update-bot-only",
         "drupal/upgrade_status": "^4.3",
         "drupal/username_enumeration_prevention": "dev-3435303-automated-drupal-11",
         "drupal/viewfield": "^3.0@beta",
@@ -304,31 +311,12 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/advanced_text_formatter": {
-                "https://www.drupal.org/project/advanced_text_formatter/issues/3442782": "https://www.drupal.org/files/issues/2024-04-23/advanced_text_formatter.3.0.0-rc1.rector.patch"
-            },
-            "drupal/coffee": {
-                "https://www.drupal.org/project/coffee/issues/3428399": "https://www.drupal.org/files/issues/2024-08-05/coffee.1.x-dev.rector.patch"
-            },
-            "drupal/config_filter": {
-                "https://www.drupal.org/project/config_filter/issues/3428542": "https://git.drupalcode.org/project/config_filter/-/merge_requests/9.diff"
-            },
             "drupal/druxt": {
                 "#3315030 - Add a wildcard route translator": "https://git.drupalcode.org/project/druxt/-/merge_requests/11.diff",
-                "#3315035 - Cannot load the 'view' entity with NULL ID": "https://git.drupalcode.org/project/druxt/-/merge_requests/10.diff",
-                "https://www.drupal.org/project/druxt/issues/3429976": "https://git.drupalcode.org/project/druxt/-/merge_requests/13.diff"
+                "#3315035 - Cannot load the 'view' entity with NULL ID": "https://git.drupalcode.org/project/druxt/-/merge_requests/10.diff"
             },
             "drupal/dynamic_entity_reference": {
                 "https://www.drupal.org/project/dynamic_entity_reference/issues/3262121#comment-14396414": "./patch/3262121-by-realityloop-Rename-Label-to-Item-to.patch"
-            },
-            "drupal/eck": {
-                "https://www.drupal.org/project/eck/issues/3430042": "https://git.drupalcode.org/project/eck/-/merge_requests/50.diff"
-            },
-            "drupal/entity_display_mode": {
-                "https://www.drupal.org/project/entity_display_mode/issues/3430161": "https://www.drupal.org/files/issues/2024-04-04/entity_display_mode.2.0.x-dev.rector.patch"
-            },
-            "drupal/exclude_node_title": {
-                "https://www.drupal.org/project/exclude_node_title/issues/3430357": "https://git.drupalcode.org/project/exclude_node_title/-/merge_requests/8.diff"
             },
             "drupal/gin": {
                 "https://www.drupal.org/project/gin/issues/3217391#comment-14212917": "https://git.drupalcode.org/project/gin/-/merge_requests/92.diff"
@@ -336,58 +324,20 @@
             "drupal/gin_toolbar": {
                 "https://www.drupal.org/project/gin_toolbar/issues/3217393": "https://git.drupalcode.org/project/gin_toolbar/-/merge_requests/9.diff"
             },
-            "drupal/jsonapi_user_resources": {
-                "https://www.drupal.org/project/jsonapi_user_resources/issues/3448737": "https://git.drupalcode.org/project/jsonapi_user_resources/-/merge_requests/6.diff"
-            },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3356968#comment-15027689": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/127.diff",
                 "https://www.drupal.org/project/layout_paragraphs/issues/3366968#comment-15123733": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/132.diff"
             },
-            "drupal/linkyreplacer": {
-                "https://www.drupal.org/project/linkyreplacer/issues/3455249": "https://git.drupalcode.org/project/linkyreplacer/-/merge_requests/9.diff"
-            },
             "drupal/m4032404": {
-                "https://www.drupal.org/project/m4032404/issues/3358555#comment-15043416": "https://git.drupalcode.org/project/m4032404/-/merge_requests/3.diff",
-                "https://www.drupal.org/project/m4032404/issues/3431768": "https://git.drupalcode.org/project/m4032404/-/merge_requests/4.diff"
+                "https://www.drupal.org/project/m4032404/issues/3358555#comment-15043416": "https://git.drupalcode.org/project/m4032404/-/merge_requests/3.diff"
             },
             "drupal/node_edit_protection": {
                 "https://www.drupal.org/project/node_edit_protection/issues/3196605#comment-14363624": "https://www.drupal.org/files/issues/2021-04-12/node_edit_protection-3196605-5.patch",
-                "https://www.drupal.org/project/node_edit_protection/issues/3193652#comment-13970107": "https://www.drupal.org/files/issues/2021-01-20/3193652-2.patch",
-                "https://www.drupal.org/project/node_edit_protection/issues/3433587": "https://www.drupal.org/files/issues/2024-03-24/node_edit_protection.8.x-1.1.rector.patch"
-            },
-            "drupal/oembed_providers": {
-                "https://www.drupal.org/project/oembed_providers/issues/3433668": "https://git.drupalcode.org/issue/oembed_providers-3433668/-/commit/d1c771240f642c35cf5232bbb68a0f63a1468898.diff"
+                "https://www.drupal.org/project/node_edit_protection/issues/3193652#comment-13970107": "https://www.drupal.org/files/issues/2021-01-20/3193652-2.patch"
             },
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-15247772": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "https://www.drupal.org/project/paragraphs/issues/3031598#comment-13972961": "https://www.drupal.org/files/issues/2021-01-22/paragraph-entity-type-did-not-specify-translation-halder-3031598-45.patch"
-            },
-            "drupal/paragraphs_asymmetric_translation_widgets": {
-                "https://www.drupal.org/project/paragraphs_asymmetric_translation_widgets/issues/3467509": "https://git.drupalcode.org/issue/paragraphs_asymmetric_translation_widgets-3467509/-/commit/0f3183e01ae09c1ce42bc5c0d9f6aae30c0add0a.diff"
-            },
-            "drupal/paragraphs_ee": {
-                "https://www.drupal.org/project/paragraphs_ee/issues/3467510": "https://git.drupalcode.org/issue/paragraphs_ee-3467510/-/commit/8f223d4213bcd0d7f3957ce05ab2d65f572c9430.diff"
-            },
-            "drupal/paragraphs_features": {
-                "https://www.drupal.org/project/paragraphs_features/issues/3433828": "https://git.drupalcode.org/project/paragraphs_features/-/merge_requests/18.diff"
-            },
-            "drupal/paragraphs_viewmode": {
-                "https://www.drupal.org/project/paragraphs_viewmode/issues/3433848": "https://git.drupalcode.org/project/paragraphs_viewmode/-/merge_requests/3.diff"
-            },
-            "drupal/revision_log_default": {
-                "https://www.drupal.org/project/revision_log_default/issues/3434251": "https://git.drupalcode.org/issue/revision_log_default-3434251/-/commit/d737fd04b0664a44ef44b84260b0ff995b7ff874.diff"
-            },
-            "drupal/role_watchdog": {
-                "https://www.drupal.org/project/role_watchdog/issues/3434274": "https://git.drupalcode.org/project/role_watchdog/-/merge_requests/8.diff"
-            },
-            "drupal/svg_image": {
-                "https://www.drupal.org/project/svg_image/issues/3451339": "https://git.drupalcode.org/project/svg_image/-/merge_requests/30.diff"
-            },
-            "drupal/tome": {
-                "https://www.drupal.org/project/tome/issues/3435061": "https://git.drupalcode.org/project/tome/-/merge_requests/27.diff"
-            },
-            "drupal/username_enumeration_prevention": {
-                "https://www.drupal.org/project/username_enumeration_prevention/issues/3435303": "https://git.drupalcode.org/project/username_enumeration_prevention/-/merge_requests/11.diff"
             }
         }
     }
