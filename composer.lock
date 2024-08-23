@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3584ead3ae0a1fc3ac44fd04eda1b059",
+    "content-hash": "15c07424a30031f42e6e1e3297b5e509",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1461,16 +1461,24 @@
         },
         {
             "name": "drupal-tome/tome_drush",
-            "version": "dev-patch-1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BrianGilbert/tome_drush.git",
-                "reference": "cb9a19a95d66f8b84008ca4610b689cc02ef0e3c"
+                "url": "https://github.com/drupal-tome/tome_drush.git",
+                "reference": "e372169049a49a48628f3229d050477b1df6c2e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal-tome/tome_drush/zipball/e372169049a49a48628f3229d050477b1df6c2e9",
+                "reference": "e372169049a49a48628f3229d050477b1df6c2e9",
+                "shasum": ""
             },
             "require": {
                 "drush/drush": "^9.6.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0"
             },
+            "default-branch": true,
             "type": "drupal-drush",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1481,7 +1489,11 @@
                 }
             ],
             "description": "Contains global Drush commands for initializing and installing Tome.",
-            "time": "2024-08-20T00:27:52+00:00"
+            "support": {
+                "issues": "https://github.com/drupal-tome/tome_drush/issues",
+                "source": "https://github.com/drupal-tome/tome_drush/tree/master"
+            },
+            "time": "2024-08-20T17:26:30+00:00"
         },
         {
             "name": "drupal/admin_audit_trail",
@@ -4895,21 +4907,66 @@
         },
         {
             "name": "drupal/linkyreplacer",
-            "version": "dev-project-update-bot-only",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/issue/linkyreplacer-3455249.git",
-                "reference": "efc10f380a1930138e1117a8ea46243f505f0c64"
+                "url": "https://git.drupalcode.org/project/linkyreplacer.git",
+                "reference": "2.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/linkyreplacer-2.3.0.zip",
+                "reference": "2.3.0",
+                "shasum": "d101be73a06ec6d7317344ae855256516e43d082"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11",
-                "drupal/entity_route_context": "^1 || ^3 || ^4",
-                "drupal/linky": "^1 || ^2",
-                "php": ">=7.3 || ^8"
+                "drupal/entity_route_context": "^4",
+                "drupal/linky": "^2",
+                "php": ">=8.1"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.3.0",
+                    "datestamp": "1723787425",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
+                    "name": "dpi",
+                    "homepage": "https://www.drupal.org/user/81431"
+                },
+                {
+                    "name": "gordon",
+                    "homepage": "https://www.drupal.org/user/959"
+                },
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                }
+            ],
             "description": "Converts hyperlink URL's to Linky entities, and replaces URL with Linky.",
-            "time": "2024-06-18T01:48:55+00:00"
+            "homepage": "https://www.drupal.org/project/linkyreplacer",
+            "support": {
+                "source": "https://git.drupalcode.org/project/linkyreplacer"
+            }
         },
         {
             "name": "drupal/m4032404",
@@ -4996,26 +5053,29 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "dev-3.x",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maxlength.git",
-                "reference": "b0cc444106ffc116798582f5b494aa9049157b1d"
+                "reference": "3.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/maxlength-3.1.0.zip",
+                "reference": "3.1.0",
+                "shasum": "48f5beb8c2242cb2557cf0706341b8bb01ebaff1"
             },
             "require": {
                 "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
-                    "version": "3.0.0+9-dev",
-                    "datestamp": "1722419805",
+                    "version": "3.1.0",
+                    "datestamp": "1724334810",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -17565,7 +17625,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal-tome/tome_drush": 20,
         "drupal/coffee": 20,
         "drupal/config_filter": 20,
         "drupal/config_pages": 20,
@@ -17586,9 +17645,7 @@
         "drupal/jsonapi_user_resources": 20,
         "drupal/linkit": 15,
         "drupal/linky": 10,
-        "drupal/linkyreplacer": 20,
         "drupal/m4032404": 20,
-        "drupal/maxlength": 20,
         "drupal/node_edit_protection": 20,
         "drupal/paragraphs_asymmetric_translation_widgets": 20,
         "drupal/paragraphs_ee": 20,
