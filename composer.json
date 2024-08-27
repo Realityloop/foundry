@@ -24,7 +24,6 @@
                 "drupal/m4032404",
                 "drupal/node_edit_protection",
                 "drupal/paragraphs_asymmetric_translation_widgets",
-                "drupal/paragraphs_ee",
                 "drupal/paragraphs_features",
                 "drupal/paragraphs_viewmode",
                 "drupal/pate",
@@ -78,10 +77,6 @@
         "drupal/paragraphs_asymmetric_translation_widgets": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/paragraphs_asymmetric_translation_widgets-3467509.git"
-        },
-        "drupal/paragraphs_ee": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/paragraphs_ee-3467510.git"
         },
         "drupal/paragraphs_features": {
             "type": "git",
@@ -186,7 +181,7 @@
         "drupal/oembed_providers": "^2.2",
         "drupal/paragraphs": "^1.18",
         "drupal/paragraphs_asymmetric_translation_widgets": "dev-3467509-drupal-11-compatibility",
-        "drupal/paragraphs_ee": "dev-3467510-drupal-11-compatibility",
+        "drupal/paragraphs_ee": "10.0.x-dev@dev",
         "drupal/paragraphs_features": "dev-project-update-bot-only as 2.0",
         "drupal/paragraphs_viewmode": "dev-project-update-bot-only",
         "drupal/pate": "dev-3467514-drupal-11-compatibility",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15c07424a30031f42e6e1e3297b5e509",
+    "content-hash": "d03f601653b994cafcaccbcc97492277",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5500,32 +5500,51 @@
         },
         {
             "name": "drupal/paragraphs_ee",
-            "version": "dev-3467510-drupal-11-compatibility",
+            "version": "dev-10.0.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/issue/paragraphs_ee-3467510.git",
-                "reference": "9705fdaf29dea2238e6d4faadd2cc71fde01da7a"
+                "url": "https://git.drupalcode.org/project/paragraphs_ee.git",
+                "reference": "37f0201300d6d1233db06ec92c056896384e7f5e"
             },
             "require": {
                 "drupal/core": ">=10.0",
                 "drupal/paragraphs_features": "^2.0"
             },
             "require-dev": {
+                "drupal/paragraphs_sets": "*",
                 "phpunit/phpunit": "^9.5",
                 "weitzman/drupal-test-traits": "^1.5"
             },
             "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-10.0.x": "10.0.x-dev"
+                },
+                "drupal": {
+                    "version": "10.0.3+9-dev",
+                    "datestamp": "1724656687",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Stefan Borchert",
+                    "homepage": "https://www.drupal.org/user/36942",
                     "email": "stefan.borchert@undpaul.de"
                 }
             ],
             "description": "Paragraphs Editor Enhancements for better usability.",
-            "time": "2024-08-15T02:18:34+00:00"
+            "homepage": "https://www.drupal.org/project/paragraphs_ee",
+            "support": {
+                "source": "https://git.drupalcode.org/project/paragraphs_ee"
+            }
         },
         {
             "name": "drupal/paragraphs_features",
