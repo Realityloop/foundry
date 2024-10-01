@@ -15,7 +15,6 @@
             "exclude": [
                 "drupal/advanced_text_formatter",
                 "drupal/coffee",
-                "drupal/config_filter",
                 "drupal/druxt",
                 "drupal/eck",
                 "drupal/entity_display_mode",
@@ -23,15 +22,12 @@
                 "drupal/jsonapi_user_resources",
                 "drupal/m4032404",
                 "drupal/node_edit_protection",
-                "drupal/paragraphs_asymmetric_translation_widgets",
                 "drupal/paragraphs_features",
                 "drupal/paragraphs_viewmode",
                 "drupal/pate",
                 "drupal/revision_log_default",
                 "drupal/role_watchdog",
-                "drupal/svg_image",
-                "drupal/tome",
-                "drupal/username_enumeration_prevention"
+                "drupal/tome"
             ]
         },
         "drupal/advanced_text_formatter": {
@@ -41,10 +37,6 @@
         "drupal/coffee": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/coffee-3428399.git"
-        },
-        "drupal/config_filter": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/config_filter-3428542.git"
         },
         "drupal/druxt": {
             "type": "git",
@@ -74,10 +66,6 @@
             "type": "git",
             "url": "https://git.drupalcode.org/issue/node_edit_protection-3433587.git"
         },
-        "drupal/paragraphs_asymmetric_translation_widgets": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/paragraphs_asymmetric_translation_widgets-3467509.git"
-        },
         "drupal/paragraphs_features": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/paragraphs_features-3433828.git"
@@ -98,17 +86,9 @@
             "type": "git",
             "url": "https://git.drupalcode.org/issue/role_watchdog-3434274.git"
         },
-        "drupal/svg_image": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/svg_image-3451339.git"
-        },
         "drupal/tome": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/tome-3435061.git"
-        },
-        "drupal/username_enumeration_prevention": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/username_enumeration_prevention-3435303.git"
         }
     },
     "require": {
@@ -122,16 +102,16 @@
         "drupal/allowed_formats": "^3.0",
         "drupal/anonymous_redirect": "^2.4",
         "drupal/coffee": "dev-3428399-automated-drupal-11",
-        "drupal/config_filter": "dev-3428542-automated-drupal-11",
+        "drupal/config_filter": "^2.7",
         "drupal/config_ignore": "^3.2",
         "drupal/config_pages": "2.x-dev@dev",
         "drupal/config_rewrite": "^1.6",
         "drupal/config_split": "^2.0",
         "drupal/consumers": "^1.19",
         "drupal/content_lock": "^3.0@alpha",
-        "drupal/core-composer-scaffold": "11.0.1",
-        "drupal/core-project-message": "11.0.1",
-        "drupal/core-recommended": "11.0.1",
+        "drupal/core-composer-scaffold": "11.0.4",
+        "drupal/core-project-message": "11.0.4",
+        "drupal/core-recommended": "11.0.4",
         "drupal/crop": "^2.4",
         "drupal/ctools": "^4.1",
         "drupal/decoupled_router": "^2.0",
@@ -149,7 +129,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/environment_indicator": "^4.0",
         "drupal/exclude_node_title": "dev-project-update-bot-only",
-        "drupal/field_group": "^3.6",
+        "drupal/field_group": "^4.0@alpha",
         "drupal/field_tools": "^1.0@alpha",
         "drupal/focal_point": "^2.1",
         "drupal/gin": "^3.0@RC",
@@ -165,7 +145,7 @@
         "drupal/jsonapi_node_preview_tab": "^1.0",
         "drupal/jsonapi_resources": "^1.2",
         "drupal/jsonapi_user_resources": "dev-project-update-bot-only",
-        "drupal/layout_paragraphs": "^2.0",
+        "drupal/layout_paragraphs": "^2.1",
         "drupal/length_indicator": "^1.4",
         "drupal/linkit": "^7.0@alpha",
         "drupal/linky": "^2.0@beta",
@@ -180,7 +160,7 @@
         "drupal/node_edit_protection": "dev-project-update-bot-only",
         "drupal/oembed_providers": "^2.2",
         "drupal/paragraphs": "^1.18",
-        "drupal/paragraphs_asymmetric_translation_widgets": "dev-3467509-drupal-11-compatibility",
+        "drupal/paragraphs_asymmetric_translation_widgets": "^1.4",
         "drupal/paragraphs_ee": "10.0.x-dev@dev",
         "drupal/paragraphs_features": "dev-project-update-bot-only as 2.0",
         "drupal/paragraphs_viewmode": "dev-project-update-bot-only",
@@ -191,23 +171,23 @@
         "drupal/replicate": "^1.3",
         "drupal/revision_log_default": "dev-3434251-automated-drupal-11",
         "drupal/robotstxt": "^1.6",
-        "drupal/role_delegation": "^1.2",
+        "drupal/role_delegation": "^1.3",
         "drupal/role_watchdog": "dev-project-update-bot-only",
         "drupal/scheduled_transitions": "^2.5",
         "drupal/security_review": "^3.0",
         "drupal/simple_oauth": "6.0.x-dev@dev",
         "drupal/simple_sitemap": "^4.1",
-        "drupal/smart_date": "^4.1",
-        "drupal/svg_image": "dev-project-update-bot-only",
+        "drupal/smart_date": "^4.2@beta",
+        "drupal/svg_image": "^3.1",
         "drupal/token": "^1.15",
         "drupal/tome": "dev-project-update-bot-only",
         "drupal/upgrade_status": "^4.3",
-        "drupal/username_enumeration_prevention": "dev-3435303-automated-drupal-11",
+        "drupal/username_enumeration_prevention": "^1.4",
         "drupal/viewfield": "^3.0@beta",
         "drupal/wpf": "^1.2"
     },
     "require-dev": {
-        "drupal/core-dev": "11.0.1",
+        "drupal/core-dev": "11.0.4",
         "drush/drush": "^13",
         "phpspec/prophecy-phpunit": "^2",
         "sllh/composer-lint": "^2.0"

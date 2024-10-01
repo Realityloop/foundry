@@ -25,7 +25,4 @@ permissions:
   - 'notify of path changes'
   - 'use text format formatted'
   - 'view all media revisions'
-  - 'view document media revisions'
-  - 'view image media revisions'
   - 'view the administration theme'
-  - 'view video media revisions'
