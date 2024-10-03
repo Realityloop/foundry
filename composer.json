@@ -111,7 +111,7 @@
         "drupal/content_lock": "^3.0@alpha",
         "drupal/core-composer-scaffold": "11.0.4",
         "drupal/core-project-message": "11.0.4",
-        "drupal/core-recommended": "11.0.4",
+        "drupal/core-recommended": "11.0.5",
         "drupal/crop": "^2.4",
         "drupal/ctools": "^4.1",
         "drupal/decoupled_router": "^2.0",
