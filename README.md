@@ -6,7 +6,7 @@ The Foundry install profile is designed to be a good starting point for most web
 
 ## Recommended usage
 
-Create a directory for your project then use the `composer create-project` command to download the required code as shown here:
+Create a directory for your project then use the `composer create-project` command to download the required code as shown here (as of Drupal 11 you will require php 8.3 to execute this):
 
 ```
 composer create-project -s dev realityloop/foundry [destination]
