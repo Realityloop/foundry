@@ -107,7 +107,7 @@
         "drupal/field_group": "^4.0@alpha",
         "drupal/field_tools": "^1.0@alpha",
         "drupal/focal_point": "^2.1",
-        "drupal/gin": "^3.0@RC",
+        "drupal/gin": "^4.0.2@RC",
         "drupal/gin_everywhere": "1.x-dev@dev",
         "drupal/gin_login": "^2.1",
         "drupal/gin_toolbar": "^1.0@RC",
