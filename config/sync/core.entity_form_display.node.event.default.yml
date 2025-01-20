@@ -81,9 +81,6 @@ content:
     region: content
     settings:
       modal: false
-      default_tz: ''
-      custom_tz: Australia/Melbourne
-      allowed_timezones: {  }
       default_duration: 60
       default_duration_increments: |-
         30
@@ -94,6 +91,9 @@ content:
       show_extra: false
       hide_date: true
       separator: to
+      default_tz: ''
+      custom_tz: Australia/Melbourne
+      allowed_timezones: {  }
       add_abbreviations: ''
     third_party_settings: {  }
   field_description:
