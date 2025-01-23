@@ -14,12 +14,9 @@
             "url": "https://packages.drupal.org/8",
             "exclude": [
                 "drupal/druxt",
-                "drupal/eck",
                 "drupal/entity_display_mode",
                 "drupal/exclude_node_title",
                 "drupal/m4032404",
-                "drupal/node_edit_protection",
-                "drupal/paragraphs_features",
                 "drupal/paragraphs_viewmode",
                 "drupal/pate",
                 "drupal/role_watchdog"
@@ -28,10 +25,6 @@
         "drupal/druxt": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/druxt-3429976.git"
-        },
-        "drupal/eck": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/eck-3430042.git"
         },
         "drupal/entity_display_mode": {
             "type": "git",
@@ -44,14 +37,6 @@
         "drupal/m4032404": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/m4032404-3431768.git"
-        },
-        "drupal/node_edit_protection": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/node_edit_protection-3433587.git"
-        },
-        "drupal/paragraphs_features": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/paragraphs_features-3433828.git"
         },
         "drupal/paragraphs_viewmode": {
             "type": "git",
@@ -94,7 +79,7 @@
         "drupal/druxt": "dev-project-update-bot-only",
         "drupal/dynamic_entity_reference": "^4.0@alpha",
         "drupal/eca": "^2.0",
-        "drupal/eck": "dev-project-update-bot-only",
+        "drupal/eck": "^2.1@beta",
         "drupal/entity_browser": "^2.11",
         "drupal/entity_browser_enhanced": "^2.0",
         "drupal/entity_clone": "^2.1@beta",
@@ -132,12 +117,12 @@
         "drupal/media_file_delete": "^1.3",
         "drupal/memcache": "^2.6",
         "drupal/metatag": "^2.1",
-        "drupal/node_edit_protection": "dev-project-update-bot-only",
+        "drupal/node_edit_protection": "^1.2",
         "drupal/oembed_providers": "^2.2",
         "drupal/paragraphs": "^1.18",
         "drupal/paragraphs_asymmetric_translation_widgets": "^1.4",
         "drupal/paragraphs_ee": "10.0.x-dev@dev",
-        "drupal/paragraphs_features": "dev-project-update-bot-only as 2.0",
+        "drupal/paragraphs_features": "^2.1",
         "drupal/paragraphs_viewmode": "dev-project-update-bot-only",
         "drupal/pate": "dev-3467514-drupal-11-compatibility",
         "drupal/pathauto": "^1.13",
@@ -150,7 +135,7 @@
         "drupal/role_watchdog": "dev-project-update-bot-only",
         "drupal/scheduled_transitions": "^2.5",
         "drupal/security_review": "^3.0",
-        "drupal/simple_oauth": "6.0.x-dev@dev",
+        "drupal/simple_oauth": "^6.0@beta",
         "drupal/simple_sitemap": "^4.2",
         "drupal/smart_date": "^4.2",
         "drupal/svg_image": "^3.1",
@@ -278,7 +263,11 @@
             },
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-15247772": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
-                "https://www.drupal.org/project/paragraphs/issues/3031598#comment-13972961": "https://www.drupal.org/files/issues/2021-01-22/paragraph-entity-type-did-not-specify-translation-halder-3031598-45.patch"
+                "https://www.drupal.org/project/paragraphs/issues/3031598#comment-13972961": "https://www.drupal.org/files/issues/2021-01-22/paragraph-entity-type-did-not-specify-translation-halder-3031598-45.patch",
+                "https://www.drupal.org/project/paragraphs/issues/3501591#comment-15953986": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/171.diff"
+            },
+            "drupal/simple_oauth": {
+                "https://www.drupal.org/project/simple_oauth/issues/3502661#comment-15962075": "https://git.drupalcode.org/project/simple_oauth/-/merge_requests/168.diff"
             },
             "drupal/smart_date": {
                 "https://www.drupal.org/project/smart_date/issues/3493091#comment-15950309": "https://git.drupalcode.org/project/smart_date/-/merge_requests/163.diff"
