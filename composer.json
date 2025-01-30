@@ -135,7 +135,7 @@
         "drupal/role_watchdog": "dev-project-update-bot-only",
         "drupal/scheduled_transitions": "^2.5",
         "drupal/security_review": "^3.0",
-        "drupal/simple_oauth": "^6.0@beta",
+        "drupal/simple_oauth": "6.0.x-dev@dev",
         "drupal/simple_sitemap": "^4.2",
         "drupal/smart_date": "^4.2",
         "drupal/svg_image": "^3.1",
@@ -265,9 +265,6 @@
                 "https://www.drupal.org/project/paragraphs/issues/2904705#comment-15247772": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "https://www.drupal.org/project/paragraphs/issues/3031598#comment-13972961": "https://www.drupal.org/files/issues/2021-01-22/paragraph-entity-type-did-not-specify-translation-halder-3031598-45.patch",
                 "https://www.drupal.org/project/paragraphs/issues/3501591#comment-15953986": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/171.diff"
-            },
-            "drupal/simple_oauth": {
-                "https://www.drupal.org/project/simple_oauth/issues/3502661#comment-15962075": "https://git.drupalcode.org/project/simple_oauth/-/merge_requests/168.diff"
             },
             "drupal/smart_date": {
                 "https://www.drupal.org/project/smart_date/issues/3493091#comment-15950309": "https://git.drupalcode.org/project/smart_date/-/merge_requests/163.diff"
