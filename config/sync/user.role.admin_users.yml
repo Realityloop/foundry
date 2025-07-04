@@ -9,12 +9,11 @@ dependencies:
   module:
     - admin_audit_trail
     - coffee
-    - exclude_node_title
     - masquerade
+    - navigation
     - role_delegation
     - role_watchdog
     - system
-    - toolbar
 id: admin_users
 label: 'Admin: Users'
 weight: -4
@@ -22,8 +21,8 @@ is_admin: null
 permissions:
   - 'access admin audit trail'
   - 'access coffee'
+  - 'access navigation'
   - 'access role_watchdog reports'
-  - 'access toolbar'
   - 'access user profiles'
   - 'assign admin_content role'
   - 'assign admin_users role'
@@ -32,6 +31,5 @@ permissions:
   - 'masquerade as approver'
   - 'masquerade as authenticated'
   - 'masquerade as author'
-  - 'use exclude node title'
   - 'view the administration theme'
   - 'view user email addresses'

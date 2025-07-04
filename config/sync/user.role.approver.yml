@@ -10,9 +10,9 @@ dependencies:
     - entity_usage
     - filter
     - media
+    - navigation
     - pathauto
     - system
-    - toolbar
 id: approver
 label: Approver
 weight: -6
@@ -21,7 +21,7 @@ permissions:
   - 'access coffee'
   - 'access contextual links'
   - 'access entity usage statistics'
-  - 'access toolbar'
+  - 'access navigation'
   - 'notify of path changes'
   - 'use text format formatted'
   - 'view all media revisions'

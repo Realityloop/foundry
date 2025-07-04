@@ -3,5 +3,6 @@ _core:
 langcode: en
 internal_patterns: ''
 internal: false
+internal_prefer_internal: false
 email: true
 telephone: true

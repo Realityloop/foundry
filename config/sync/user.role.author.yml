@@ -22,13 +22,13 @@ dependencies:
     - filter
     - linky
     - media
+    - navigation
     - node
     - paragraphs_type_permissions
     - pathauto
     - shortcut
     - system
     - taxonomy
-    - toolbar
 id: author
 label: Author
 weight: -7
@@ -40,8 +40,8 @@ permissions:
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
+  - 'access navigation'
   - 'access shortcuts'
-  - 'access toolbar'
   - 'add linky entities'
   - 'create article content'
   - 'create content translations'

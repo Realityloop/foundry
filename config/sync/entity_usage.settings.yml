@@ -8,19 +8,17 @@ local_task_enabled_entity_types:
 track_enabled_source_entity_types:
   - block_content
   - consumer
-  - content_moderation_state
   - crop
   - linky
   - media
   - menu_link_content
   - node
+  - oauth2_token
+  - paragraph
   - path_alias
   - redirect
-  - scheduled_transition
   - shortcut
-  - oauth2_token
   - taxonomy_term
-  - paragraph
 track_enabled_target_entity_types:
   - block_content
   - consumer
@@ -30,13 +28,13 @@ track_enabled_target_entity_types:
   - media
   - menu_link_content
   - node
+  - oauth2_token
+  - paragraph
   - path_alias
   - redirect
   - scheduled_transition
   - shortcut
-  - oauth2_token
   - taxonomy_term
-  - paragraph
 track_enabled_plugins:
   - block_field
   - dynamic_entity_reference

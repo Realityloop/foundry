@@ -4,11 +4,9 @@ status: true
 dependencies:
   module:
     - druxt
-    - exclude_node_title
 id: api_frontend
 label: 'API Frontend'
 weight: -9
 is_admin: null
 permissions:
   - 'access druxt resources'
-  - 'use exclude node title'

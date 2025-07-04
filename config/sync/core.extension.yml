@@ -10,8 +10,6 @@ module:
   admin_audit_trail_redirect: 0
   admin_audit_trail_taxonomy: 0
   admin_audit_trail_user: 0
-  admin_toolbar: 0
-  admin_toolbar_tools: 0
   advanced_text_formatter: 0
   allowed_formats: 0
   anonymous_redirect: 0
@@ -90,6 +88,8 @@ module:
   menu_ui: 0
   metatag: 0
   mysql: 0
+  navigation: 0
+  navigation_extra_tools: 0
   node: 0
   node_edit_protection: 0
   oembed_providers: 0
@@ -124,7 +124,6 @@ module:
   telephone: 0
   text: 0
   token: 0
-  toolbar: 0
   update: 0
   upgrade_status: 0
   user: 0

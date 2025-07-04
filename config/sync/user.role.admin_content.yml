@@ -24,13 +24,13 @@ dependencies:
     - filter
     - linky
     - media
+    - navigation
     - node
     - path
     - pathauto
     - redirect
     - system
     - taxonomy
-    - toolbar
 id: admin_content
 label: 'Admin: Content'
 weight: -5
@@ -43,8 +43,8 @@ permissions:
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
+  - 'access navigation'
   - 'access taxonomy overview'
-  - 'access toolbar'
   - 'administer content lock'
   - 'administer menu'
   - 'administer redirects'
@@ -77,7 +77,6 @@ permissions:
   - 'revert event revisions'
   - 'revert page revisions'
   - 'translate any entity'
-  - 'use exclude node title'
   - 'use text format formatted'
   - 'view all media revisions'
   - 'view all revisions'

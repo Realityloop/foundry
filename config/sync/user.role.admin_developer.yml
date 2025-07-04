@@ -10,7 +10,6 @@ dependencies:
     - role_delegation
     - shortcut
     - system
-    - toolbar
 id: admin_developer
 label: 'Admin: Developer'
 weight: -3
@@ -21,7 +20,6 @@ permissions:
   - 'access files overview'
   - 'access site in maintenance mode'
   - 'access site reports'
-  - 'access toolbar'
   - 'administer menu'
   - 'administer modules'
   - 'administer redirect settings'

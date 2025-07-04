@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - druxt
-    - exclude_node_title
     - linky
     - media
     - paragraphs_type_permissions
@@ -18,7 +17,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access druxt resources'
-  - 'use exclude node title'
   - 'view linky entities'
   - 'view media'
   - 'view paragraph content banner'
