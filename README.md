@@ -25,10 +25,12 @@ php ./web/core/scripts/drupal quick-start foundry
 This method is great for development purposes.
 
 1. First install ddev https://ddev.com/get-started/
-2. Then from the project root execute the following:
+2. Then from the project root execute the following commands:
 
 ```
 ddev start
+ddev ssh #Connect to container
+drush si --existing-config -y #Install site
 ```
 
 
@@ -36,7 +38,7 @@ For production use we suggest a contaier based workflow such as docker or kubern
 
 ## Contributing
 
-This project uses conventional commits https://www.conventionalcommits.org/en/v1.0.0/ 
+This project uses conventional commits https://www.conventionalcommits.org/en/v1.0.0/
 
 You will need nodejs v16.x installed for local development, we assume you will be using nvm.
 
