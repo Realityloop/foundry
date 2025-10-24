@@ -10,7 +10,6 @@ dependencies:
     - entity_usage
     - filter
     - media
-    - navigation
     - pathauto
     - system
 id: approver
@@ -21,7 +20,6 @@ permissions:
   - 'access coffee'
   - 'access contextual links'
   - 'access entity usage statistics'
-  - 'access navigation'
   - 'notify of path changes'
   - 'use text format formatted'
   - 'view all media revisions'

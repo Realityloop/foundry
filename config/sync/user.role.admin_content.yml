@@ -24,7 +24,6 @@ dependencies:
     - filter
     - linky
     - media
-    - navigation
     - node
     - path
     - pathauto
@@ -43,7 +42,6 @@ permissions:
   - 'access entity usage statistics'
   - 'access files overview'
   - 'access media overview'
-  - 'access navigation'
   - 'access taxonomy overview'
   - 'administer content lock'
   - 'administer menu'

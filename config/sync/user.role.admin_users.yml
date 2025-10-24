@@ -10,7 +10,6 @@ dependencies:
     - admin_audit_trail
     - coffee
     - masquerade
-    - navigation
     - role_delegation
     - role_watchdog
     - system
@@ -21,7 +20,6 @@ is_admin: null
 permissions:
   - 'access admin audit trail'
   - 'access coffee'
-  - 'access navigation'
   - 'access role_watchdog reports'
   - 'access user profiles'
   - 'assign admin_content role'
