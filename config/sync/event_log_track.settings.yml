@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: 5ql2jbHWc3doCoFqeyJN7ivG_8S7k22l9ECXQIJRGXs
+enable_log_deletion: true
+timespan_limit: 30
+batch_size: 50
+disable_db_logs: true
+log_cli: false
+syslog:
+  format: 'ELT [[event-log:type]] [[event-log:ref_char]] [[event-log:operation]] ON [[event-log:path]] BY [user:[event-log:user:uid]:[event-log:user:name]:[event-log:user:roles:join:,]] [[event-log:description]]'
+  output_type: watchdog
+stdout:
+  format: 'ELT [[event-log:type]] [[event-log:ref_char]] [[event-log:operation]] ON [[event-log:path]] BY [user:[event-log:user:uid]:[event-log:user:name]:[event-log:user:roles:join:,]] [[event-log:description]]'
+  output_type: watchdog

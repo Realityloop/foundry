@@ -7,8 +7,8 @@ dependencies:
     - user.role.authenticated
     - user.role.author
   module:
-    - admin_audit_trail
     - coffee
+    - event_log_track
     - masquerade
     - role_delegation
     - role_watchdog
@@ -18,8 +18,8 @@ label: 'Admin: Users'
 weight: -4
 is_admin: null
 permissions:
-  - 'access admin audit trail'
   - 'access coffee'
+  - 'access event log track'
   - 'access role_watchdog reports'
   - 'access user profiles'
   - 'assign admin_content role'

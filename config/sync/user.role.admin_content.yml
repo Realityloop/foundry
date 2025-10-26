@@ -12,13 +12,13 @@ dependencies:
     - node.type.page
     - taxonomy.vocabulary.article_category
   module:
-    - admin_audit_trail
     - coffee
     - content_lock
     - content_translation
     - contextual
     - entity_reference_revisions
     - entity_usage
+    - event_log_track
     - exclude_node_title
     - file
     - filter
@@ -35,11 +35,11 @@ label: 'Admin: Content'
 weight: -5
 is_admin: null
 permissions:
-  - 'access admin audit trail'
   - 'access coffee'
   - 'access content overview'
   - 'access contextual links'
   - 'access entity usage statistics'
+  - 'access event log track'
   - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'

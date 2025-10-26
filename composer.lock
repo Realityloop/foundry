@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73f526574131dc2a8a799685b8601e83",
+    "content-hash": "4e125092e9cbcf32c451fd080ff05d1a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1496,68 +1496,6 @@
                 "source": "https://github.com/drupal-tome/tome_drush/tree/master"
             },
             "time": "2024-08-20T17:26:30+00:00"
-        },
-        {
-            "name": "drupal/admin_audit_trail",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/admin_audit_trail.git",
-                "reference": "1.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_audit_trail-1.0.5.zip",
-                "reference": "1.0.5",
-                "shasum": "8cff16b4459d4540e52bdabd5a2758fa2f8ee38c"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
-            },
-            "require-dev": {
-                "drupal/entityqueue": "*",
-                "drupal/redirect": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.5",
-                    "datestamp": "1747848366",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Vardot",
-                    "homepage": "https://www.drupal.org/vardot",
-                    "role": "Maintenance for D8 and D9 versions"
-                },
-                {
-                    "name": "mohammed j. razem",
-                    "homepage": "https://www.drupal.org/user/255384"
-                },
-                {
-                    "name": "omar alahmed",
-                    "homepage": "https://www.drupal.org/user/308031"
-                },
-                {
-                    "name": "rajab natshah",
-                    "homepage": "https://www.drupal.org/user/1414312"
-                }
-            ],
-            "description": "This module track logs of specific events that you'd like to review.",
-            "homepage": "https://www.drupal.org/project/admin_audit_trail",
-            "support": {
-                "source": "http://cgit.drupalcode.org/admin_audit_trail",
-                "issues": "https://www.drupal.org/project/issues/admin_audit_trail"
-            }
         },
         {
             "name": "drupal/admin_toolbar",
@@ -5378,6 +5316,72 @@
             }
         },
         {
+            "name": "drupal/login_emailusername",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/login_emailusername.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/login_emailusername-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "0617c5da79bb038dd1af3f9d5620b2f0d2156133"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1738619522",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/2820429/committers",
+                    "role": "contributor"
+                },
+                {
+                    "name": "jannakha",
+                    "homepage": "https://www.drupal.org/user/3085703"
+                },
+                {
+                    "name": "mably",
+                    "homepage": "https://www.drupal.org/user/3375160"
+                },
+                {
+                    "name": "pameeela",
+                    "homepage": "https://www.drupal.org/user/1431110"
+                },
+                {
+                    "name": "rjjakes",
+                    "homepage": "https://www.drupal.org/user/3457245"
+                },
+                {
+                    "name": "vladimiraus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Login with Email or Username.",
+            "homepage": "https://drupal.org/project/login_emailusername",
+            "support": {
+                "source": "https://git.drupalcode.org/project/login_emailusername",
+                "issues": "https://drupal.org/project/issues/login_emailusername"
+            }
+        },
+        {
             "name": "drupal/m4032404",
             "version": "2.0.3",
             "source": {
@@ -6888,6 +6892,66 @@
             "time": "2025-01-25T14:29:18+00:00"
         },
         {
+            "name": "drupal/sam",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/sam.git",
+                "reference": "1.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sam-1.3.2.zip",
+                "reference": "1.3.2",
+                "shasum": "455bbdaa3565842fb848ad5c7c38126cfa5e8e4c"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/entity_reference_revisions": "*",
+                "drupal/paragraphs": "dev-1.x"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.3.2",
+                    "datestamp": "1733343161",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "lullabot",
+                    "homepage": "https://www.drupal.org/user/3815489"
+                },
+                {
+                    "name": "marcoscano",
+                    "homepage": "https://www.drupal.org/user/1288796"
+                },
+                {
+                    "name": "penyaskito",
+                    "homepage": "https://www.drupal.org/user/959536"
+                }
+            ],
+            "description": "Improves limited-cardinality widgets by displaying only one empty element at a time",
+            "homepage": "https://www.drupal.org/project/sam",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/sam",
+                "issues": "http://drupal.org/project/issues/sam"
+            }
+        },
+        {
             "name": "drupal/scheduled_transitions",
             "version": "2.8.0",
             "source": {
@@ -7274,6 +7338,59 @@
             }
         },
         {
+            "name": "drupal/tagify",
+            "version": "1.2.42",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tagify.git",
+                "reference": "1.2.42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tagify-1.2.42.zip",
+                "reference": "1.2.42",
+                "shasum": "3bc18ce2fad0ccdca0955900f69301824286d3d4"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/better_exposed_filters": "^7.0",
+                "drupal/facets": "^2.0",
+                "drupal/iconify_icons": "*",
+                "drupal/search_api": "^1.31",
+                "drupal/ui_icons": "*",
+                "drupal/ui_icons_field": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.42",
+                    "datestamp": "1757084234",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "David Galeano",
+                    "homepage": "https://www.drupal.org/u/gxleano"
+                }
+            ],
+            "description": "Integration with the Tagify JavaScript library.",
+            "homepage": "https://drupal.org/project/tagify",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tagify",
+                "issues": "https://www.drupal.org/project/issues/tagify"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.16.0",
             "source": {
@@ -7525,6 +7642,60 @@
             "homepage": "https://www.drupal.org/project/tome",
             "support": {
                 "source": "https://git.drupalcode.org/project/tome"
+            }
+        },
+        {
+            "name": "drupal/trash",
+            "version": "3.0.21",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/trash.git",
+                "reference": "3.0.21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/trash-3.0.21.zip",
+                "reference": "3.0.21",
+                "shasum": "8f5a297bea3efc2d2a1105378432e4ec86b833e7"
+            },
+            "require": {
+                "drupal/core": "^10.3 | ^11"
+            },
+            "conflict": {
+                "drush/drush": "<12.5.1"
+            },
+            "require-dev": {
+                "drupal/redirect": "*",
+                "drupal/wse": "*"
+            },
+            "suggest": {
+                "drush/drush": "^12 || ^13"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.21",
+                    "datestamp": "1760707352",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "amateescu",
+                    "homepage": "https://www.drupal.org/user/729614"
+                }
+            ],
+            "description": "This module adds a trash bin for all content entities.",
+            "homepage": "https://www.drupal.org/project/trash",
+            "support": {
+                "source": "https://git.drupalcode.org/project/trash"
             }
         },
         {
