@@ -113,7 +113,7 @@
         "drupal/metatag": "^2.2",
         "drupal/navigation_extra_tools": "^1.2",
         "drupal/node_edit_protection": "^1.2",
-        "drupal/oembed_providers": "^2.2",
+        "drupal/oembed_providers": "^3.0.0",
         "drupal/paragraphs": "^1.19",
         "drupal/paragraphs_asymmetric_translation_widgets": "^1.4",
         "drupal/paragraphs_ee": "10.0.x-dev@dev",
