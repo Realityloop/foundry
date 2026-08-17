@@ -68,7 +68,7 @@
         "drupal/diff": "^2.0@beta",
         "drupal/druxt": "dev-project-update-bot-only",
         "drupal/dynamic_entity_reference": "^4.0@alpha",
-        "drupal/eca": "^2.0",
+        "drupal/eca": "^3.1.6",
         "drupal/eck": "^2.1@beta",
         "drupal/entity_browser": "^2.11",
         "drupal/entity_browser_enhanced": "^2.0",
